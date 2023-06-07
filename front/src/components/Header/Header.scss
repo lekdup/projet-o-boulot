@@ -1,0 +1,18 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0C89FF;
+}
+
+.logo {
+    width: 3rem;
+    &-image {
+        max-width: 100%;
+    }
+}
+
+.Menu-profile {
+    display: flex;
+    gap: 1rem;
+}
