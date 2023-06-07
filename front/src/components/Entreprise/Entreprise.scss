@@ -1,0 +1,23 @@
+@use 'src/styles/vars';
+
+.wrapper-entreprise {
+    background-color: vars.$blue;
+    border-radius: .5rem;
+    margin: 1rem;
+    & h2 {
+        padding: 2rem 0;
+        color: white;
+    }
+
+   
+
+    &-button {
+        display: flex;
+        border-radius: .5rem;
+        background-color: white;
+        align-items: center;
+        justify-items: center;
+        width: 100%;
+        color: vars.$blue;
+    }
+}

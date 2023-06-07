@@ -1,5 +1,6 @@
 import './App.scss';
 import Candidat from './Candidat/Candidat';
+import Entreprise from './Entreprise/Entreprise';
 import Header from './Header/Header';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
         <h1>O'Boulot</h1>
         <p>Pour ceux qui en veulent</p>
       </article>
+      <Entreprise />
       <Candidat />
     </div>
   );
