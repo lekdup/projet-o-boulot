@@ -1,20 +1,10 @@
 import './App.scss';
-import Candidat from './Candidat/Candidat';
-import Entreprise from './Entreprise/Entreprise';
-import Footer from './Footer/Footer';
-import Header from './Header/Header';
+import Homepage from './Homepage/Homepage';
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <article className="intro">
-        <h1>O'Boulot</h1>
-        <p>Pour ceux qui en veulent</p>
-      </article>
-      <Entreprise />
-      <Candidat />
-      <Footer />
+      <Homepage />
     </div>
   );
 }
