@@ -1,0 +1,32 @@
+@use 'src/styles/vars';
+
+.CandidateAlertPage {
+    
+
+    &-message {
+        
+        border-radius: 1rem ;
+        margin: 3rem;
+        background-color: rgb(229, 229, 229);
+    
+        
+    }
+
+    &-title{
+        font-style: italic;
+        padding: 1rem;
+    }
+
+    &-p{
+        padding: 2rem;
+
+    }
+
+    &-button{
+        display: flex;
+        justify-content: center;
+        padding: 3rem;
+        
+    }
+}
+

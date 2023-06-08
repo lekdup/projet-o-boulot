@@ -6,7 +6,6 @@ function EntrepriseArea() {
 
     return(
         <div className="EntrepriseArea">
-            <Header />
             
             <h1 className="EntrepriseArea-title"> Bonjour entreprise X </h1>
             
@@ -15,9 +14,7 @@ function EntrepriseArea() {
                 <button className='EntrepriseArea-button' >Mes offres d'emploi</button>
                 <button className='EntrepriseArea-button' >Mes documents</button>
             </div>
-            
-
-            <Footer />
+       
 
         </div>
 
