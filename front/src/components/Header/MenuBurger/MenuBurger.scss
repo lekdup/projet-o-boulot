@@ -1,5 +1,63 @@
 .MenuBurger {
-    &-logo {
-        width: 2rem;
+    &-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: fixed;
+        right: 0;
+        left: 0;
+        height: 100vh;
+        background-color: darkslategray;
+        // margin-top: 1.6rem;
+        &-extend {
+            &>li {
+                padding-top: 1rem;
+                font-size: 1rem;
+            }
+        }
+        
+        &>li {
+            padding: 1.2rem;
+            font-size: 7vw;
+            font-weight: 600;
+            border-bottom: 1px #ddd solid;
+            transition: all 200ms ease-in;
+            cursor: pointer;
+            &:hover {
+                padding-top: 1.5rem;
+                background-color: #eee;
+            }
+        }
     }
+    &-logo {
+        &-bar,
+        &-bar::before,
+        &-bar::after {
+            display: block;
+            width: 30px;
+            height: 3px;
+            position: relative;
+            border-radius: 5px;
+            background-color: #000;
+        } 
+
+        &-bar::before,
+        &-bar::after {
+            content: "";
+            position: absolute;
+            left: 0;
+        }
+
+        &-bar::before {
+            transform: translateY(-10px);
+        }
+
+        &-bar::after {
+            transform: translateY(10px);
+        }
+    }
+}
+
+span {
+    color: #aaa;
 }

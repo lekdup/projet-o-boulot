@@ -1,33 +1,62 @@
 import './MenuBurger.scss';
+import { useState } from 'react';
 
 function MenuBurger() {
+    const [toggle, setToggle] = useState(false);
+    const [menuExtend, setMenuExtend] = useState("");
+
+    const handleClick = (e) => {
+        const menuValue = e.target.getAttribute('data-value');
+        if (menuExtend === menuValue) {
+            setMenuExtend('');
+        } else {
+            setMenuExtend(menuValue)
+        }
+    };
+
+    console.log(menuExtend);
     return( 
         <div className="MenuBurger">
-            <div className="MenuBurger-logo">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="hamburger-menu"><path d="M5 7h14c.6 0 1-.4 1-1s-.4-1-1-1H5c-.6 0-1 .4-1 1s.4 1 1 1zm0 6h14c.6 0 1-.4 1-1s-.4-1-1-1H5c-.6 0-1 .4-1 1s.4 1 1 1zm0 6h14c.6 0 1-.4 1-1s-.4-1-1-1H5c-.6 0-1 .4-1 1s.4 1 1 1z"></path></svg>
-            </div>
-            <ul className="MenuBurger-nav">
-                <li>O'Boulot
-                    <ul>
-                        <li>Qui sommes-nous</li>
-                        <li>Prestations</li>
-                        <li>Contact</li>
-                    </ul>
-                </li>
-                <li>Candidat
-                    <ul>
-                        <li>Trouver un Boulot</li>
-                    </ul>
-                </li>
-                <li>Entreprise
-                    <ul>
-                        <li>Publier un Boulot</li>
-                    </ul>
-                </li>
-                <li>Actualités</li>
-                <li>Aide</li>
-                <li>Contact</li>
-            </ul>
+            {toggle && (
+                <ul className="MenuBurger-nav">
+                    <li onClick={handleClick} data-value="O'Boulot">O'Boulot <span>&gt;</span>
+                        {menuExtend === "O'Boulot" && (
+                            <ul className="MenuBurger-nav-extend">
+                                <li>Qui sommes-nous</li>
+                                <li>Prestations</li>
+                                <li>Contact</li>
+                            </ul>
+                        )}
+                    </li>
+                    <li onClick={handleClick} data-value="Candidat">Candidat <span>&gt;</span>
+                    {menuExtend === "Candidat" && (
+                        <ul className="MenuBurger-nav-extend">
+                            <li>Trouver un Boulot</li>
+                            <li>Se connecter</li>
+                        </ul>
+                    )}
+                    </li>
+                    <li onClick={handleClick} data-value="Entreprise">Entreprise <span>&gt;</span>
+                    {menuExtend === "Entreprise" && (
+                        <ul className="MenuBurger-nav-extend">
+                            <li>Publier un Boulot</li>
+                            <li>Se connecter</li>
+                        </ul>
+                    )}
+                    </li>
+                    <li>Actualités</li>
+                    <li>Aide</li>
+                    <li>Contact</li>
+                </ul>
+            )}
+            <button
+                className="MenuBurger-logo"
+                onClick={() => {
+                    setToggle(!toggle);
+                }}
+            >
+                <span className="MenuBurger-logo-bar"></span>
+            </button>
         </div>
     ) 
 }
