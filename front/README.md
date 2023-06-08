@@ -6,7 +6,7 @@
 Lien de la doc: 
 https://create-react-app.dev/docs/getting-started/
 
-Ouvrez un teminal ->
+Lancez dans un teminal les commandes suivantes:
 
  `npx create-react-app [le-nom-de-l-app]`
 
@@ -18,7 +18,7 @@ Ouvrez ensuite http://localhost:3000/ pour voir votre application.
 
 ## 2 -Travailler avec SASS au lieu de CSS
 
-Afin de pouvoir utiliser SASS au lieu de CSS lancer les commandes suivantes:
+Afin de pouvoir utiliser SASS au lieu de CSS lancez les commandes suivantes:
 
 `npm uninstall node-sass`
 
