@@ -6,6 +6,8 @@
 Lien de la doc: 
 https://create-react-app.dev/docs/getting-started/
 
+Ouvrez un teminal ->
+
  `npx create-react-app [le-nom-de-l-app]`
 
 `cd [le-nom-de-l-app]`
