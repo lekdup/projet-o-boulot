@@ -1,72 +1,33 @@
-# Getting Started with Create React App
+# ETAPES PROJET FRONT REACT
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## 1 - Création d'une app react
 
-In the project directory, you can run:
+Lien de la doc: 
+https://create-react-app.dev/docs/getting-started/
 
-### `npm start`
+Lancez dans un teminal les commandes suivantes:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ `npx create-react-app [le-nom-de-l-app]`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+`cd [le-nom-de-l-app]`
 
-### `npm test`
+`npm start`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Ouvrez ensuite http://localhost:3000/ pour voir votre application.
 
-### `npm run build`
+## 2 -Travailler avec SASS au lieu de CSS
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Afin de pouvoir utiliser SASS au lieu de CSS lancez les commandes suivantes:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`npm uninstall node-sass`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`npm i -S sass`
 
-### `npm run eject`
+## 3 - Commencer à utiliser React JS
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Pour cela, il va falloir plonger dans les merveilleux cours et documentation de React: 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+https://fr.legacy.reactjs.org/tutorial/tutorial.html
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-### Test push Juliette
+Pas d'inquiétude, je vous conseille de faire un tour dans les cours de la spé React avec les replay de Luko, tout va bien se passer !

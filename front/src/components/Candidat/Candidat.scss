@@ -1,0 +1,11 @@
+@use 'src/styles/vars';
+
+.wrapper {
+    background-color: vars.$orange;
+    border-radius: .5rem;
+    margin: 1rem;
+    & h2 {
+        padding: 2rem 0;
+        color: white
+    }
+}

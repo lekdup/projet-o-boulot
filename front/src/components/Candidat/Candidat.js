@@ -5,7 +5,8 @@ function Candidat() {
         <div className="wrapper">
             <h2>Je cherche un boulot</h2>
             <div>
-                <button></button>
+                <button>Consulter les offres</button>
+                <button>Créer mon espace candidat</button>
             </div>
         </div>
     )
