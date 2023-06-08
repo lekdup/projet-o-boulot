@@ -1,4 +1,11 @@
 footer {
+    margin-top: auto;
+}
+
+.aide {
+    & p{
+        margin-bottom: 1rem;
+    }
 }
 
 .social {
@@ -12,4 +19,8 @@ footer {
         width: 2rem;
         list-style: none;
     }
+}
+
+.logo-footer {
+    display: none;
 }

@@ -1,11 +1,29 @@
 @use 'src/styles/vars';
 
-.wrapper {
+.wrapper-candidat {
+    padding: 0 1rem 1rem 1rem;
     background-color: vars.$orange;
     border-radius: .5rem;
     margin: 1rem;
-    & h2 {
-        padding: 2rem 0;
-        color: white
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    &-title {
+        font-size: 1.5rem;
+        padding: 1.5rem 0;
+        color: white;
+    }
+    &-buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: .5rem;
+        & button {
+            width: 15rem;
+            padding: .5rem;
+            font-size: 1rem;
+            border-radius: .4rem;
+            color: vars.$orange;
+        }
     }
 }
