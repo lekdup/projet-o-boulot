@@ -10,8 +10,8 @@ function CandidateAlertPage () {
                 <p className="CandidateAlertPage-p" > Votre demande X a été prise en compte </p>
             </div>
             
-            <div className="CandidateAlertPage-button" >
-                <button href="/"> Retour sur mon espace </button>
+            <div className="CandidateAlertPage-buttons" >
+                <a href="#" className="CandidateAlertPage-button">Mon espace</a>
             </div>
 
         </div>
