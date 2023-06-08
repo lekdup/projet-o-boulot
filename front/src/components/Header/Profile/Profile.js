@@ -1,9 +1,10 @@
 import './Profile.scss';
+import anonyme from '../../../assets/anonyme.png';
 
 function Profile() {
     return(
-        <section>
-            <h1>O</h1>
+        <section className='profile'>
+            <img className="profile-image" src={anonyme} alt="profile icon" />        
         </section>
     )
 }

@@ -1,5 +1,5 @@
 import './Header.scss';
-import logo from '../../logo.png';
+import logo from '../../assets/logo.png';
 import Profile from './Profile/Profile';
 import MenuBurger from './MenuBurger/MenuBurger';
 
