@@ -1,0 +1,10 @@
+.Joblist{
+    min-height: 100vh;
+    text-align: center;
+    &-title {
+        margin-top: 1rem;
+        font-size: 2em;
+        font-weight: 800;
+    }
+
+}
