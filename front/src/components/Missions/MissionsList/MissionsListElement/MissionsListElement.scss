@@ -21,18 +21,27 @@
         font-size: 0.6rem;
         margin-top: 0.5rem;
     }
+    &-tags.done{
+        display: none;
+
+    }
     &-bookmark{
-        
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+
     }
     &-btn{
         width: 10rem;
         margin-top: 1rem;
-
         padding: .5rem;
         font-size: 1rem;
         border-radius: .4rem;
         color: white;
         background-color: vars.$orange;
+    }
+    &-btn.hidden{
+        display: none;
     }
     &-btn:hover{
         transform: translateY(-3px);

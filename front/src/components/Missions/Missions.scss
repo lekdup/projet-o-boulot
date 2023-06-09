@@ -6,11 +6,15 @@
     &-nav{
         display: flex;
         justify-content: space-around;
-        padding: .8rem;
         border-bottom: 1px solid vars.$grey;
         border-top: 1px solid vars.$grey;
     }
     &-element{
-        
+        padding: 1rem;
     }
-}
+    &-element:hover{
+        background-color: vars.$grey;
+        padding: 1rem;
+    }
+    
+} 

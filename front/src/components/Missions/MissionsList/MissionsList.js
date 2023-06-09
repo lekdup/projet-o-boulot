@@ -1,12 +1,11 @@
 import './MissionsList.scss';
 import MissionsListElement from './MissionsListElement/MissionsListElement';
 
-function MissionsList(){
+function MissionsList({menuValue}){
     return(
         <div className='MissionsList'>
-        <MissionsListElement/>
-
-        
+        <MissionsListElement menuValue={menuValue}/>
+      
 
 </div>
     )
