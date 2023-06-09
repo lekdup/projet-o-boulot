@@ -1,0 +1,18 @@
+.Legacy{
+
+    &-title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: 800;
+        padding: 2rem;
+    }
+    &-p{
+        padding: 1rem;
+        margin: 0 0 .5rem;
+        text-align: center;
+        font-style: italic;
+    }
+}
