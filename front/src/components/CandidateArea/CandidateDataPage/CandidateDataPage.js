@@ -1,5 +1,6 @@
 
 import './CandidateDataPage.scss';
+import logoCandidateDataPage from '../../../assets/logoCandidateDataPage.svg'
 
 
 function CandidateDataPage() {
@@ -9,27 +10,30 @@ function CandidateDataPage() {
         
             <h1 className="CandidateDataPage-title">Mes données personnelles</h1>
 			
+
+			<img className="CandidateDataPage-img" src={logoCandidateDataPage} alt="Logo Candidate Data Page"></img>
+
             <form className="CandidateDataPage-form" action="/">
 		    <div>
 			
 				<div className="CandidateDataPage-input" >
-				    <label className="CandidateDataPage-input-label" for="name">Nom : </label>
-					<input type="text" id="name" autofocus />
+				    <label className="CandidateDataPage-input-label" for="name">Nom du candidat ici </label>
+					
 				</div>
 
 				<div className="CandidateDataPage-input" >
-					<label className="CandidateDataPage-input-label" for="prenom">Prénom : </label>
-					<input type="text" id="prenom" />
+					<label className="CandidateDataPage-input-label" for="prenom">Prénom du candidat ici </label>
+					
 				</div>
 
                 <div className="CandidateDataPage-input" >
-					<label className="CandidateDataPage-input-label" for="prenom">Age : </label>
-					<input type="number" id="age" />
+					<label className="CandidateDataPage-input-label" for="prenom">Age du candidat ici </label>
+					
 				</div>
 
 				<div className="CandidateDataPage-input" >
-					<label className="CandidateDataPage-input-label" for="email">E-mail : </label>
-					<input type="email" id="email" />
+					<label className="CandidateDataPage-input-label" for="email">E-mail du candidat ici </label>
+					
 				</div>
 
 				<div className="CandidateDataPage-p" >Veuillez verifier l'exactitude de vos données personnelles, ces dernière sont très importantes. Ces dernière serviront à établir et à éditer votre contrat de travail.</div>
