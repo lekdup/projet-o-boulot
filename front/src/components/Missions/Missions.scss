@@ -1,0 +1,16 @@
+@use 'src/styles/vars';
+
+.Missions{
+    margin-top: 2rem;
+    height: 100vh;
+    &-nav{
+        display: flex;
+        justify-content: space-around;
+        padding: .8rem;
+        border-bottom: 1px solid vars.$grey;
+        border-top: 1px solid vars.$grey;
+    }
+    &-element{
+        
+    }
+}

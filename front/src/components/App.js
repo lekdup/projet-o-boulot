@@ -3,12 +3,13 @@ import Header from './Header/Header';
 import Footer  from './Footer/Footer';
 import Joblist from './Joblist/Joblist';
 import Jobcard from './Jobcard/Jobcard';
+import Missions from './Missions/Missions';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Jobcard/>
+      <Missions/>
       <Footer/>
     </div>
   );
