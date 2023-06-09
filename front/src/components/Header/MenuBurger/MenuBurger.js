@@ -14,30 +14,29 @@ function MenuBurger() {
         }
     };
 
-    console.log(menuExtend);
     return( 
-        <div className="MenuBurger">
-            <ul className={`MenuBurger-nav ${toggle ? "show" : ""}`}>
-                <li onClick={handleClick} data-value="O'Boulot">O'Boulot <span>&gt;</span>
+        <nav className={`MenuBurger ${toggle ? "show" : ""}`}>
+            <ul className="MenuBurger__nav">
+                <li onClick={handleClick} data-value="O'Boulot">O'Boulot <span className="MenuBurger__nav--arrow">&gt;</span>
                     {menuExtend === "O'Boulot" && (
-                        <ul className="MenuBurger-nav-extend">
+                        <ul className="MenuBurger__nav--extend">
                             <li>Qui sommes-nous</li>
                             <li>Prestations</li>
                             <li>Contact</li>
                         </ul>
                     )}
                 </li>
-                <li onClick={handleClick} data-value="Candidat">Candidat <span>&gt;</span>
+                <li onClick={handleClick} data-value="Candidat">Candidat <span className="MenuBurger__nav--arrow">&gt;</span>
                 {menuExtend === "Candidat" && (
-                    <ul className="MenuBurger-nav-extend">
+                    <ul className="MenuBurger__nav--extend">
                         <li>Trouver un Boulot</li>
                         <li>Se connecter</li>
                     </ul>
                 )}
                 </li>
-                <li onClick={handleClick} data-value="Entreprise">Entreprise <span>&gt;</span>
+                <li onClick={handleClick} data-value="Entreprise">Entreprise <span className="MenuBurger__nav--arrow">&gt;</span>
                 {menuExtend === "Entreprise" && (
-                    <ul className="MenuBurger-nav-extend">
+                    <ul className="MenuBurger__nav--extend">
                         <li>Publier un Boulot</li>
                         <li>Se connecter</li>
                     </ul>
@@ -48,14 +47,14 @@ function MenuBurger() {
                 <li>Contact</li>
             </ul>
             <button
-                className="MenuBurger-logo"
+                className="MenuBurger__logo"
                 onClick={() => {
                     setToggle(!toggle);
                 }}
             >
-                <span className="MenuBurger-logo-bar"></span>
+                <span className="MenuBurger__logo--bar"></span>
             </button>
-        </div>
+        </nav>
     ) 
 }
 
