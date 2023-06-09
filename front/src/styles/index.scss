@@ -21,3 +21,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+button {
+  border: none;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s;
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+  }
+  &:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.5);
+  }
+}
