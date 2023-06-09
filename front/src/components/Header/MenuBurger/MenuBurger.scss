@@ -1,0 +1,118 @@
+.MenuBurger {
+    display: flex;
+    align-items: center;
+    @media (max-width: 799px) {
+        &.show .MenuBurger__nav {
+            transform: scale(1,1);
+            min-height: 100vh;
+            background-color: white;
+        }
+        &.show .MenuBurger__nav > li {
+            opacity: 1;
+            transition: opacity 250ms ease-in-out 250ms;
+        }
+        &.show .MenuBurger__logo--bar::before {
+            transform: rotate(45deg);
+        }
+        &.show .MenuBurger__logo--bar {
+            background-color: transparent;
+        }
+        &.show .MenuBurger__logo--bar::after {
+            transform: rotate(-45deg);
+        }
+    }
+    &__nav {
+        display: flex;
+        margin-right: 2rem;
+        position: relative;
+        @media (max-width: 799px) {
+            margin-right: 0;
+            flex-direction: column;
+            justify-content: center;
+            position: absolute;
+            min-height: 100vh;
+            background-color: white;
+            inset: 0;
+
+            transform: scale(0,1);
+            transform-origin: right;
+            transition: transform 400ms ease-in-out;
+        }
+        &--arrow {
+            color: #ccc;
+        }
+        & > li {
+            @media (max-width: 799px) {
+                padding: 1.2rem;
+                font-size: 7vw;
+                border-bottom: 1px solid #eee;
+                transition: all .2s ease;
+                opacity: 0;
+                transition: opacity 150ms ease-in-out;
+                &:hover {
+                    padding-bottom: 1.4rem;
+                }
+            }
+        }
+        &--extend {
+            position: absolute;
+            top: 3rem;
+            background-color: rgb(127, 77, 77);
+            margin-left: -1rem;
+            transform: scale(1,1);
+            transform-origin: top;
+            transition: transform 400ms ease-in-out;
+            @media (max-width: 799px) {
+                position: inherit;
+                background-color: #eee;
+            }
+            & > li {
+                padding: .5rem 0;
+                border-bottom: 1px #fff solid;
+            }
+        }
+    }
+    &__logo {
+        display: none;
+        @media (max-width: 799px) {
+            display: block;
+            position: fixed;
+            padding: 1rem .5rem;
+            background-color: transparent;
+            top: 1rem;
+            right: 1rem;
+            &--bar,
+            &--bar::before,
+            &--bar::after {
+                display: block;
+                width: 30px;
+                height: 3px;
+                position: relative;
+                border-radius: 3px;
+                background-color: #000;
+                transition: all .5s ease-in-out;
+            } 
+
+            &--bar::before,
+            &--bar::after {
+                content: "";
+                position: absolute;
+                left: 0;
+            }
+
+            &--bar::before {
+                transform: translateY(-10px);
+            }
+            &--bar::after {
+                transform: translateY(10px);
+            }
+        }
+    }
+    & li {
+        cursor: pointer;
+        padding: 1rem;
+        &:hover {
+            background-color: #eee;
+        }
+    }
+}

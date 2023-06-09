@@ -1,12 +1,15 @@
 header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background-color: #0C89FF;
+    position: sticky;
+    top: 1rem;
+    margin: 0 1rem;
+    margin-bottom: 2rem;
 }
 
 .logo {
     width: 3rem;
+    z-index: 9;
     &-image {
         max-width: 100%;
     }
@@ -14,5 +17,8 @@ header {
 
 .Menu-profile {
     display: flex;
-    gap: 1rem;
+    @media (min-width: 799px) {
+        flex-direction: row-reverse;
+        // gap: 1rem;
+    }
 }

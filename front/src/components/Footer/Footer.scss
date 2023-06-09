@@ -1,0 +1,26 @@
+footer {
+    margin-top: auto;
+}
+
+.aide {
+    & p{
+        margin-bottom: 1rem;
+    }
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    &-icon {
+        // max-width: 100%;
+    }
+    & li {
+        width: 2rem;
+        list-style: none;
+    }
+}
+
+.logo-footer {
+    display: none;
+}

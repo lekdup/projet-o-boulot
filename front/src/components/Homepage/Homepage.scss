@@ -1,0 +1,20 @@
+.Homepage{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  &-intro {
+    margin-top: 1rem;
+    & h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+    & p {
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+  }
+}
+
+
+  
