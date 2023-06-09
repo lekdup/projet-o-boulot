@@ -1,8 +1,47 @@
+@use '../../../styles/vars';
+
 .profile{
     width: 2rem;
+    margin-right: 4rem;
+    margin-top: .2rem;
+    position: relative;
+    cursor: pointer;
     &-image{
-    max-width: 100%;
-   
+        max-width: 100%;
+    }
+
+    &-select {
+        position: absolute;
+        top: 3rem;
+        left: -10rem;
+        text-align: start;
+        width: 12rem;
+        background-color: #eee;
+        transform: scale(1,0);
+        transform-origin: top;
+        transition: transform 400ms ease-in-out;
+        &-btn {
+            font-size:2rem;
+            padding: 1rem;
+            width: 100%;
+            transition: all .2s ease;
+            opacity: 0;
+            transition: opacity 150ms ease-in-out;
+            &.candidat:hover {
+                background-color: vars.$orange;
+            }
+            &.entreprise:hover {
+                background-color: vars.$blue;
+            }
+        }
+        &.show {
+            display: block;
+            transform: scale(1, 1);
+        }
+        &.show .profile-select-btn {
+            opacity: 1;
+            transition: opacity 250ms ease-in-out 250ms;
+        }
     }
 
 
