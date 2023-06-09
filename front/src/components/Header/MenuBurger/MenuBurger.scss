@@ -4,11 +4,13 @@
         flex-direction: column;
         justify-content: center;
         position: fixed;
-        right: 0;
-        left: 0;
+        right: -100vw;
         height: 100vh;
-        background-color: darkslategray;
-        // margin-top: 1.6rem;
+        background-color: white;
+        visibility: hidden;
+
+        transition: transform 0.5s ease-in-out;
+        transform: translateX(100%);
         &-extend {
             &>li {
                 padding-top: 1rem;
@@ -28,8 +30,19 @@
                 background-color: #eee;
             }
         }
+        &.show {
+            right: 0;
+            left: 0;
+            visibility: visible;
+            transform: translateX(0%);
+        }
     }
     &-logo {
+        background-color: transparent;
+        display: block;
+        position: fixed;
+        top: 2rem;
+        right: 1rem;
         &-bar,
         &-bar::before,
         &-bar::after {
@@ -37,7 +50,7 @@
             width: 30px;
             height: 3px;
             position: relative;
-            border-radius: 5px;
+            border-radius: 100vmax;
             background-color: #000;
         } 
 
@@ -56,6 +69,13 @@
             transform: translateY(10px);
         }
     }
+    &.show .MenuBurger-logo-bar::before {
+        transform: rotate(45deg);
+    }
+    &.show .MenuBurger-logo-bar::after {
+        transform: rotate(-45deg);
+    }
+    
 }
 
 span {

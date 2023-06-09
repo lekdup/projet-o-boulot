@@ -17,38 +17,36 @@ function MenuBurger() {
     console.log(menuExtend);
     return( 
         <div className="MenuBurger">
-            {toggle && (
-                <ul className="MenuBurger-nav">
-                    <li onClick={handleClick} data-value="O'Boulot">O'Boulot <span>&gt;</span>
-                        {menuExtend === "O'Boulot" && (
-                            <ul className="MenuBurger-nav-extend">
-                                <li>Qui sommes-nous</li>
-                                <li>Prestations</li>
-                                <li>Contact</li>
-                            </ul>
-                        )}
-                    </li>
-                    <li onClick={handleClick} data-value="Candidat">Candidat <span>&gt;</span>
-                    {menuExtend === "Candidat" && (
+            <ul className={`MenuBurger-nav ${toggle ? "show" : ""}`}>
+                <li onClick={handleClick} data-value="O'Boulot">O'Boulot <span>&gt;</span>
+                    {menuExtend === "O'Boulot" && (
                         <ul className="MenuBurger-nav-extend">
-                            <li>Trouver un Boulot</li>
-                            <li>Se connecter</li>
+                            <li>Qui sommes-nous</li>
+                            <li>Prestations</li>
+                            <li>Contact</li>
                         </ul>
                     )}
-                    </li>
-                    <li onClick={handleClick} data-value="Entreprise">Entreprise <span>&gt;</span>
-                    {menuExtend === "Entreprise" && (
-                        <ul className="MenuBurger-nav-extend">
-                            <li>Publier un Boulot</li>
-                            <li>Se connecter</li>
-                        </ul>
-                    )}
-                    </li>
-                    <li>Actualités</li>
-                    <li>Aide</li>
-                    <li>Contact</li>
-                </ul>
-            )}
+                </li>
+                <li onClick={handleClick} data-value="Candidat">Candidat <span>&gt;</span>
+                {menuExtend === "Candidat" && (
+                    <ul className="MenuBurger-nav-extend">
+                        <li>Trouver un Boulot</li>
+                        <li>Se connecter</li>
+                    </ul>
+                )}
+                </li>
+                <li onClick={handleClick} data-value="Entreprise">Entreprise <span>&gt;</span>
+                {menuExtend === "Entreprise" && (
+                    <ul className="MenuBurger-nav-extend">
+                        <li>Publier un Boulot</li>
+                        <li>Se connecter</li>
+                    </ul>
+                )}
+                </li>
+                <li>Actualités</li>
+                <li>Aide</li>
+                <li>Contact</li>
+            </ul>
             <button
                 className="MenuBurger-logo"
                 onClick={() => {
