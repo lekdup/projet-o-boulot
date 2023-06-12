@@ -36,9 +36,9 @@ function App() {
         <Route path="/entreprise/mes-donnes/done" element={<EntrepriseAlertPage />} />
         <Route path="/entreprise/mes-donnes/modification" element={<EntrepriseModificationPage />} />
         <Route path="/entreprise/ajout-publication/done" element={<EntrepriseAddAlertPage />} />
-       </Routes>
+      </Routes>
 
-       <Footer />
+      <Footer />
 
     </div>
   );
