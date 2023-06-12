@@ -1,2 +1,9 @@
-.cardList{
+.cardsList{
+display: flex;
+flex-direction: column;
+margin: auto;
+@media (max-width: 799px) {
+    max-width: 500px;
+
+}
 }

@@ -6,6 +6,8 @@ function CardsList(){
         <div className='cardsList'>
             <Card/>
             <Card/>
+            <Card/>
+
 
         </div>
     )
