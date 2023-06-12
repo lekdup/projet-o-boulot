@@ -2,23 +2,33 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  // min-height: 100vh;
-  @media (min-width: 799) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: 
-      "";
-  }
+  margin-bottom: 3rem;
   &-intro {
     margin-top: 1rem;
     & h1 {
       font-size: 2.5rem;
       font-weight: 800;
     }
-    & p {
+    & h2 {
       font-size: 1.2rem;
       font-weight: 400;
+      margin: .5rem 0 1.5rem 0;
+    }
+    & p {
+      display: none;
+      @media (min-width: 799px){
+        display: block;
+        max-width: 800px;
+        margin: auto;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  &-component {
+    @media (min-width: 799px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
     }
   }
 }

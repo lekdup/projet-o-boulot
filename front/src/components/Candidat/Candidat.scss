@@ -4,14 +4,25 @@
     padding: 0 1rem 1rem 1rem;
     background-color: vars.$orange;
     border-radius: .5rem;
-    margin: 1rem;
+    margin: 1rem 1rem 0 1rem;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
     &-title {
         font-size: 1.5rem;
         padding: 1.5rem 0;
         color: white;
+    }
+    &-logo {
+        display: none;
+        @media (min-width: 799px) {
+            display: block;
+            max-width: 15rem;
+            & img {
+                max-width: 100%;
+            }
+        }
     }
     &-buttons {
         display: flex;
