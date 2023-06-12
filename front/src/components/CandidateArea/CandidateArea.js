@@ -1,5 +1,5 @@
 import'./CandidateArea.scss';
-
+import logoCandidatArea from '../../assets/logoCandidatArea.svg';
 
 
 function CandidatArea () {
@@ -7,6 +7,8 @@ function CandidatArea () {
         <div className="CandidateArea">
             
             <h1 className="CandidateArea-title"> Bonjour candidat X </h1>
+
+            <img className="EntrepriseArea-img" src={logoCandidatArea} alt="Logo Candidate Area Page" />
             
             <div className='CandidateArea-buttons'>
                 <button className='CandidateArea-button' >Mes données personnelles</button>

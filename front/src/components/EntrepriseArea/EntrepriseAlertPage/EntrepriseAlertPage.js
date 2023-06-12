@@ -1,10 +1,12 @@
 import './EntrepriseAlertPage.scss';
+import logoEntrepriseAlertPage from '../../../assets/logoEntrepriseAlertPage.svg';
 
 function EntrepriseAlertPage() {
 
     return(
         <div className="EntrepriseAlertPage">
-            <div className="EntrepriseAlertPage-message">
+            <img className="EntrepriseAlertPage-img" src={logoEntrepriseAlertPage} alt="logo entreprise done" />
+            <div  className="EntrepriseAlertPage-message">
                 <h3 className="EntrepriseAlertPage-title">Alert</h3>
                 <p className="EntrepriseAlertPage-p" > Votre demande X a été prise en compte </p>
             </div>

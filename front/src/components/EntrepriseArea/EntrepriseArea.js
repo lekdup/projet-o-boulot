@@ -1,6 +1,5 @@
 import './EntrepriseArea.scss';
-import Footer from '../Footer/Footer';
-import Header from '../Header/Header';
+import logoEntrepriseArea from '../../assets/logoEntrepriseArea.svg';
 
 function EntrepriseArea() {
 
@@ -8,6 +7,8 @@ function EntrepriseArea() {
         <div className="EntrepriseArea">
             
             <h1 className="EntrepriseArea-title"> Bonjour entreprise X </h1>
+
+            <img className="EntrepriseArea-img" src={logoEntrepriseArea} alt="Logo Candidate Area Page" />
             
             <div className='EntrepriseArea-buttons'>
                 <button className='EntrepriseArea-button' >Mes données</button>
