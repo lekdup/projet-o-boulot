@@ -9,6 +9,10 @@ footer {
 }
 
 .aide {
+    text-align: center;
+    @media (min-width: 799px) {
+        text-align: start;
+    }
     & p{
         margin-bottom: 1rem;
     }
