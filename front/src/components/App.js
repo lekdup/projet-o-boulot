@@ -19,6 +19,8 @@ import EntrepriseAddAlertPage from './EntrepriseArea/EntrepriseAddAlertPage/Entr
 
 import AboutUs from './AboutUs/AboutUs';
 import Legacy from './Legacy/Legacy';
+import Joblist from './Joblist/Joblist';
+import Jobcard from './Jobcard/Jobcard';
 
 function App() {
 
@@ -34,6 +36,7 @@ function App() {
         <Route path="/candidat/mes-donnes" element={<CandidateDataPage />} />
         <Route path="/candidat/mes-donnes/done" element={<CandidateAlertPage />} />
         <Route path="/candidat/mes-donnes/modification" element={<CandidateModificationPage />} />
+        <Route path="/candidat/joblist" element={<Joblist/>} />
 
         <Route path="/entreprise" element={<EntrepriseArea />} />
         <Route path="/entreprise/mes-donnes" element={<EntrepriseDataPage />} />
@@ -44,10 +47,8 @@ function App() {
 
         <Route path="/qui-sommes-nous" element={<AboutUs />} />
         <Route path="/mentions-legales" element={<Legacy />} /> 
-
       </Routes>
       <Footer />
-
     </div>
   );
 }
