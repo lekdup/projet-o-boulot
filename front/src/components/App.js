@@ -21,6 +21,7 @@ import AboutUs from './AboutUs/AboutUs';
 import Legacy from './Legacy/Legacy';
 import Joblist from './Joblist/Joblist';
 import Jobcard from './Jobcard/Jobcard';
+import Contact from './Contact/Contact';
 
 function App() {
 
@@ -47,6 +48,7 @@ function App() {
 
         <Route path="/qui-sommes-nous" element={<AboutUs />} />
         <Route path="/mentions-legales" element={<Legacy />} /> 
+        <Route path="/contact" element={<Contact />} /> 
       </Routes>
       <Footer />
     </div>

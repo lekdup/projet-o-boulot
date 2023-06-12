@@ -1,0 +1,51 @@
+@use '../../styles/vars';
+.Contact {
+    margin: 2rem 2rem;
+    &-title {
+        font-size: 2rem;
+        font-weight: 800;
+        text-align: center;
+    }
+    &-image {
+        max-width: 80vw;
+        margin: 2rem auto;
+        & img {
+            width: 100%;
+        }
+    }
+    &-form {
+        display: flex;
+        flex-direction: column;
+        &-fieldHolder {
+            position: relative;
+            margin-bottom: 1.25rem;
+            & label {
+                position: absolute;
+                font-size: 1.2rem;
+                font-weight: 600;
+                margin-bottom: 1rem;
+            }
+            & input {
+                border: none;
+                border-bottom: 1px solid #ccc;
+                font-weight: 1.1;
+                outline: none;
+            }
+            & textarea {
+                border: none;
+                padding: .5rem 0 .8rem;
+                border-bottom: 1px solid #ccc;
+                outline: none;
+            }
+        }
+        &-btn {
+            margin: .2rem;
+            background-color: vars.$orange;
+            padding: 1rem;
+            border-radius: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+    }
+}
