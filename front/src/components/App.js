@@ -17,9 +17,13 @@ import EntrepriseDataPage from './EntrepriseArea/EntrepriseDataPage/EntrepriseDa
 import EntrepriseAlertPage from './EntrepriseArea/EntrepriseAlertPage/EntrepriseAlertPage';
 import EntrepriseAddAlertPage from './EntrepriseArea/EntrepriseAddAlertPage/EntrepriseAddAlertPage';
 
+import AboutUs from './AboutUs/AboutUs';
+import Legacy from './Legacy/Legacy';
+
 function App() {
 
   return (
+    
     <div className="App">
       <Header />
       
@@ -35,9 +39,13 @@ function App() {
         <Route path="/entreprise/mes-donnes" element={<EntrepriseDataPage />} />
         <Route path="/entreprise/mes-donnes/done" element={<EntrepriseAlertPage />} />
         <Route path="/entreprise/mes-donnes/modification" element={<EntrepriseModificationPage />} />
-        <Route path="/entreprise/ajout-publication/done" element={<EntrepriseAddAlertPage />} />
-      </Routes>
+        <Route path="/entreprise/ajout-publication/done" element={<EntrepriseAddAlertPage />} /> 
 
+
+        <Route path="/qui-sommes-nous" element={<AboutUs />} />
+        <Route path="/mentions-legales" element={<Legacy />} /> 
+
+      </Routes>
       <Footer />
 
     </div>
