@@ -2,7 +2,14 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  // min-height: 100vh;
+  @media (min-width: 799) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "";
+  }
   &-intro {
     margin-top: 1rem;
     & h1 {
