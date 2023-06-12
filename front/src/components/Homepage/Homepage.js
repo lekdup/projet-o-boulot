@@ -1,7 +1,5 @@
 import Candidat from '../Candidat/Candidat';
 import Entreprise from '../Entreprise/Entreprise';
-import Footer from '../Footer/Footer';
-import Header from '../Header/Header';
 import './Homepage.scss';
 
 function Homepage() {
