@@ -1,4 +1,5 @@
 import './MissionsListElement.scss';
+
 function MissionsListElement({menuValue}){
     // TODO : https://timmousk.com/blog/react-conditional-classname/#method-2-using-an-if-statement
     // Comment faire une condition de type if else else pour un className
@@ -11,7 +12,7 @@ function MissionsListElement({menuValue}){
         
 <a href='#' className='MissionsListElement-title'> Saisie administrative </a>
 <div className='MissionsListElement-tags'> <p> ADMINISTRATION</p></div>
-<button className={menuValue === 'coming' ?'MissionsListElement-btn hidden' : 'MissionsListElement-btn'}> Je postule !</button>
+<button className={menuValue === 'saved' ?'MissionsListElement-btn' : 'MissionsListElement-btn hidden'}> Je postule !</button>
 <div className={menuValue === 'coming' ?'MissionsListElement-tags' : ' MissionsListElement-tags done'}> <p> Début de ta mission : 5/01/2023</p></div>
 
    
