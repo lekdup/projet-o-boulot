@@ -1,3 +1,5 @@
+@use 'src/styles/vars.scss';
+
 .Joblist{
     min-height: 100vh;
     text-align: center;
@@ -9,6 +11,35 @@
     }
     &-content{
         display: flex;
+    }
+    &-searchbar{
+        display: flex;
+        justify-content: center;
+        margin: 1rem;
+
+        &-input{
+            border-radius: .4rem 0rem 0rem .4rem;
+            border: none;
+            background-color: vars.$grey;
+            height: 2rem;
+            width: 60%;
+            max-width: 600px;
+            padding: .5rem;
+
+        }
+        &-button{
+            right: 50px;
+            width: 6rem;
+            height: 2rem;
+            padding: .5rem;
+            font-size: 1rem;
+            border-radius: 0rem 0.4rem 0.4rem 0rem;
+            color: white;
+            background-color: vars.$orange;
+        }
+        &-button:hover{
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+        }
     }
 .showJobCard{
     width: 50%;
