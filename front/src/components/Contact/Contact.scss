@@ -21,15 +21,21 @@
             margin-bottom: 1.25rem;
             & label {
                 position: absolute;
-                font-size: 1.2rem;
-                font-weight: 600;
                 margin-bottom: 1rem;
             }
             & input {
                 border: none;
                 border-bottom: 1px solid #ccc;
-                font-weight: 1.1;
                 outline: none;
+            }
+            & label, input {
+                font-size: 1.2rem;
+                width: 100%;
+            }
+            & input:focus + label {
+                color: #555;
+                font-size: .75rem;
+                
             }
             & textarea {
                 border: none;
