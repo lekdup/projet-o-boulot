@@ -2,10 +2,12 @@
 
 .profile{
     width: 2rem;
+    margin-right: 3.5rem;
     margin-top: .2rem;
     position: relative;
     cursor: pointer;
     @media (min-width: 799px){
+        margin-right: 0;
         display: flex;
         justify-content: center;
         align-items: center;
