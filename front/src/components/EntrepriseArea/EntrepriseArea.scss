@@ -2,6 +2,10 @@
 
 .EntrepriseArea {
     
+    @media (min-width: 799px) {
+        max-width: 900px;
+        margin: 5rem auto;
+    }
     
 
     &-title {
@@ -17,6 +21,9 @@
         flex-direction: column;
         gap: .5rem;
         padding-bottom: 1rem;
+        @media (min-width: 799px) {
+            margin: .5rem;
+        }
         
     }
     &-button {

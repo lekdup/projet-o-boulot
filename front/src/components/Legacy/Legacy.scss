@@ -14,5 +14,8 @@
         margin: 0 0 .5rem;
         text-align: center;
         font-style: italic;
+        @media (min-width: 799px) {
+            margin: 0 15rem 5rem;
+        }
     }
 }

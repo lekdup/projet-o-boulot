@@ -1,6 +1,11 @@
 @use 'src/styles/vars';
 
 .EntrepriseAlertPage {
+
+    @media (min-width: 799px) {
+        max-width: 900px;
+        margin: 5rem auto;
+        }
     
 
     &-message {
@@ -19,6 +24,7 @@
 
     &-p{
         padding: 2rem;
+        
 
     }
 

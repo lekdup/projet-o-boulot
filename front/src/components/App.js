@@ -43,7 +43,7 @@ function App() {
 
 
         <Route path="/qui-sommes-nous" element={<AboutUs />} />
-        <Route path="/mentions-legales" element={<Legacy />} />
+        <Route path="/mentions-legales" element={<Legacy />} /> 
 
        </Routes>
 

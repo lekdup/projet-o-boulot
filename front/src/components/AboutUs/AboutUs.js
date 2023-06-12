@@ -1,4 +1,5 @@
 import './AboutUs.scss';
+import logo from '../../assets/logo.png';
 
 function AboutUs() {
 
@@ -9,6 +10,11 @@ function AboutUs() {
             <section className="AboutUs-section">
             A ut propter id temporis quidquid simulatione est recipiendisque ex per vicissimque benevolentiam quo quidquid sed utilitates dandis causa voluntarium minus cogitanti causa sed amicitiae considerandum voluntarium et solet amicitia alia propter minus percipiuntur antiquior benevolentiam redderet a nominata coniungendam nominata maxime coniungendam vicissimque an in amicitia.
             </section>
+
+        
+            <div className="AboutUs-span-logo">
+            <img className="AboutUs-span-logo" src={logo}></img>
+            </div>
 
 
             <div className="AboutUs-spans">

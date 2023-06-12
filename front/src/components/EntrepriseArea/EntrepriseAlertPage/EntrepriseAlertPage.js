@@ -3,7 +3,7 @@ import './EntrepriseAlertPage.scss';
 function EntrepriseAlertPage() {
 
     return(
-        <div className="EntrepriseAlertPageEntrepriseAlertPage">
+        <div className="EntrepriseAlertPage">
             <div className="EntrepriseAlertPage-message">
                 <h3 className="EntrepriseAlertPage-title">Alert</h3>
                 <p className="EntrepriseAlertPage-p" > Votre demande X a été prise en compte </p>

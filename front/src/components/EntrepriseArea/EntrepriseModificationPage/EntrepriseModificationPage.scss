@@ -1,6 +1,12 @@
 @use 'src/styles/vars';
 
 .EntrepriseModificationPage{
+
+    @media (min-width: 799px) {
+        max-width: 900px;
+        margin: 5rem auto;
+        }
+
     &-title{
         display: flex;
         justify-content: center;

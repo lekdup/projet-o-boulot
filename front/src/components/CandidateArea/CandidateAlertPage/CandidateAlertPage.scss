@@ -1,6 +1,11 @@
 @use 'src/styles/vars';
 
 .CandidateAlertPage {
+
+    @media (min-width: 799px) {
+        max-width: 900px;
+        margin: 5rem auto;
+        }
     
 
     &-message {
