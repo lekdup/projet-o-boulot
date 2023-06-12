@@ -17,8 +17,8 @@ function Profile() {
                 }}
             />        
             <div className={`profile-select ${toggle ? "show" : ""}`} >
-                <button className="profile-select-btn candidat">Candidat</button>
-                <button className="profile-select-btn entreprise">Entreprise</button>
+                <button className="profile-select-btn">Candidat</button>
+                <button className="profile-select-btn">Entreprise</button>
             </div>
         </section>
     )

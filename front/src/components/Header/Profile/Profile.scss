@@ -6,6 +6,13 @@
     margin-top: .2rem;
     position: relative;
     cursor: pointer;
+    @media (min-width: 799px){
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;
+    }
+
     &-image{
         max-width: 100%;
     }
@@ -21,16 +28,16 @@
         transform-origin: top;
         transition: transform 400ms ease-in-out;
         &-btn {
-            font-size:2rem;
+            font-size:1.5rem;
             padding: 1rem;
             width: 100%;
-            transition: all .2s ease;
             opacity: 0;
             transition: opacity 150ms ease-in-out;
-            &.candidat:hover {
+            &:first-child:hover {
                 background-color: vars.$orange;
             }
-            &.entreprise:hover {
+
+            &:last-child:hover {
                 background-color: vars.$blue;
             }
         }

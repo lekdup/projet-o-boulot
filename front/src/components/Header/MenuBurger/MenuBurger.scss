@@ -10,6 +10,10 @@
         &.show .MenuBurger__nav > li {
             opacity: 1;
             transition: opacity 250ms ease-in-out 250ms;
+            &:hover {
+                padding-bottom: 1.4rem;
+                background-color: #eee;
+            }
         }
         &.show .MenuBurger__logo--bar::before {
             transform: rotate(45deg);
@@ -43,15 +47,10 @@
         }
         & > li {
             @media (max-width: 799px) {
-                padding: 1.2rem;
                 font-size: 7vw;
                 border-bottom: 1px solid #eee;
-                transition: all .2s ease;
                 opacity: 0;
                 transition: opacity 150ms ease-in-out;
-                &:hover {
-                    padding-bottom: 1.4rem;
-                }
             }
         }
         &--extend {
