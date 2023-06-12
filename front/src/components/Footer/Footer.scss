@@ -1,5 +1,11 @@
 footer {
     margin-top: auto;
+    @media (min-width: 799px) {
+        margin-right: 1rem;
+        margin-left: 1rem;
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .aide {
@@ -11,7 +17,7 @@ footer {
 .social {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: .5rem;
     &-icon {
         // max-width: 100%;
     }
@@ -23,4 +29,8 @@ footer {
 
 .logo-footer {
     display: none;
+    @media (min-width: 799px) {
+        display: block;
+        width: 3rem;
+    }
 }
