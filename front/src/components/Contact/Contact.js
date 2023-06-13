@@ -11,42 +11,47 @@ function Contact() {
             </div>
             <form className="Contact-form">
                 <div className="Contact-form-fieldHolder">
+                    <input
+                        type="text"
+                        name="nom"
+                        id="nom"
+                    />
                     <label for="nom" >Nom</label>
-                        <input
-                            type="text"
-                            name="nom"
-                        />
                 </div>
                 <div className="Contact-form-fieldHolder">
+                    <input
+                        type="text"
+                        name="prenom"
+                        id="prenom"
+                    />
                     <label for="prenom">Prénom</label>
-                        <input
-                            type="text"
-                            name="prenom"
-                        />
                 </div>
                 <div className="Contact-form-fieldHolder">
+                    <input
+                        type="email"
+                        inputMode="email"
+                        name="email"
+                        id="email"
+                    />
                     <label for="email">Email</label>
-                        <input
-                            type="email"
-                            inputMode="email"
-                            name="mail"
-                        />
                 </div>
                 <div className="Contact-form-fieldHolder">
+                    <input
+                        type="number"
+                        inputMode="tel"
+                        name="telephone"
+                        id="telephone"
+                    />
                     <label for="telephone">Téléphone</label>
-                        <input
-                            type="number"
-                            inputMode="tel"
-                            name="telephone"
-                        />
                 </div>
                 <div className="Contact-form-fieldHolder">
+                    <textarea
+                        name="votre-message"
+                        rows="1"
+                        maxLength="250"
+                        id="votre-message"
+                    />
                     <label for="votre-message">Votre message</label>
-                        <textarea
-                            name="votre-message"
-                            rows="1"
-                            maxLength="250"
-                        />
                 </div>
                 <button
                     type="submit"
