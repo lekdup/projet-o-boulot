@@ -1,0 +1,78 @@
+@use '/src/styles/vars';
+
+.help{
+    text-align: center;
+    max-width: 50rem;
+    width: 100%;
+    margin: 0 auto;
+    &-title{
+        font-size: 2.5rem;
+        font-weight: 800;
+    }
+    &-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 25px;
+    }
+    &-tabs input[type="radio"] {
+        display: none;
+    }
+    &-tabs label {
+        padding: .5rem;
+        background: vars.$grey;
+        font-weight: 600;
+        color: rgb(104, 103, 103);
+        border-radius: .4rem .4rem 0rem 0rem;
+    }
+    
+    &-tab {
+        width: 100%;
+        padding: 20px;
+        background: #fff;
+        order: 1;
+        display: none;
+        text-align: left;
+    }
+    &-tab h2 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: white;
+
+    }
+    &-tab p {
+        font-size: 1rem;
+        color: white;
+    }
+    
+    &-tabs input[type='radio']:checked + label + &-tab {
+        display: block;
+        border-radius: 0rem .4rem .4rem .4rem;
+    }
+
+    &-tabs input[type='radio']:checked + label + &-tab.orange {
+        background-color: vars.$orange;
+    }
+
+    &-tabs input[type='radio']:checked + label + &-tab.blue {
+        background-color: vars.$blue;
+
+    }
+    
+    &-tabs input[type="radio"]:checked + &-label {
+        color: white;
+    }
+
+
+    &-tabs input[type="radio"]:checked + &-label.blue {
+        background: vars.$blue;
+
+    }
+
+    &-tabs input[type="radio"]:checked + &-label.orange {
+        background: vars.$orange;
+
+    }
+    
+}
