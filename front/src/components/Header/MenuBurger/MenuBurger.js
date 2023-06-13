@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './MenuBurger.scss';
 import { useState } from 'react';
 
@@ -20,17 +21,17 @@ function MenuBurger() {
                 <li onClick={handleClick} data-value="O'Boulot">O'Boulot <span className="MenuBurger__nav--arrow">&gt;</span>
                     {menuExtend === "O'Boulot" && (
                         <ul className="MenuBurger__nav--extend">
-                            <li>Qui sommes-nous</li>
+                            <li><Link to="/qui-sommes-nous">Qui sommes-nous</Link></li>
                             <li>Prestations</li>
-                            <li>Contact</li>
+                            <li><Link to="/contact">Contact</Link></li>
                         </ul>
                     )}
                 </li>
                 <li onClick={handleClick} data-value="Candidat">Candidat <span className="MenuBurger__nav--arrow">&gt;</span>
                 {menuExtend === "Candidat" && (
                     <ul className="MenuBurger__nav--extend">
-                        <li>Trouver un Boulot</li>
-                        <li>Se connecter</li>
+                        <li>Trouver un boulot</li>
+                        <li><Link to="/candidat/login">Se connecter</Link></li>
                     </ul>
                 )}
                 </li>

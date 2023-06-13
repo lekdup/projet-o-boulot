@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Profile.scss';
 import { useState } from 'react';
 
@@ -15,8 +16,8 @@ function Profile({ logoColors }) {
                 }}
             />        
             <div className={`profile-select ${toggle ? "show" : ""}`} >
-                <button className="profile-select-btn">Candidat</button>
-                <button className="profile-select-btn">Entreprise</button>
+                <Link to="/candidat"><button className="profile-select-btn">Candidat</button></Link>
+                <Link to="/entreprise"><button className="profile-select-btn">Entreprise</button></Link>
             </div>
         </section>
     )

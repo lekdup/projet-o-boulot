@@ -1,6 +1,15 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import './App.scss';
 
+import Header from './Header/Header';
+import Homepage from './Homepage/Homepage';
+import AboutUs from './AboutUs/AboutUs';
+import Legacy from './Legacy/Legacy';
+import Joblist from './Joblist/Joblist';
+import Jobcard from './Jobcard/Jobcard';
+import Contact from './Contact/Contact';
+
+import ConnectionCandidate from './ConnectionCandidate/ConnectionCandidate';
 import CandidatArea from './CandidateArea/CandidateArea';
 import CandidateDataPage from './CandidateArea/CandidateDataPage/CandidateDataPage';
 import CandidateAlertPage from './CandidateArea/CandidateAlertPage/CandidateAlertPage';
@@ -12,16 +21,8 @@ import EntrepriseDataPage from './EntrepriseArea/EntrepriseDataPage/EntrepriseDa
 import EntrepriseAlertPage from './EntrepriseArea/EntrepriseAlertPage/EntrepriseAlertPage';
 import EntrepriseAddAlertPage from './EntrepriseArea/EntrepriseAddAlertPage/EntrepriseAddAlertPage';
 
-import AboutUs from './AboutUs/AboutUs';
-import Legacy from './Legacy/Legacy';
-import Joblist from './Joblist/Joblist';
-import Jobcard from './Jobcard/Jobcard';
-import Contact from './Contact/Contact';
-import ConnectionCandidate from './ConnectionCandidate/ConnectionCandidate';
 import Footer from './Footer/Footer';
-import Header from './Header/Header';
 
-import Homepage from './Homepage/Homepage';
 import logoNeutre from '../assets/anonyme.png';
 import logoEntreprise from '../assets/company.png';
 import logoCandidat from '../assets/candidate.png';
@@ -63,6 +64,7 @@ function App() {
 
       <div className="main-container">
         <Routes>
+
           <Route path="/" element={<Homepage />} />
           <Route path="/qui-sommes-nous" element={<AboutUs />} />
           <Route path="/mentions-legales" element={<Legacy />} /> 
@@ -80,8 +82,6 @@ function App() {
           <Route path="/entreprise/mes-donnes/done" element={<EntrepriseAlertPage />} />
           <Route path="/entreprise/mes-donnes/modification" element={<EntrepriseModificationPage />} />
           <Route path="/entreprise/ajout-publication/done" element={<EntrepriseAddAlertPage />} />
-
-
 
         </Routes>
       </div>
