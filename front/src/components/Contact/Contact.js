@@ -16,7 +16,7 @@ function Contact() {
                         name="nom"
                         id="nom"
                     />
-                    <label for="nom" >Nom</label>
+                    <label htmlFor="nom" >Nom</label>
                 </div>
                 <div className="Contact-form-fieldHolder">
                     <input
@@ -24,7 +24,7 @@ function Contact() {
                         name="prenom"
                         id="prenom"
                     />
-                    <label for="prenom">Prénom</label>
+                    <label htmlFor="prenom">Prénom</label>
                 </div>
                 <div className="Contact-form-fieldHolder">
                     <input
@@ -33,7 +33,7 @@ function Contact() {
                         name="email"
                         id="email"
                     />
-                    <label for="email">Email</label>
+                    <label htmlFor="email">Email</label>
                 </div>
                 <div className="Contact-form-fieldHolder">
                     <input
@@ -42,7 +42,7 @@ function Contact() {
                         name="telephone"
                         id="telephone"
                     />
-                    <label for="telephone">Téléphone</label>
+                    <label htmlFor="telephone">Téléphone</label>
                 </div>
                 <div className="Contact-form-fieldHolder">
                     <textarea
@@ -51,7 +51,7 @@ function Contact() {
                         maxLength="250"
                         id="votre-message"
                     />
-                    <label for="votre-message">Votre message</label>
+                    <label htmlFor="votre-message">Votre message</label>
                 </div>
                 <button
                     type="submit"

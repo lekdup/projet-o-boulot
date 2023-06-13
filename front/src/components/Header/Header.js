@@ -8,7 +8,7 @@ import logoOboulot from '../../assets/logo.png'
 function Header({ logoColors }) {
     const [scrollPosition, setScrollPosition] = useState(0);
 
-    console.log(scrollPosition)
+    // console.log(scrollPosition)
 
     const handleScroll = () => {
         const position = window.scrollY;
@@ -25,12 +25,14 @@ function Header({ logoColors }) {
 
     return (
         <header className={`${scrollPosition > 40 ? "bcg" : ""}`}>
-            <div className="logo">
-                <img className="logo-image" src={logoOboulot} alt="Logo O'Boulot en couleur Orange" />
-            </div>
-            <div className="Menu-profile">
-                <Profile />
-                <MenuBurger />
+            <div className="container-head">
+                <div className="logo">
+                    <img className="logo-image" src={logoOboulot} alt="Logo O'Boulot en couleur Orange" />
+                </div>
+                <div className="Menu-profile">
+                    <Profile logoColors={logoColors}/>
+                    <MenuBurger />
+                </div>
             </div>
         </header>
     )

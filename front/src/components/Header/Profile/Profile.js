@@ -1,15 +1,14 @@
 import './Profile.scss';
-import anonyme from '../../../assets/anonyme.png';
 import { useState } from 'react';
 
-function Profile() {
+function Profile({ logoColors }) {
     const [toggle, setToggle] = useState(false);
 
     return(
         <section className='profile'>
             <img
                 className="profile-image"
-                src={anonyme}
+                src={logoColors}
                 alt="profile icon"
                 onClick={() => {
                     setToggle(!toggle);

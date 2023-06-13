@@ -1,5 +1,4 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import './App.scss';
 
 import CandidatArea from './CandidateArea/CandidateArea';
@@ -23,32 +22,28 @@ import Footer from './Footer/Footer';
 import Header from './Header/Header';
 
 import Homepage from './Homepage/Homepage';
-import logoNeutre from '../assets/logo.png';
+import logoNeutre from '../assets/anonyme.png';
 import logoEntreprise from '../assets/company.png';
 import logoCandidat from '../assets/candidate.png';
 
-
-
-
-
 function App() {
-  const [scrollPosition, setScrollPosition] = useState(0);
   const location = useLocation();
+  // const [scrollPosition, setScrollPosition] = useState(0);
   
   
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setScrollPosition(position);
-  };
+  // const handleScroll = () => {
+  //   const position = window.pageYOffset;
+  //   setScrollPosition(position);
+  // };
   
-  console.log(scrollPosition);
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
+  // console.log(scrollPosition);
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll, { passive: true });
     
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
 
   const getDifferentLogoColor = () => {
     if (location.pathname.startsWith('/candidat')) {
@@ -60,38 +55,40 @@ function App() {
     }
   }
 
+
   return (
-    
     <div className="App">
-      <Header logoColors={getDifferentLogoColor}/>
-      
-      <Routes>
-        <Route path="/" element={<Homepage />} />
 
-        <Route path="/candidat/login" element={<ConnectionCandidate /> } />
-        <Route path="/candidat" element={<CandidatArea />} />
-        <Route path="/candidat/mes-donnes" element={<CandidateDataPage />} />
-        <Route path="/candidat/mes-donnes/done" element={<CandidateAlertPage />} />
-        <Route path="/candidat/mes-donnes/modification" element={<CandidateModificationPage />} />
-        <Route path="/candidat/joblist" element={<Joblist/>} />
+      <Header logoColors={getDifferentLogoColor()}/>
 
-        <Route path="/entreprise" element={<EntrepriseArea />} />
-        <Route path="/entreprise/mes-donnes" element={<EntrepriseDataPage />} />
-        <Route path="/entreprise/mes-donnes/done" element={<EntrepriseAlertPage />} />
-        <Route path="/entreprise/mes-donnes/modification" element={<EntrepriseModificationPage />} />
-        <Route path="/entreprise/ajout-publication/done" element={<EntrepriseAddAlertPage />} />
+      <div className="main-container">
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/qui-sommes-nous" element={<AboutUs />} />
+          <Route path="/mentions-legales" element={<Legacy />} /> 
+          <Route path="/contact" element={<Contact />} /> 
+
+          <Route path="/candidat/login" element={<ConnectionCandidate /> } />
+          <Route path="/candidat" element={<CandidatArea />} />
+          <Route path="/candidat/mes-donnes" element={<CandidateDataPage />} />
+          <Route path="/candidat/mes-donnes/done" element={<CandidateAlertPage />} />
+          <Route path="/candidat/mes-donnes/modification" element={<CandidateModificationPage />} />
+          <Route path="/candidat/joblist" element={<Joblist/>} />
+
+          <Route path="/entreprise" element={<EntrepriseArea />} />
+          <Route path="/entreprise/mes-donnes" element={<EntrepriseDataPage />} />
+          <Route path="/entreprise/mes-donnes/done" element={<EntrepriseAlertPage />} />
+          <Route path="/entreprise/mes-donnes/modification" element={<EntrepriseModificationPage />} />
+          <Route path="/entreprise/ajout-publication/done" element={<EntrepriseAddAlertPage />} />
 
 
-        <Route path="/qui-sommes-nous" element={<AboutUs />} />
-        <Route path="/mentions-legales" element={<Legacy />} /> 
-        <Route path="/contact" element={<Contact />} /> 
 
-      </Routes>
+        </Routes>
+      </div>
 
       <Footer />
 
     </div>
-    
   );
 }
 
