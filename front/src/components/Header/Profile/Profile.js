@@ -5,7 +5,6 @@ import { useState } from 'react';
 function Profile() {
     const [toggle, setToggle] = useState(false);
 
-    console.log(toggle);
     return(
         <section className='profile'>
             <img

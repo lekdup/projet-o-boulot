@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import './Header.scss';
 import Profile from './Profile/Profile';
 import MenuBurger from './MenuBurger/MenuBurger';
-
+import logoOboulot from '../../assets/logo.png'
 
 function Header({ logoColors }) {
     const [scrollPosition, setScrollPosition] = useState(0);
@@ -26,7 +26,7 @@ function Header({ logoColors }) {
     return (
         <header className={`${scrollPosition > 40 ? "bcg" : ""}`}>
             <div className="logo">
-                <img className="logo-image" src={logoColors} alt="Logo O'Boulot en couleur Orange" />
+                <img className="logo-image" src={logoOboulot} alt="Logo O'Boulot en couleur Orange" />
             </div>
             <div className="Menu-profile">
                 <Profile />

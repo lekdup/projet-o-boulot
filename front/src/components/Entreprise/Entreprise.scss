@@ -1,7 +1,6 @@
 @use 'src/styles/vars';
 
 .wrapper-entreprise {
-    
     padding: 0 1rem 1rem 1rem;
     background-color: vars.$blue;
     border-radius: .5rem;
@@ -10,6 +9,7 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    
     &-title {
         font-size: 1.5rem;
         padding: 1.5rem 0;
@@ -20,6 +20,10 @@
         @media (min-width: 799px) {
             display: block;
             max-width: 15rem;
+            & img {
+                max-width: 100%;
+                filter: drop-shadow( 5px 5px 8px rgba(0, 0, 0, .7));
+            }
         }
     }
     &-apparition {
