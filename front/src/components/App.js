@@ -43,14 +43,16 @@ function App() {
         <Route path="/entreprise/mes-donnes" element={<EntrepriseDataPage />} />
         <Route path="/entreprise/mes-donnes/done" element={<EntrepriseAlertPage />} />
         <Route path="/entreprise/mes-donnes/modification" element={<EntrepriseModificationPage />} />
-        <Route path="/entreprise/ajout-publication/done" element={<EntrepriseAddAlertPage />} /> 
+        <Route path="/entreprise/ajout-publication/done" element={<EntrepriseAddAlertPage />} />
 
 
         <Route path="/qui-sommes-nous" element={<AboutUs />} />
         <Route path="/mentions-legales" element={<Legacy />} /> 
         <Route path="/contact" element={<Contact />} /> 
-      </Routes>
+
+       </Routes>
       <Footer />
+
     </div>
   );
 }
