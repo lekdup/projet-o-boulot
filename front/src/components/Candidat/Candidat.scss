@@ -19,12 +19,25 @@
         @media (min-width: 799px) {
             display: block;
             max-width: 15rem;
-            & img {
-                max-width: 100%;
-                filter: drop-shadow( 5px 5px 8px rgba(0, 0, 0, .7));
-            }
         }
     }
+
+    &-apparition {
+        max-width: 100%;
+        -webkit-transform: scale(1);
+	    transform: scale(1);
+	    -webkit-transition: .3s ease-in-out;
+	    transition: 1s ease-in-out;
+    
+    }
+    &-disparition {
+        max-width: 10%;
+        
+        
+        
+        
+    }
+
     &-buttons {
         display: flex;
         flex-direction: column;

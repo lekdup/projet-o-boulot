@@ -17,22 +17,22 @@ function CandidateDataPage() {
 		    <div>
 			
 				<div className="CandidateDataPage-input" >
-				    <label className="CandidateDataPage-input-label" for="name">Nom du candidat ici </label>
+				    <label className="CandidateDataPage-input-label" htmlFor="name">Nom du candidat ici </label>
 					
 				</div>
 
 				<div className="CandidateDataPage-input" >
-					<label className="CandidateDataPage-input-label" for="prenom">Prénom du candidat ici </label>
+					<label className="CandidateDataPage-input-label" htmlFor="prenom">Prénom du candidat ici </label>
 					
 				</div>
 
                 <div className="CandidateDataPage-input" >
-					<label className="CandidateDataPage-input-label" for="prenom">Age du candidat ici </label>
+					<label className="CandidateDataPage-input-label" htmlFor="prenom">Age du candidat ici </label>
 					
 				</div>
 
 				<div className="CandidateDataPage-input" >
-					<label className="CandidateDataPage-input-label" for="email">E-mail du candidat ici </label>
+					<label className="CandidateDataPage-input-label" htmlFor="email">E-mail du candidat ici </label>
 					
 				</div>
 
