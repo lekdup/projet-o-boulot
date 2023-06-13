@@ -74,5 +74,60 @@
         background: vars.$orange;
 
     }
+    /* FAQ Accordeon*/
+    &-tab{
+        &-faq{
+
+            width: 100%;
+            color: white;
+            overflow: hidden;
+           
+            & input[type="checkbox"] {
+                //display: none;
+            }
+           
+            
+            &-content {
+                max-height: 0rem;
+                padding: 0 1em;
+                color: white;
+                transition: all .35s;
+            }
+        
+
+            &-label {
+              display: flex;
+              justify-content: space-between;
+              padding: 1em;
+              font-weight: 800;
+              cursor: pointer;
+              background-color: transparent !important;
+              color: white !important;
+              
+              &::after {
+                content: "\276F";
+                width: .8em;
+                height: .8em;
+                text-align: center;
+                transition: all .35s;
+              }    
+            }
+        
+       }
+       
+       } 
+       input:checked {
+        + &-tab-label {
+          &::after {
+            transform: rotate(90deg);
+          }
+        }
+        ~ .tab-content {
+          max-height: 100vh;
+          padding: 1em;
+        }
+    }
+       
+    
     
 }
