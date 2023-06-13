@@ -22,6 +22,7 @@ import Legacy from './Legacy/Legacy';
 import Joblist from './Joblist/Joblist';
 import Jobcard from './Jobcard/Jobcard';
 import Contact from './Contact/Contact';
+import ConnectionCandidate from './ConnectionCandidate/ConnectionCandidate';
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />} />
 
+        <Route path="/candidat/login" element={<ConnectionCandidate /> } />
         <Route path="/candidat" element={<CandidatArea />} />
         <Route path="/candidat/mes-donnes" element={<CandidateDataPage />} />
         <Route path="/candidat/mes-donnes/done" element={<CandidateAlertPage />} />
@@ -50,7 +52,8 @@ function App() {
         <Route path="/mentions-legales" element={<Legacy />} /> 
         <Route path="/contact" element={<Contact />} /> 
 
-       </Routes>
+      </Routes>
+
       <Footer />
 
     </div>
