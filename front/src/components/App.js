@@ -23,6 +23,7 @@ import Joblist from './Joblist/Joblist';
 import Jobcard from './Jobcard/Jobcard';
 import Contact from './Contact/Contact';
 import ConnectionCandidate from './ConnectionCandidate/ConnectionCandidate';
+import ConnectionEntreprise from './ConnectionEntreprise/ConnectionEntreprise';
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
         <Route path="/candidat/mes-donnes/modification" element={<CandidateModificationPage />} />
         <Route path="/candidat/joblist" element={<Joblist/>} />
 
+        <Route path="/entreprise/login" element={<ConnectionEntreprise />} />
         <Route path="/entreprise" element={<EntrepriseArea />} />
         <Route path="/entreprise/mes-donnes" element={<EntrepriseDataPage />} />
         <Route path="/entreprise/mes-donnes/done" element={<EntrepriseAlertPage />} />
