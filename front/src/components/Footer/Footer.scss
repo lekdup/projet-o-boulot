@@ -1,14 +1,30 @@
 footer {
+    width: 100vw;
+    background-color: rgb(242, 242, 242);
+    box-shadow: 5px 3px 5px 5px rgba(57, 63, 72, 0.3);
     margin-top: auto;
+}
+
+.container-foot {
+    padding: 1rem 0;
+    max-width: 1200px;
+    margin: auto;
     @media (min-width: 799px) {
-        margin-right: 1rem;
-        margin-left: 1rem;
+        padding: 1rem 3rem;
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
 }
 
 .aide {
+    text-align: center;
+    @media (min-width: 799px) {
+        text-align: start;
+        & p:last-of-type {
+            margin-bottom: 0;
+        }
+    }
     & p{
         margin-bottom: 1rem;
     }
@@ -18,9 +34,6 @@ footer {
     display: flex;
     justify-content: center;
     gap: .5rem;
-    &-icon {
-        // max-width: 100%;
-    }
     & li {
         width: 2rem;
         list-style: none;
@@ -32,5 +45,6 @@ footer {
     @media (min-width: 799px) {
         display: block;
         width: 3rem;
+        filter: none;
     }
 }

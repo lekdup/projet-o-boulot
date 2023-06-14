@@ -2,11 +2,12 @@
 
 .profile{
     width: 2rem;
-    margin-right: 4rem;
+    margin-right: 3rem;
     margin-top: .2rem;
     position: relative;
     cursor: pointer;
     @media (min-width: 799px){
+        margin-right: 0;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -15,6 +16,7 @@
 
     &-image{
         max-width: 100%;
+        filter: none;
     }
 
     &-select {
