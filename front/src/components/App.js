@@ -3,6 +3,7 @@ import './App.scss';
 
 import Header from './Header/Header';
 import Homepage from './Homepage/Homepage';
+import Help from './Help/Help';
 import AboutUs from './AboutUs/AboutUs';
 import Legacy from './Legacy/Legacy';
 import Joblist from './Joblist/Joblist';
@@ -43,8 +44,8 @@ function App() {
 
 
   return (
+    
     <div className="App">
-      
       <Header logoColors={getDifferentLogoColor()}/>
 
       <div className="main-container">
@@ -53,7 +54,8 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/qui-sommes-nous" element={<AboutUs />} />
           <Route path="/mentions-legales" element={<Legacy />} /> 
-          <Route path="/contact" element={<Contact />} /> 
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/aide" element={<Help />} />
 
           <Route path="/candidat/login" element={<ConnectionCandidate /> } />
           <Route path="/candidat" element={<CandidatArea />} />
