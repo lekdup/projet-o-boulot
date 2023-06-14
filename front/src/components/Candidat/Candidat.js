@@ -9,7 +9,6 @@ function Candidat() {
 
     const handleLoad = () => {
         let load = document.body.offsetHeight;
-        console.log(load);
         setLoad(load);
     };
 

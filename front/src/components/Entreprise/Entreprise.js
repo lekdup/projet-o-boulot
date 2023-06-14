@@ -9,7 +9,6 @@ function Entreprise() {
 
     const handleLoad = () => {
         let load = document.body.offsetHeight;
-        console.log(load);
         setLoad(load);
     };
 
