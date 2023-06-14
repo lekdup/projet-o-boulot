@@ -3,6 +3,7 @@ import Entreprise from '../Entreprise/Entreprise';
 import './Homepage.scss';
 
 function Homepage() {
+
     return(
         <div className="Homepage">
             <article className="Homepage-intro">

@@ -17,22 +17,22 @@ function EntrepriseDataPage() {
 		    <div>
 			
 				<div className="EntrepriseDataPage-input" >
-				    <label className="EntrepriseDataPage-input-label" for="name">Nom de l'entreprise ici </label>
+				    <label className="EntrepriseDataPage-input-label" htmlFor="name">Nom de l'entreprise ici </label>
 					
 				</div>
 
 				<div className="EntrepriseDataPage-input" >
-					<label className="EntrepriseDataPage-input-label" for="prenom">Prénom de l'entreprise ici </label>
+					<label className="EntrepriseDataPage-input-label" htmlFor="prenom">Prénom de l'entreprise ici </label>
 					
 				</div>
 
                 <div className="EntrepriseDataPage-input" >
-					<label className="EntrepriseDataPage-input-label" for="prenom">SIRET de l'entreprise ici </label>
+					<label className="EntrepriseDataPage-input-label" htmlFor="prenom">SIRET de l'entreprise ici </label>
 					
 				</div>
 
 				<div className="EntrepriseDataPage-input" >
-					<label className="EntrepriseDataPage-input-label" for="email">E-mail de l'entreprise ici </label>
+					<label className="EntrepriseDataPage-input-label" htmlFor="email">E-mail de l'entreprise ici </label>
 					
 				</div>
 
