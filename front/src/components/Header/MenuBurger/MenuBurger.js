@@ -39,12 +39,12 @@ function MenuBurger() {
                 {menuExtend === "Entreprise" && (
                     <ul className="MenuBurger__nav--extend">
                         <li>Publier un Boulot</li>
-                        <li>Se connecter</li>
+                        <li><Link to="/entreprise/login">Se connecter</Link></li>
                     </ul>
                 )}
                 </li>
                 <li>Actualités</li>
-                <li>Aide</li>
+                <li><Link to="/aide">Aide</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
             </ul>
             <button
