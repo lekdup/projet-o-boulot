@@ -3,9 +3,7 @@ import './App.scss';
 
 import Header from './Header/Header';
 import Homepage from './Homepage/Homepage';
-<<<<<<< HEAD
 import Help from './Help/Help';
-=======
 import AboutUs from './AboutUs/AboutUs';
 import Legacy from './Legacy/Legacy';
 import Joblist from './Joblist/Joblist';
@@ -30,7 +28,6 @@ import Footer from './Footer/Footer';
 import logoNeutre from '../assets/anonyme.png';
 import logoEntreprise from '../assets/company.png';
 import logoCandidat from '../assets/candidate.png';
->>>>>>> 324a086d2ba99a280635a3daab43e0ab9538292e
 
 function App() {
   const location = useLocation();
@@ -49,11 +46,6 @@ function App() {
   return (
     
     <div className="App">
-<<<<<<< HEAD
-      <Header />
-        <Help />
-=======
-      
       <Header logoColors={getDifferentLogoColor()}/>
 
       <div className="main-container">
@@ -62,7 +54,8 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/qui-sommes-nous" element={<AboutUs />} />
           <Route path="/mentions-legales" element={<Legacy />} /> 
-          <Route path="/contact" element={<Contact />} /> 
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/aide" element={<Help />} />
 
           <Route path="/candidat/login" element={<ConnectionCandidate /> } />
           <Route path="/candidat" element={<CandidatArea />} />
@@ -81,7 +74,6 @@ function App() {
         </Routes>
       </div>
 
->>>>>>> 324a086d2ba99a280635a3daab43e0ab9538292e
       <Footer />
 
     </div>
