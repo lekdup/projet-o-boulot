@@ -81,14 +81,24 @@
             width: 100%;
             color: white;
             overflow: hidden;
+            & input[type="checkbox"]{
+                display:none;
+            }
            
-            & input[type="checkbox"] {
-                //display: none;
+            & input[type="checkbox"]:checked + &-label + &-content{
+                max-height: 100vh;
+
+            }
+
+            & input[type="checkbox"]:checked + &-label::after{
+                transform: rotate(90deg);
+
             }
            
             
+            
             &-content {
-                max-height: 0rem;
+                max-height: 0vh;
                 padding: 0 1em;
                 color: white;
                 transition: all .35s;
@@ -116,17 +126,8 @@
        }
        
        } 
-       input:checked {
-        + &-tab-label {
-          &::after {
-            transform: rotate(90deg);
-          }
-        }
-        ~ .tab-content {
-          max-height: 100vh;
-          padding: 1em;
-        }
-    }
+    
+       
        
     
     
