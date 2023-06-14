@@ -1,7 +1,9 @@
 import './Jobcard.scss';
 import {useState} from 'react';
 
-function Jobcard(){
+function Jobcard({  offers }){
+
+    
 
     const [isClicked, setIsClicked] = useState(false);
     const handleClick = () => {
