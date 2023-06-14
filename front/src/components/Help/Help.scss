@@ -5,27 +5,33 @@
     max-width: 50rem;
     width: 100%;
     margin: 0 auto;
+    & img{
+        width: 100%;
+    }
     &-title{
         font-size: 2.5rem;
         font-weight: 800;
+        margin-top: 2rem;
     }
     &-tabs {
         display: flex;
         flex-wrap: wrap;
         max-width: 800px;
-        margin: 50px auto;
+        margin: auto;
         padding: 25px;
     }
     &-tabs input[type="radio"] {
         display: none;
     }
-    &-tabs label {
+    &-label{
+        font-size: 1rem;
+        font-weight: 700 ;
         padding: .5rem;
-        background: vars.$grey;
-        font-weight: 600;
         color: rgb(104, 103, 103);
+        background: vars.$grey;
         border-radius: .4rem .4rem 0rem 0rem;
     }
+    
     
     &-tab {
         width: 100%;
@@ -108,16 +114,15 @@
             &-label {
               display: flex;
               justify-content: space-between;
-              padding: 1em;
-              font-weight: 800;
+              padding: 1rem 0rem 1rem 0rem;
+              font-weight: 800 !important;
               cursor: pointer;
               background-color: transparent !important;
               color: white !important;
               
               &::after {
                 content: "\276F";
-                width: .8em;
-                height: .8em;
+                scale: 0.6;
                 text-align: center;
                 transition: all .35s;
               }    
