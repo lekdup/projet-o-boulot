@@ -7,9 +7,10 @@ footer {
 
 .container-foot {
     padding: 1rem 0;
+    max-width: 1200px;
+    margin: auto;
     @media (min-width: 799px) {
-        margin-right: 1rem;
-        margin-left: 1rem;
+        padding: 1rem 3rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
