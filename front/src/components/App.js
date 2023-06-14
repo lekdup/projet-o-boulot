@@ -29,23 +29,7 @@ import logoCandidat from '../assets/candidate.png';
 
 function App() {
   const location = useLocation();
-  // const [scrollPosition, setScrollPosition] = useState(0);
   
-  
-  // const handleScroll = () => {
-  //   const position = window.pageYOffset;
-  //   setScrollPosition(position);
-  // };
-  
-  // console.log(scrollPosition);
-  // useEffect(() => {
-  //   window.addEventListener('scroll', handleScroll, { passive: true });
-    
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, []);
-
   const getDifferentLogoColor = () => {
     if (location.pathname.startsWith('/candidat')) {
         return logoCandidat;
