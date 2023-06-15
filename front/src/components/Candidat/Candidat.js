@@ -15,7 +15,6 @@ function Candidat() {
 
     useEffect(() => {
         window.addEventListener('load', handleLoad, { passive: true });
-
     }, []);
 
     return(

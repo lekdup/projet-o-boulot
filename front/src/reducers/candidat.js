@@ -1,16 +1,14 @@
 // Ne pas oublier d'importer les actions comme ceci:
 
-//import{
-//    ADD_MESSAGE, SET_CONNECTED_USER,
-//} from '../actions/actions';
-  
-  const initialState = {
-    //exemple ==>
-    //connectedUser: false,
-    //messages: [],
-    //highestIndex: 3,
+
+// import { EXEMPLE_ACTION } from '../actions/candidat';
+
+// => EXEMPLE "list" est accessible avec state.candidat.list, pas state.list /!\
+export const initialState = {
+    list: [],
   };
-  
+
+
   function reducer(state = initialState, action = {}) {
     switch (action.type) {
 
