@@ -1,6 +1,6 @@
 import { Outlet, Navigate  } from "react-router-dom";
 
-const PrivateRoutes = () => {
+const PrivateRoutesCandidat = () => {
     let auth = {'token':false}
 
     return(
@@ -9,4 +9,4 @@ const PrivateRoutes = () => {
     )
 }
 
-export default PrivateRoutes;
+export default PrivateRoutesCandidat;

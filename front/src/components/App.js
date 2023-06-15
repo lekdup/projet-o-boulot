@@ -30,7 +30,7 @@ import logoNeutre from '../assets/anonyme.png';
 import logoEntreprise from '../assets/company.png';
 import logoCandidat from '../assets/candidate.png';
 
-import PrivateRoutes from '../utils/PrivateRoutes';
+import PrivateRoutesCandidat from '../utils/PrivateRoutesCandidat';
 import PrivateRoutesEntreprise from '../utils/PrivateRoutesEntreprise';
 
 function App() {
@@ -56,7 +56,7 @@ function App() {
         
         <Routes>
         
-            <Route element={<PrivateRoutes />}>
+            <Route element={<PrivateRoutesCandidat />}>
               <Route path="/candidat/mes-donnes" element={<CandidateDataPage />} />
               <Route path="/candidat/mes-donnes/done" element={<CandidateAlertPage />} />
               <Route path="/candidat/mes-donnes/modification" element={<CandidateModificationPage />} />
