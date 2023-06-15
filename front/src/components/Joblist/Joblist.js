@@ -10,7 +10,7 @@ function Joblist(){
     
 
     useEffect(() => {
-      axios.get("http://localhost:8000/api/offres/")
+      axios.get("http://isisyoussef-server.eddi.cloud/projet-o-boulot-back/public/api/offres/")
           .then(res => {
               setOffers(res.data);
               //setOffer()
