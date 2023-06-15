@@ -3,13 +3,10 @@ import axios from 'axios';
 
 import loginCandidate from '../../assets/login-candidate.svg';
 import { useState } from 'react';
-import {useDispatch} from 'react-redux';
 
 function ConnectionCandidate() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
-    const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -18,14 +15,15 @@ function ConnectionCandidate() {
             password: password,
         })
         .then((res) => {
-            dispatch(console.log(res.data));
+            console.log(res.data.token);
+            localStorage.setItem('token', res.data.token);
+            window.history.back();
         })
         .catch(() => {
             console.log("Mauvais email/password");
         })
     }
 
-    console.log(email, password);
     return(
         <section className="ConnectionCandidate" >
             <h1 className="ConnectionCandidate-title">Connectez-vous</h1>
