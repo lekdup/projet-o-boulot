@@ -21,13 +21,11 @@ footer {
     text-align: center;
     @media (min-width: 799px) {
         text-align: start;
-        & p:last-of-type {
-            margin-bottom: 0;
-        }
     }
     & p{
-        margin-bottom: 1rem;
+        padding: .5rem 0;
     }
+    
 }
 
 .social {
