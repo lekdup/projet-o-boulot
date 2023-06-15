@@ -1,18 +1,10 @@
 import { Link } from 'react-router-dom';
 import './MenuBurger.scss';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 function MenuBurger() {
     const [toggle, setToggle] = useState(false);
     const [menuExtend, setMenuExtend] = useState("");
-
-    useEffect(() => {
-        let handler = () => {
-            setToggle(false);
-        }
-
-        document.addEventListener("mousedown", handler);
-    })
 
     const handleClick = (e) => {
         const menuValue = e.target.getAttribute('data-value');
@@ -24,7 +16,7 @@ function MenuBurger() {
     };
 
     return( 
-        <nav className={`MenuBurger ${toggle ? "show" : ""}`}>
+        <nav className={`MenuBurger ${toggle ? "show" : ""}`} >
             <ul className="MenuBurger__nav">
                 <li onClick={handleClick} data-value="O'Boulot">O'Boulot <span className="MenuBurger__nav--arrow">&gt;</span>
                     {menuExtend === "O'Boulot" && (
