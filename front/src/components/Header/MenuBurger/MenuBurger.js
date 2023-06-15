@@ -21,17 +21,17 @@ function MenuBurger() {
                 <li onClick={handleClick} data-value="O'Boulot">O'Boulot <span className="MenuBurger__nav--arrow">&gt;</span>
                     {menuExtend === "O'Boulot" && (
                         <ul className="MenuBurger__nav--extend">
-                            <li><Link to="/qui-sommes-nous">Qui sommes-nous</Link></li>
+                            <Link to="/qui-sommes-nous"><li>Qui sommes-nous</li></Link>
                             <li>Prestations</li>
-                            <li><Link to="/contact">Contact</Link></li>
+                            <Link to="/contact"><li>Contact</li></Link>
                         </ul>
                     )}
                 </li>
                 <li onClick={handleClick} data-value="Candidat">Candidat <span className="MenuBurger__nav--arrow">&gt;</span>
                 {menuExtend === "Candidat" && (
                     <ul className="MenuBurger__nav--extend">
-                        <li><Link to="/candidat/joblist">Trouver un boulot</Link></li>
-                        <li><Link to="/candidat/login">Se connecter</Link></li>
+                        <Link to="/candidat/joblist"><li>Trouver un boulot</li></Link>
+                        <Link to="/candidat/login"><li>Se connecter</li></Link>
                     </ul>
                 )}
                 </li>
@@ -39,13 +39,13 @@ function MenuBurger() {
                 {menuExtend === "Entreprise" && (
                     <ul className="MenuBurger__nav--extend">
                         <li>Publier un Boulot</li>
-                        <li><Link to="/entreprise/login">Se connecter</Link></li>
+                        <Link to="/entreprise/login"><li>Se connecter</li></Link>
                     </ul>
                 )}
                 </li>
                 <li>Actualités</li>
-                <li><Link to="/aide">Aide</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
+                <Link to="/aide"><li>Aide</li></Link>
+                <Link to="/contact"><li>Contact</li></Link>
             </ul>
             <button
                 className="MenuBurger__logo"
