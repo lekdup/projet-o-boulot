@@ -35,13 +35,6 @@
             width: 100%;
             opacity: 0;
             transition: opacity 150ms ease-in-out;
-            &:first-child:hover {
-                background-color: vars.$orange;
-            }
-
-            &:last-child:hover {
-                background-color: vars.$blue;
-            }
         }
         &.show {
             display: block;

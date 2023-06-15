@@ -47,6 +47,7 @@
             color: #ccc;
         }
         & > li {
+            transition: .3s;
             @media (max-width: 799px) {
                 font-size: 7vw;
                 border-bottom: 1px solid #eee;
@@ -57,11 +58,12 @@
         &--extend {
             position: absolute;
             top: 3rem;
-            background-color: rgb(127, 77, 77);
+            background-color: white;
             margin-left: -1rem;
             transform: scale(1,1);
             transform-origin: top;
             transition: transform 400ms ease-in-out;
+            box-shadow:  0 3px 5px rgba(57, 63, 72, 0.3);
             @media (max-width: 799px) {
                 position: inherit;
                 background-color: #eee;
@@ -69,6 +71,7 @@
             & > li {
                 padding: .5rem 0;
                 border-bottom: 1px #fff solid;
+                transition: .3s;
             }
         }
     }

@@ -1,12 +1,13 @@
 import './Footer.scss';
 import logo from '../../assets/logo.png';
+import { Link } from 'react-router-dom';
 
 function Footer() {
     return(
         <footer>
             <div className="container-foot">
                 <div className="aide">
-                    <p>Aide</p>
+                    <p><Link to="/aide">Aide</Link></p>
                     <p>Mentions légales</p>
                 </div>
                 <div className="logo">
