@@ -22,7 +22,7 @@ function MenuBurger() {
                     {menuExtend === "O'Boulot" && (
                         <ul className="MenuBurger__nav--extend">
                             <Link to="/qui-sommes-nous"><li>Qui sommes-nous</li></Link>
-                            <li>Prestations</li>
+                            <Link to="/"><li>Prestations</li></Link>
                             <Link to="/contact"><li>Contact</li></Link>
                         </ul>
                     )}
@@ -38,12 +38,12 @@ function MenuBurger() {
                 <li onClick={handleClick} data-value="Entreprise">Entreprise <span className="MenuBurger__nav--arrow">&gt;</span>
                 {menuExtend === "Entreprise" && (
                     <ul className="MenuBurger__nav--extend">
-                        <li>Publier un Boulot</li>
+                        <Link to="/"><li>Publier un Boulot</li></Link>
                         <Link to="/entreprise/login"><li>Se connecter</li></Link>
                     </ul>
                 )}
                 </li>
-                <li>Actualités</li>
+                <Link to="/"><li>Actualités</li></Link>
                 <Link to="/aide"><li>Aide</li></Link>
                 <Link to="/contact"><li>Contact</li></Link>
             </ul>
