@@ -3,22 +3,20 @@ import axios from 'axios';
 
 import loginCandidate from '../../assets/login-candidate.svg';
 import { useState } from 'react';
-import {useDispatch} from 'react-redux';
 
 function ConnectionCandidate() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://isis-youssef-oclock-student.cloud.lan:8000/api/login_check/', {
+        axios.post('http://isisyoussef-server.eddi.cloud/projet-o-boulot-back/public/api/login_check', {
             email: email,
             password: password,
         })
         .then((res) => {
-            dispatch(console.log(res.data));
+            console.log(res.data);
         })
         .catch(() => {
             console.log("Mauvais email/password");
