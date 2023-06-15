@@ -8,11 +8,8 @@ function Footer() {
             <div className="container-foot">
                 <div className="aide">
                     <p><Link to="/aide">Aide</Link></p>
-<<<<<<< HEAD
                     <p><Link to="/mentions-legales">Mentions légales</Link></p>
-=======
                     <p>Mentions légales</p>
->>>>>>> footerAndHeader
                 </div>
                 <div className="logo">
                     <Link to="/"><img src={logo} className="logo-footer" alt="logo of O'boulot" /></Link>
