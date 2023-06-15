@@ -1,12 +1,17 @@
 import { Outlet, Navigate  } from "react-router-dom";
 
 const PrivateRoutesCandidat = () => {
-    let auth = {'token':false}
+    // exemple lors de linstallation de privateRoutes
+    // let auth = {'token':false}
 
-    return(
-        //verifier à quoi correspond le <Outlet/> /!/
-        auth.token ? <Outlet/> : <Navigate to="/candidat/login"/>
-    )
+    const token = localStorage.getItem('token');
+    
+    const hasToken = token !== null && token !== undefined;
+
+  return (
+    hasToken ? <Outlet/> : <Navigate to="/candidat/login"/>
+  );
 }
+
 
 export default PrivateRoutesCandidat;

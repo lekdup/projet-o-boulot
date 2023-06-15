@@ -3,12 +3,17 @@ import axios from 'axios';
 
 import loginCandidate from '../../assets/login-candidate.svg';
 import { useState } from 'react';
-import {useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { setTokenCandidate } from '../../actions/candidate';
 
 function ConnectionCandidate() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const tokenCandidate = useSelector(state => state.candidate.tokenCandidate);
+    //console.log(tokenCandidate);
+    
     const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
@@ -18,14 +23,19 @@ function ConnectionCandidate() {
             password: password,
         })
         .then((res) => {
-            dispatch(console.log(res.data));
+            console.log("requete OK")
+            console.log(tokenCandidate)
+            dispatch(setTokenCandidate(res.data.token))
+            localStorage.setItem('token', res.data.token)
+            // window.history.back();
+            
         })
         .catch(() => {
             console.log("Mauvais email/password");
         })
     }
 
-    console.log(email, password);
+    // console.log(email, password);
     return(
         <section className="ConnectionCandidate" >
             <h1 className="ConnectionCandidate-title">Connectez-vous</h1>
