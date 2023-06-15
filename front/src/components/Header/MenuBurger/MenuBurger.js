@@ -16,7 +16,7 @@ function MenuBurger() {
     };
 
     return( 
-        <nav className={`MenuBurger ${toggle ? "show" : ""}`}>
+        <nav className={`MenuBurger ${toggle ? "show" : ""}`} >
             <ul className="MenuBurger__nav">
                 <li onClick={handleClick} data-value="O'Boulot">O'Boulot <span className="MenuBurger__nav--arrow">&gt;</span>
                     {menuExtend === "O'Boulot" && (
