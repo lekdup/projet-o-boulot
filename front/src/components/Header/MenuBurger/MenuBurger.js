@@ -1,10 +1,18 @@
 import { Link } from 'react-router-dom';
 import './MenuBurger.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function MenuBurger() {
     const [toggle, setToggle] = useState(false);
     const [menuExtend, setMenuExtend] = useState("");
+
+    useEffect(() => {
+        let handler = () => {
+            setToggle(false);
+        }
+
+        document.addEventListener("mousedown", handler);
+    })
 
     const handleClick = (e) => {
         const menuValue = e.target.getAttribute('data-value');
