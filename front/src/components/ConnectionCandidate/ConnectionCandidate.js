@@ -13,7 +13,7 @@ function ConnectionCandidate() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://isis-youssef-oclock-student.cloud.lan:8000/api/login_check/', {
+        axios.post('http://isisyoussef-server.eddi.cloud/projet-o-boulot-back/public/api/login_check', {
             email: email,
             password: password,
         })
