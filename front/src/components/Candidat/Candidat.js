@@ -2,6 +2,7 @@ import apply from '../../assets/apply.svg';
 import './Candidat.scss';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function Candidat() {
 
@@ -24,7 +25,7 @@ function Candidat() {
                 <img className={`${load ? "wrapper-candidat-apparition" : "wrapper-candidat-disparition"}`} src={apply} alt="illustration of a man building blocks on a board" />
             </div>
             <div className="wrapper-candidat-buttons">
-                <button>Consulter les offres</button>
+                <button><Link to="/candidat/joblist">Consulter les offres</Link></button>
                 <button>Créer mon espace candidat</button>
             </div>
         </div>

@@ -1,9 +1,43 @@
+@use 'src/styles/vars';
+
 .cardsList{
 display: flex;
 flex-direction: column;
 margin: auto;
-@media (max-width: 799px) {
-    max-width: 500px;
+    @media (max-width: 799px) {
+        max-width: 500px;
 
+    }
 }
+
+.card{
+    background-color: vars.$grey;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    
+    &-title{
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    &-tags{
+        background-color: rgb(173, 173, 173);
+        padding: 0.4rem;
+        border-radius: 0.5rem;
+        display:inline;
+        font-size: 0.6rem;
+        margin-top: 0.5rem;
+    }
+    
+    &-bookmark{
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;    
+    }
 }

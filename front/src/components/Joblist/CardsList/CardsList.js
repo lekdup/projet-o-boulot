@@ -27,7 +27,7 @@ function CardsList({ offers }){
                     </div>
                     <a href='#' className='card-title'> {offer.entitled} </a>
                     <div className='card-tags'>
-                        <p> {offer.place}</p>
+                        <p>{offer.place}</p>
                     </div>
                 </div>
             ))}
