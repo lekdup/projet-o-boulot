@@ -1,11 +1,11 @@
 // Ne pas oublier d'importer les actions comme ceci:
 
 
-// import { EXEMPLE_ACTION } from '../actions/candidat';
+import { SET_USER } from "../actions/candidat";
 
 // => EXEMPLE "list" est accessible avec state.candidat.list, pas state.list /!\
 export const initialState = {
-    ,
+    user: null,
   };
 
 
@@ -20,7 +20,11 @@ export const initialState = {
       //    connectedUser: action.payload.connectedUser,
       //  };
   
-  
+      case SET_USER:
+        return {
+          ...state,
+          user: action.payload.user,
+        };
       default:
         return state;
     }

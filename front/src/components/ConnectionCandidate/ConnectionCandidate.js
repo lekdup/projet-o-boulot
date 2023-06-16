@@ -3,12 +3,16 @@ import axios from 'axios';
 
 import loginCandidate from '../../assets/login-candidate.svg';
 import { useEffect, useState } from 'react';
+import {useSelector, useDispatch} from 'react-redux';
+import {setUser} from '../../actions/candidat';
 
 function ConnectionCandidate() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [user, setUser] = useState(null);
     const [token, setToken] = useState("");
+
+    const user = useSelector(state => state.candidat.user);
+    const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -41,7 +45,7 @@ function ConnectionCandidate() {
                 // On filtre les résultats pour ne garder que les données associées à l'email entré par l'utilisateur
                 const connectedCandidate = res.data.find((candidate) => candidate.email === email);
                 // On set avec le résultat filtré
-                setUser(connectedCandidate)
+                dispatch(setUser(connectedCandidate))
                 console.log(connectedCandidate)
             })
             .catch(()=> 
