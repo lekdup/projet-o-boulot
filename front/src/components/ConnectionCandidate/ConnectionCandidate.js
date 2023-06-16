@@ -30,8 +30,18 @@ function ConnectionCandidate() {
     }
 
     useEffect (() => {
-        const response = axios.get('http://isisyoussef-server.eddi.cloud/projet-o-boulot-back/public/api/candidat')
-    })
+        axios.get('http://isisyoussef-server.eddi.cloud/projet-o-boulot-back/public/api/candidats', {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        })
+        .then ((res) => {
+            console.log(res.data)
+            setUser(res.data)
+        })
+        .catch(()=> 
+        console.log('Pas de récupération de dataUser erreur API'))
+    }, [token]);
 
     return(
         <section className="ConnectionCandidate" >
