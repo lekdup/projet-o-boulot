@@ -2,11 +2,13 @@ import './ConnectionCandidate.scss';
 import axios from 'axios';
 
 import loginCandidate from '../../assets/login-candidate.svg';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function ConnectionCandidate() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [user, setUser] = useState(null);
+    const [token, setToken] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -18,11 +20,18 @@ function ConnectionCandidate() {
             console.log(res.data.token);
             localStorage.setItem('token', res.data.token);
             window.history.back();
+            setToken(res.data.token);
+            console.log(token)
+
         })
         .catch(() => {
             console.log("Mauvais email/password");
         })
     }
+
+    useEffect (() => {
+        const response = axios.get('http://isisyoussef-server.eddi.cloud/projet-o-boulot-back/public/api/candidat')
+    })
 
     return(
         <section className="ConnectionCandidate" >
