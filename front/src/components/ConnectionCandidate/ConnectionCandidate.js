@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import loginCandidate from '../../assets/login-candidate.svg';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function ConnectionCandidate() {
     const [email, setEmail] = useState("");
@@ -73,7 +74,7 @@ function ConnectionCandidate() {
                     type="submit"
                 >Connexion
                 </button>
-                <p>Vous n'avez pas encore de compte ? <a href="#">Inscrivez-vous !</a></p>
+                <p>Vous n'avez pas encore de compte ? <Link to="/candidat/inscription"><span>Inscrivez-vous !</span></Link></p>
             </form>
         </section>
     );
