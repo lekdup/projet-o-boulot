@@ -8,7 +8,6 @@ function ConnectionCandidate() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-
     const handleSubmit = (e) => {
         e.preventDefault();
         axios.post('http://isisyoussef-server.eddi.cloud/projet-o-boulot-back/public/api/login_check', {
@@ -16,14 +15,15 @@ function ConnectionCandidate() {
             password: password,
         })
         .then((res) => {
-            console.log(res.data);
+            console.log(res.data.token);
+            localStorage.setItem('token', res.data.token);
+            window.history.back();
         })
         .catch(() => {
             console.log("Mauvais email/password");
         })
     }
 
-    console.log(email, password);
     return(
         <section className="ConnectionCandidate" >
             <h1 className="ConnectionCandidate-title">Connectez-vous</h1>
