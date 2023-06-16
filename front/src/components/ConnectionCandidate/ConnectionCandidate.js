@@ -3,18 +3,11 @@ import axios from 'axios';
 
 import loginCandidate from '../../assets/login-candidate.svg';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
-import { setTokenCandidate } from '../../actions/candidate';
+import { Link } from 'react-router-dom';
 
 function ConnectionCandidate() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
-    const tokenCandidate = useSelector(state => state.candidate.tokenCandidate);
-    //console.log(tokenCandidate);
-    
-    const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -23,19 +16,15 @@ function ConnectionCandidate() {
             password: password,
         })
         .then((res) => {
-            console.log("requete OK")
-            console.log(tokenCandidate)
-            dispatch(setTokenCandidate(res.data.token))
-            localStorage.setItem('token', res.data.token)
-            // window.history.back();
-            
+            console.log(res.data.token);
+            localStorage.setItem('token', res.data.token);
+            window.history.back();
         })
         .catch(() => {
             console.log("Mauvais email/password");
         })
     }
 
-    // console.log(email, password);
     return(
         <section className="ConnectionCandidate" >
             <h1 className="ConnectionCandidate-title">Connectez-vous</h1>
@@ -85,7 +74,7 @@ function ConnectionCandidate() {
                     type="submit"
                 >Connexion
                 </button>
-                <p>Vous n'avez pas encore de compte ? <a href="#">Inscrivez-vous !</a></p>
+                <p>Vous n'avez pas encore de compte ? <Link to="/candidat/inscription"><span>Inscrivez-vous !</span></Link></p>
             </form>
         </section>
     );

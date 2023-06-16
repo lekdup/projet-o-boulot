@@ -11,7 +11,11 @@ import Joblist from './Joblist/Joblist';
 import Jobcard from './Jobcard/Jobcard';
 import Contact from './Contact/Contact';
 
+import PrivateRoutesCandidat from '../utils/PrivateRoutesCandidat';
+import PrivateRoutesEntreprise from '../utils/PrivateRoutesEntreprise';
+
 import ConnectionCandidate from './ConnectionCandidate/ConnectionCandidate';
+import CandidateSubscription from './CandidateSubscription/CandidateSubscription';
 import CandidatArea from './CandidateArea/CandidateArea';
 import CandidateDataPage from './CandidateArea/CandidateDataPage/CandidateDataPage';
 import CandidateAlertPage from './CandidateArea/CandidateAlertPage/CandidateAlertPage';
@@ -29,9 +33,9 @@ import Footer from './Footer/Footer';
 import logoNeutre from '../assets/anonyme.png';
 import logoEntreprise from '../assets/company.png';
 import logoCandidat from '../assets/candidate.png';
+import Error404 from './Error404/Error404';
+import CompanySubscription from './CompanySubscription/CompanySubscription';
 
-import PrivateRoutesCandidat from '../utils/PrivateRoutesCandidat';
-import PrivateRoutesEntreprise from '../utils/PrivateRoutesEntreprise';
 
 function App() {
   const location = useLocation();
@@ -55,20 +59,24 @@ function App() {
       <div className="main-container">
         
         <Routes>
-        
+
+        {/* private routes, for only logged in clients */}
             <Route element={<PrivateRoutesCandidat />}>
+              <Route path="/candidat" element={<CandidatArea />} />
               <Route path="/candidat/mes-donnes" element={<CandidateDataPage />} />
               <Route path="/candidat/mes-donnes/done" element={<CandidateAlertPage />} />
               <Route path="/candidat/mes-donnes/modification" element={<CandidateModificationPage />} />
             </Route> 
 
             <Route element={<PrivateRoutesEntreprise />}>
+              <Route path="/entreprise" element={<EntrepriseArea />} />
               <Route path="/entreprise/mes-donnes" element={<EntrepriseDataPage />} />
               <Route path="/entreprise/mes-donnes/done" element={<EntrepriseAlertPage />} />
               <Route path="/entreprise/mes-donnes/modification" element={<EntrepriseModificationPage />} />
               <Route path="/entreprise/ajout-publication/done" element={<EntrepriseAddAlertPage />} />
             </Route>
 
+        {/* public routes, for everybody */}
             <Route path="/" element={<Homepage />} />
             <Route path="/qui-sommes-nous" element={<AboutUs />} />
             <Route path="/mentions-legales" element={<Legacy />} /> 
@@ -76,12 +84,13 @@ function App() {
             <Route path="/aide" element={<Help />} />
 
             <Route path="/candidat/login" element={<ConnectionCandidate /> } />
-            <Route path="/candidat" element={<CandidatArea />} />
-            
             <Route path="/candidat/joblist" element={<Joblist/>} />
+            <Route path="/candidat/inscription" element={<CandidateSubscription />} />
 
             <Route path="/entreprise/login" element={<ConnectionEntreprise />} />
-            <Route path="/entreprise" element={<EntrepriseArea />} />
+            <Route path="/entreprise/inscription" element={<CompanySubscription />} />
+
+            <Route path="*" element={<Error404 />} />
 
         </Routes>
         
