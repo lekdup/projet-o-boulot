@@ -57,12 +57,14 @@ function App() {
         <Routes>
         
             <Route element={<PrivateRoutesCandidat />}>
+              <Route path="/candidat" element={<CandidatArea />} />
               <Route path="/candidat/mes-donnes" element={<CandidateDataPage />} />
               <Route path="/candidat/mes-donnes/done" element={<CandidateAlertPage />} />
               <Route path="/candidat/mes-donnes/modification" element={<CandidateModificationPage />} />
             </Route> 
 
             <Route element={<PrivateRoutesEntreprise />}>
+              <Route path="/entreprise" element={<EntrepriseArea />} />
               <Route path="/entreprise/mes-donnes" element={<EntrepriseDataPage />} />
               <Route path="/entreprise/mes-donnes/done" element={<EntrepriseAlertPage />} />
               <Route path="/entreprise/mes-donnes/modification" element={<EntrepriseModificationPage />} />
@@ -76,12 +78,9 @@ function App() {
             <Route path="/aide" element={<Help />} />
 
             <Route path="/candidat/login" element={<ConnectionCandidate /> } />
-            <Route path="/candidat" element={<CandidatArea />} />
-            
             <Route path="/candidat/joblist" element={<Joblist/>} />
 
             <Route path="/entreprise/login" element={<ConnectionEntreprise />} />
-            <Route path="/entreprise" element={<EntrepriseArea />} />
 
         </Routes>
         
