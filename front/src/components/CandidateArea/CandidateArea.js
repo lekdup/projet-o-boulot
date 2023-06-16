@@ -1,5 +1,6 @@
 import'./CandidateArea.scss';
 import logoCandidatArea from '../../assets/logoCandidatArea.svg';
+import { Link } from 'react-router-dom';
 
 
 function CandidatArea () {
@@ -11,7 +12,7 @@ function CandidatArea () {
             <img className="EntrepriseArea-img" src={logoCandidatArea} alt="Logo Candidate Area Page" />
             
             <div className='CandidateArea-buttons'>
-                <button className='CandidateArea-button' >Mes données personnelles</button>
+                <button className='CandidateArea-button' > <Link to='/mes-donnees'>Mes données personnelles</Link></button>
                 <button className='CandidateArea-button' >Mes missions</button>
                 <button className='CandidateArea-button' >Mes alertes</button>
                 <button className='CandidateArea-button' >Mes documents</button>
