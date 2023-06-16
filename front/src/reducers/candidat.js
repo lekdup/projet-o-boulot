@@ -5,7 +5,7 @@
 
 // => EXEMPLE "list" est accessible avec state.candidat.list, pas state.list /!\
 export const initialState = {
-    list: [],
+    ,
   };
 
 

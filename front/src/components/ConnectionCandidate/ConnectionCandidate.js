@@ -30,17 +30,24 @@ function ConnectionCandidate() {
     }
 
     useEffect (() => {
-        axios.get('http://isisyoussef-server.eddi.cloud/projet-o-boulot-back/public/api/candidats', {
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-        })
-        .then ((res) => {
-            console.log(res.data)
-            setUser(res.data)
-        })
-        .catch(()=> 
-        console.log('Pas de récupération de dataUser erreur API'))
+        // On vérifie si nous avons reçu un token lors de la tentative de connexion 
+        // Si oui, cela veut dire que le couple email/password existe dans l'API
+        if (token) {
+            // requete GET pour récupérer tous les candidats
+            axios.get('http://isisyoussef-server.eddi.cloud/projet-o-boulot-back/public/api/candidats')
+            .then ((res) => {
+                console.log(res.data)
+                console.log(email)
+                // On filtre les résultats pour ne garder que les données associées à l'email entré par l'utilisateur
+                const connectedCandidate = res.data.find((candidate) => candidate.email === email);
+                // On set avec le résultat filtré
+                setUser(connectedCandidate)
+                console.log(connectedCandidate)
+            })
+            .catch(()=> 
+            console.log('Pas de récupération de dataUser erreur API'))
+        } else {console.log("Il n'y a pas de token")}
+
     }, [token]);
 
     return(
