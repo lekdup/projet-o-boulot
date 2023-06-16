@@ -1,4 +1,5 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation} from 'react-router-dom';
+
 import './App.scss';
 
 import Header from './Header/Header';
@@ -10,7 +11,11 @@ import Joblist from './Joblist/Joblist';
 import Jobcard from './Jobcard/Jobcard';
 import Contact from './Contact/Contact';
 
+import PrivateRoutesCandidat from '../utils/PrivateRoutesCandidat';
+import PrivateRoutesEntreprise from '../utils/PrivateRoutesEntreprise';
+
 import ConnectionCandidate from './ConnectionCandidate/ConnectionCandidate';
+import CandidateSubscription from './CandidateSubscription/CandidateSubscription';
 import CandidatArea from './CandidateArea/CandidateArea';
 import CandidateDataPage from './CandidateArea/CandidateDataPage/CandidateDataPage';
 import CandidateAlertPage from './CandidateArea/CandidateAlertPage/CandidateAlertPage';
