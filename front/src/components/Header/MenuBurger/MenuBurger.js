@@ -43,7 +43,7 @@ function MenuBurger() {
                     </ul>
                 )}
                 </li>
-                <Link to="/"><li>Actualités</li></Link>
+                <Link to="/actualites"><li>Actualités</li></Link>
                 <Link to="/aide"><li>Aide</li></Link>
                 <Link to="/contact"><li>Contact</li></Link>
             </ul>

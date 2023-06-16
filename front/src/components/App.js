@@ -32,6 +32,8 @@ import logoCandidat from '../assets/candidate.png';
 
 import PrivateRoutesCandidat from '../utils/PrivateRoutesCandidat';
 import PrivateRoutesEntreprise from '../utils/PrivateRoutesEntreprise';
+import Actus from './Actus/Actus';
+import Article from './Article/Article';
 
 function App() {
   const location = useLocation();
@@ -56,6 +58,7 @@ function App() {
         
         <Routes>
         
+            //ROUTES PRIVES PUBLIC
             <Route element={<PrivateRoutesCandidat />}>
               <Route path="/candidat/mes-donnees" element={<CandidateDataPage />} />
               <Route path="/candidat/mes-donnees/done" element={<CandidateAlertPage />} />
@@ -63,6 +66,7 @@ function App() {
               <Route path="/candidat" element={<CandidatArea />} />
             </Route> 
 
+            //ROUTES PRIVES ENTREPRISE
             <Route element={<PrivateRoutesEntreprise />}>
               <Route path="/entreprise/mes-donnees" element={<EntrepriseDataPage />} />
               <Route path="/entreprise/mes-donnees/done" element={<EntrepriseAlertPage />} />
@@ -71,17 +75,19 @@ function App() {
               <Route path="/entreprise" element={<EntrepriseArea />} />
             </Route>
 
+            //ROUTES PUBLIC
             <Route path="/" element={<Homepage />} />
+            <Route path="/actualites" element={<Actus />} />
+
+            // a remplacer par l'url suivante: /actualites/:id
+            <Route path="/article" element={<Article />} /> 
+            
             <Route path="/qui-sommes-nous" element={<AboutUs />} />
             <Route path="/mentions-legales" element={<Legacy />} /> 
             <Route path="/contact" element={<Contact />} />
             <Route path="/aide" element={<Help />} />
-
             <Route path="/candidat/login" element={<ConnectionCandidate /> } />
-            
-            
             <Route path="/candidat/joblist" element={<Joblist/>} />
-
             <Route path="/entreprise/login" element={<ConnectionEntreprise />} />
             
 
