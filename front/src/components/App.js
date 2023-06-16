@@ -36,8 +36,6 @@ import logoCandidat from '../assets/candidate.png';
 import Error404 from './Error404/Error404';
 import CompanySubscription from './CompanySubscription/CompanySubscription';
 
-
-
 import Actus from './Actus/Actus';
 import Article from './Article/Article';
 
@@ -97,7 +95,10 @@ function App() {
             <Route path="/entreprise/login" element={<ConnectionEntreprise />} />
             <Route path="/entreprise/inscription" element={<CompanySubscription />} />
 
-           </Routes>
+            {/* Error routes, for everybody */}
+            <Route path="*" element={<Error404 />} />
+
+        </Routes>
         
         </div>
 
