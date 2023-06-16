@@ -5,7 +5,7 @@ import { SET_USER } from "../actions/candidat";
 
 // => EXEMPLE "list" est accessible avec state.candidat.list, pas state.list /!\
 export const initialState = {
-    user: null,
+    user: '',
   };
 
 
