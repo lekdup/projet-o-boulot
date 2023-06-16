@@ -38,6 +38,7 @@ import CompanySubscription from './CompanySubscription/CompanySubscription';
 
 import Actus from './Actus/Actus';
 import Article from './Article/Article';
+import EntrepriseAddOffer from './EntrepriseArea/EntrepriseAddOffer/EntrepriseAddOffer';
 
 function App() {
   const location = useLocation();
@@ -97,6 +98,7 @@ function App() {
 
             {/* Error routes, for everybody */}
             <Route path="*" element={<Error404 />} />
+            <Route path="/entreprise/offre-emploi" element={<EntrepriseAddOffer />} />
 
         </Routes>
         
