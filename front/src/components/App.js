@@ -47,53 +47,55 @@ function App() {
     }
   }
 
-
   return (
     
     <div className="App">
       <Header logoColors={getDifferentLogoColor()}/>
 
-      <div className="main-container">
-        <Routes>
-            {/* ROUTES PRIVES PUBLIC */}
-            <Route element={<PrivateRoutesCandidat />}>
-              <Route path="/candidat/mes-donnees" element={<CandidateDataPage />} />
-              <Route path="/candidat/mes-donnees/done" element={<CandidateAlertPage />} />
-              <Route path="/candidat/mes-donnees/modification" element={<CandidateModificationPage />} />
-              <Route path="/candidat" element={<CandidatArea />} />
-            </Route> 
+        <div className="main-container">
+        
+          <Routes>
 
-            {/* //ROUTES PRIVES ENTREPRISE */}
+        {/* private routes, for only logged in clients */}
+            <Route element={<PrivateRoutesCandidat />}>
+              <Route path="/candidat" element={<CandidatArea />} />
+              <Route path="/candidat" element={<CandidatArea />} />
+              <Route path="/candidat/mes-donnes" element={<CandidateDataPage />} />
+              <Route path="/candidat/mes-donnes/done" element={<CandidateAlertPage />} />
+              <Route path="/candidat/mes-donnes/modification" element={<CandidateModificationPage />} />
+            </Route> 
+      
+            {/* private routes, for only logged in entreprise */}
             <Route element={<PrivateRoutesEntreprise />}>
               <Route path="/entreprise" element={<EntrepriseArea />} />
-              <Route path="/entreprise/mes-donnes" element={<EntrepriseDataPage />} />
-              <Route path="/entreprise/mes-donnes/done" element={<EntrepriseAlertPage />} />
-              <Route path="/entreprise/mes-donnes/modification" element={<EntrepriseModificationPage />} />
+              <Route path="/entreprise/mes-donnees" element={<EntrepriseDataPage />} />
+              <Route path="/entreprise/mes-donnees/done" element={<EntrepriseAlertPage />} />
               <Route path="/entreprise/ajout-publication/done" element={<EntrepriseAddAlertPage />} />
+              <Route path="/entreprise/mes-donnees/modification" element={<EntrepriseModificationPage />} />
             </Route>
 
-        {/* public routes, for everybody */}
+            {/* public routes, for everybody */}
+            <Route path="/aide" element={<Help />} />
+            <Route path="*" element={<Error404 />} />
             <Route path="/" element={<Homepage />} />
-            <Route path="/actualites" element={<Actus />} />
-
-            // a remplacer par l'url suivante: /actualites/:id
+            {/* a remplacer par la route suivante: /actualites/:id */}
             <Route path="/article" element={<Article />} /> 
-            
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/actualites" element={<Actus />} />
             <Route path="/qui-sommes-nous" element={<AboutUs />} />
             <Route path="/mentions-legales" element={<Legacy />} /> 
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/aide" element={<Help />} />
-            <Route path="/candidat/login" element={<ConnectionCandidate /> } />
             <Route path="/candidat/joblist" element={<Joblist/>} />
+            <Route path="/candidat/login" element={<ConnectionCandidate /> } />
             <Route path="/candidat/inscription" element={<CandidateSubscription />} />
-
             <Route path="/entreprise/login" element={<ConnectionEntreprise />} />
             <Route path="/entreprise/inscription" element={<CompanySubscription />} />
 
+            {/* Error routes, for everybody */}
             <Route path="*" element={<Error404 />} />
 
         </Routes>
-      </div>
+        
+        </div>
 
       <Footer />
 
