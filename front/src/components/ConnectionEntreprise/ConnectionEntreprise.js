@@ -1,6 +1,7 @@
 import './ConnectionEntreprise.scss';
 import loginEntreprise from "../../assets/loginEntreprise.svg";
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function ConnectionEntreprise() {
     const [email, setEmail] = useState("");
@@ -60,7 +61,7 @@ function ConnectionEntreprise() {
                     type="submit"
                 >Connexion
                 </button>
-                <p>Vous n'avez pas encore de compte ? <a href="#">Inscrivez-vous !</a></p>
+                <p>Vous n'avez pas encore de compte ? <Link to="/entreprise/inscription"><span>Inscrivez-vous !</span></Link></p>
             </form>
         </section>
     );
