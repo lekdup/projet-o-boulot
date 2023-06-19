@@ -21,7 +21,7 @@ function MenuBurger() {
                 <li onClick={handleClick} data-value="O'Boulot">O'Boulot <span className="MenuBurger__nav--arrow">&gt;</span>
                     {menuExtend === "O'Boulot" && (
                         <ul className="MenuBurger__nav--extend">
-                            <Link to="/qui-sommes-nous"><li>Qui sommes-nous</li></Link>
+                            <Link to="#qui-sommes-nous"><li>Qui sommes-nous</li></Link>
                             <Link to="/"><li>Prestations</li></Link>
                             <Link to="/contact"><li>Contact</li></Link>
                         </ul>
