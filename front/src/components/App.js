@@ -8,7 +8,6 @@ import Help from './Help/Help';
 import AboutUs from './AboutUs/AboutUs';
 import Legacy from './Legacy/Legacy';
 import Joblist from './Joblist/Joblist';
-import Jobcard from './Jobcard/Jobcard';
 import Contact from './Contact/Contact';
 
 import PrivateRoutesCandidat from '../utils/PrivateRoutesCandidat';
@@ -65,7 +64,6 @@ function App() {
         {/* private routes, for only logged in clients */}
             <Route element={<PrivateRoutesCandidat />}>
               <Route path="/candidat" element={<CandidatArea />} />
-              <Route path="/candidat" element={<CandidatArea />} />
               <Route path="/candidat/mes-donnes" element={<CandidateDataPage />} />
               <Route path="/candidat/mes-donnes/done" element={<CandidateAlertPage />} />
               <Route path="/candidat/mes-donnes/modification" element={<CandidateModificationPage />} />
@@ -78,12 +76,14 @@ function App() {
               <Route path="/entreprise/mes-donnees/done" element={<EntrepriseAlertPage />} />
               <Route path="/entreprise/ajout-publication/done" element={<EntrepriseAddAlertPage />} />
               <Route path="/entreprise/mes-donnees/modification" element={<EntrepriseModificationPage />} />
+              <Route path="/entreprise/offre-emploi" element={<EntrepriseAddOffer />} />
             </Route>
 
             {/* public routes, for everybody */}
             <Route path="/aide" element={<Help />} />
             <Route path="*" element={<Error404 />} />
             <Route path="/" element={<Homepage />} />
+
             {/* a remplacer par la route suivante: /actualites/:id */}
             <Route path="/article" element={<Article />} /> 
             <Route path="/contact" element={<Contact />} />
@@ -95,10 +95,6 @@ function App() {
             <Route path="/candidat/inscription" element={<CandidateSubscription />} />
             <Route path="/entreprise/login" element={<ConnectionEntreprise />} />
             <Route path="/entreprise/inscription" element={<CompanySubscription />} />
-
-            {/* Error routes, for everybody */}
-            <Route path="*" element={<Error404 />} />
-            <Route path="/entreprise/offre-emploi" element={<EntrepriseAddOffer />} />
 
         </Routes>
         
