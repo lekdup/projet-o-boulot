@@ -68,7 +68,7 @@ function ConnectionCandidate() {
                         }}
                     />
                 </div>
-                <p><a href="#">Mot de passe oublié ?</a></p>
+                <p><a href="#"> Mot de passe oublié ?</a></p>
                 <button
                     className="ConnectionCandidate-form-btn"
                     type="submit"
