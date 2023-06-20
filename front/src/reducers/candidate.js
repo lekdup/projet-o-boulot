@@ -1,7 +1,7 @@
 // Ne pas oublier d'importer les actions comme ceci:
 
 
-import { SET_USER } from "../actions/candidat";
+import { SET_USER } from "../actions/candidate";
 // import { EXEMPLE_ACTION } from '../actions/candidat';
 
 import { SET_TOKEN_CANDIDATE } from "../actions/candidate";

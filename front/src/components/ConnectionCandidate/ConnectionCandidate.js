@@ -4,7 +4,7 @@ import axios from 'axios';
 import loginCandidate from '../../assets/login-candidate.svg';
 import { useEffect, useState, useRef } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {setUser} from '../../actions/candidat';
+import {setUser} from '../../actions/candidate';
 import { Link } from 'react-router-dom';
 
 function ConnectionCandidate() {
@@ -16,7 +16,7 @@ function ConnectionCandidate() {
     const [token, setToken] = useState("");
     const [errMsg, setErrMsg] = useState("");
 
-    const user = useSelector(state => state.candidat.user);
+    // const user = useSelector(state => state.candidat.user);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -79,7 +79,7 @@ function ConnectionCandidate() {
     return(
         <section className="ConnectionCandidate" >
             <h1 className="ConnectionCandidate-title">Connectez-vous</h1>
-            <p ref={errRef} className={`ConnectionCandidate-${errMsg ? "errmsg" : "offscreen"}`} aria-live="asssertive">{errMsg}</p>
+            <p ref={errRef} className={`ConnectionCandidate-${errMsg ? "errmsg" : "offscreen"}`} aria-live="assertive">{errMsg}</p>
             <div className="ConnectionCandidate-image" >
                 <img
                     src={loginCandidate}
