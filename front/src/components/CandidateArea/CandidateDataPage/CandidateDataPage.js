@@ -3,6 +3,7 @@ import './CandidateDataPage.scss';
 import logoCandidateDataPage from '../../../assets/logoCandidateDataPage.svg'
 
 import {useSelector} from 'react-redux';
+import { useEffect } from 'react';
 
 
 

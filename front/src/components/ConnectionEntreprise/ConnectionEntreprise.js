@@ -63,7 +63,6 @@ function ConnectionEntreprise() {
                 console.log(email)
                 
                 dispatch(setUserEntreprise(res.data))
-                console.log(res.data)
             })
             .catch(()=> 
             console.log('Pas de récupération de dataUser erreur API'))

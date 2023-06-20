@@ -34,9 +34,9 @@ function ConnectionCandidate() {
         })
         .then((res) => {
             console.log(res.data.token);
-            localStorage.setItem('token', res.data.token);
-            window.history.back();
             setToken(res.data.token);
+            localStorage.setItem('token', token);
+            // window.history.back();
             console.log(token)
         })
         .catch((err) => {
