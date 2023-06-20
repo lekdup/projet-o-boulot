@@ -1,5 +1,7 @@
 // Ne pas oublier d'importer les actions comme ceci:
 
+import { SET_USER_ENTREPRISE } from "../actions/entreprise";
+
 
 // import { EXEMPLE_ACTION } from '../actions/entreprise';
 
@@ -11,6 +13,13 @@ export const initialState = {
 
   function reducer(state = initialState, action = {}) {
     switch (action.type) {
+
+      case SET_USER_ENTREPRISE:
+        return {
+          ...state,
+          connectedUserEntreprise: action.payload.connectedUserEntreprise,
+        };
+        
 
       // Exemple ==>
 

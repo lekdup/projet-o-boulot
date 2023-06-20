@@ -1,16 +1,58 @@
 import './ConnectionEntreprise.scss';
 import loginEntreprise from "../../assets/loginEntreprise.svg";
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import api from '../../api/api';
+import { useEffect, useState } from 'react';
+import {useSelector, useDispatch} from 'react-redux';
+import { setUserEntreprise } from '../../actions/entreprise';
 
 function ConnectionEntreprise() {
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [token, setToken] = useState("");
 
+    const userEntreprise = useSelector(state => state.entreprise.user);
+    const dispatch = useDispatch();
+
+    
     const handleSubmit = (e) => {
         e.preventDefault();
+        api.post('/login_check', {
+            email: email,
+            password: password,
+        })
+        .then((res) => {
+            console.log(res.data.token);
+            localStorage.setItem('token', res.data.token);
+            window.history.back();
+            setToken(res.data.token);
+            console.log(token)
+
+        })
+        .catch(() => {
+            console.log("Mauvais email/password");
+        })
     }
 
+    useEffect (() => {
+        // On vérifie si nous avons reçu un token lors de la tentative de connexion 
+        // Si oui, cela veut dire que le couple email/password existe dans l'API
+        if (token) {
+            // requete GET pour récupérer tous les candidats
+            api.get('/entreprise/me')
+            .then ((res) => {
+                console.log(res.data)
+                console.log(email)
+                
+                dispatch(setUserEntreprise(res.data))
+                console.log(res.data)
+            })
+            .catch(()=> 
+            console.log('Pas de récupération de dataUser erreur API'))
+        } else {console.log("Il n'y a pas de token")}
+
+    }, [token]);
 
     return(
         <section className="ConnectionEntreprise" >
