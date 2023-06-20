@@ -2,19 +2,31 @@ import './ConnectionCandidate.scss';
 import axios from 'axios';
 
 import loginCandidate from '../../assets/login-candidate.svg';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {setUser} from '../../actions/candidat';
 
 function ConnectionCandidate() {
+    const userRef = useRef();
+    const errRef = useRef();
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [token, setToken] = useState("");
+    const [errMsg, setErrMsg] = useState("");
 
     const user = useSelector(state => state.candidat.user);
     const dispatch = useDispatch();
 
-    const handleSubmit = (e) => {
+    useEffect(() => {
+        userRef.current.focus();
+    }, [])
+
+    useEffect(() => {
+        setErrMsg("");
+    }, [email, password])
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
         axios.post('http://isisyoussef-server.eddi.cloud/projet-o-boulot-back/public/api/login_check', {
             email: email,
@@ -26,10 +38,19 @@ function ConnectionCandidate() {
             window.history.back();
             setToken(res.data.token);
             console.log(token)
-
         })
-        .catch(() => {
+        .catch((err) => {
             console.log("Mauvais email/password");
+            if (!err?.response) {
+                setErrMsg('No Server Response');
+            } else if(err.response?.status === 400) {
+                setErrMsg('Missing Username or Password')
+            } else if(err.response?.status === 401) {
+                setErrMsg('Unauthorized');
+            } else {
+                setErrMsg('Login Failed');
+            }
+            errRef.current.focus();
         })
     }
 
@@ -57,6 +78,7 @@ function ConnectionCandidate() {
     return(
         <section className="ConnectionCandidate" >
             <h1 className="ConnectionCandidate-title">Connectez-vous</h1>
+            <p ref={errRef} className={`ConnectionCandidate-${errMsg ? "errmsg" : "offscreen"}`} aria-live="asssertive">{errMsg}</p>
             <div className="ConnectionCandidate-image" >
                 <img
                     src={loginCandidate}
@@ -76,11 +98,13 @@ function ConnectionCandidate() {
                         type="email"
                         inputMode="email"
                         name="email"
+                        ref={userRef}
                         placeholder="e.g. jean@dupant.fr"
                         value={email}
                         onChange={(e) => {
                             setEmail(e.target.value)
                         }}
+                        required
                     />
                 </div>
                 <label htmlFor="password">Mot de passe</label>
@@ -95,6 +119,7 @@ function ConnectionCandidate() {
                         onChange={(e) => {
                             setPassword(e.target.value)
                         }}
+                        required
                     />
                 </div>
                 <p><a href="#"> Mot de passe oublié ?</a></p>

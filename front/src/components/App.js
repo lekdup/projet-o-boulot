@@ -49,7 +49,7 @@ function App() {
 
   return (
     
-    <div className="App">
+    <main className="App">
       <Header logoColors={getDifferentLogoColor()}/>
 
       <div className="main-container">
@@ -88,7 +88,7 @@ function App() {
 
       <Footer />
 
-    </div>
+    </main>
   );
 }
 
