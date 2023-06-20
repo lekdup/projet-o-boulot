@@ -1,6 +1,5 @@
 import './ConnectionCandidate.scss';
-import axios from 'axios';
-
+import api from '../../api/api';
 import loginCandidate from '../../assets/login-candidate.svg';
 import { useEffect, useState } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
@@ -17,7 +16,7 @@ function ConnectionCandidate() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://isisyoussef-server.eddi.cloud/projet-o-boulot-back/public/api/login_check', {
+        api.post('/login_check', {
             email: email,
             password: password,
         })
@@ -39,7 +38,7 @@ function ConnectionCandidate() {
         // Si oui, cela veut dire que le couple email/password existe dans l'API
         if (token) {
             // requete GET pour récupérer tous les candidats
-            axios.get('http://isisyoussef-server.eddi.cloud/projet-o-boulot-back/public/api/candidats')
+            api.get('/candidats/me')
             .then ((res) => {
                 console.log(res.data)
                 console.log(email)

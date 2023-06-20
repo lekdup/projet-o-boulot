@@ -13,7 +13,7 @@ function CandidatArea () {
     return(
         <div className="CandidateArea">
             
-            <h1 className="CandidateArea-title"> Bonjour {user.firstname} </h1>
+            <h1 className="CandidateArea-title"> Bonjour {user.firstname ?? user.firstname} </h1>
 
             <img className="EntrepriseArea-img" src={logoCandidatArea} alt="Logo Candidate Area Page" />
             

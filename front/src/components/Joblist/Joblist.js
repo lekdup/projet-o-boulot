@@ -1,16 +1,15 @@
 import './Joblist.scss';
 import CardsList from './CardsList/CardsList';
 import Jobcard from '../Jobcard/Jobcard';
-import axios from 'axios';
+import api from '../../api/api';
 import { useEffect, useState } from 'react';
 
 function Joblist(){
 
     const [offers, setOffers] = useState([]);
-    
 
     useEffect(() => {
-      axios.get("http://isisyoussef-server.eddi.cloud/projet-o-boulot-back/public/api/offres/")
+      api.get("/offres/")
           .then(res => {
               setOffers(res.data);
               //setOffer()
