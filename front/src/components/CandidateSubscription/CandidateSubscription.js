@@ -7,6 +7,7 @@ import api from '../../api/api';
 import { useState } from 'react';
 
 function CandidateSubscription() {
+
     const [lastname, setLastname] = useState('');
     const [firstname, setFirstname] = useState('');
     const [gender, setGender] = useState('');

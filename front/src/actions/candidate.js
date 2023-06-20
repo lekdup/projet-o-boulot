@@ -19,3 +19,35 @@ export const setTokenCandidate = (data) => ({
     tokenCandidate: data,
   },
 });
+
+export const UPTADE_FIRSTNAME = 'UPTADE_FIRSTNAME';
+export const uptadeFirstname = (data) => ({
+  type: UPTADE_FIRSTNAME,
+  payload: {
+    firstname: data,
+  },
+})
+
+export const UPTADE_LASTNAME = 'UPTADE_LASTNAME';
+export const uptadeLastname = (data) => ({
+  type: UPTADE_LASTNAME,
+  payload: {
+    lastname: data,
+  },
+})
+
+export const UPTADE_EMAIL = 'UPTADE_EMAIL';
+export const uptadeEmail = (data) => ({
+  type: UPTADE_EMAIL,
+  payload: {
+    email: data,
+  },
+})
+
+export const UPTADE_NUMBER = 'UPTADE_NUMBER';
+export const uptadeNumber = (data) => ({
+  type: UPTADE_NUMBER,
+  payload: {
+    number: data,
+  },
+})
