@@ -25,7 +25,7 @@ function Candidat() {
             </div>
             <div className="wrapper-candidat-buttons">
                 <button><Link to="/candidat/joblist">Consulter les offres</Link></button>
-                <button>Créer mon espace candidat</button>
+                <button><Link to="/candidat/inscription">Créer mon espace candidat</Link></button>
             </div>
         </div>
     )

@@ -1,4 +1,6 @@
+import AboutUs from '../AboutUs/AboutUs';
 import Candidat from '../Candidat/Candidat';
+import Contact from '../Contact/Contact';
 import Entreprise from '../Entreprise/Entreprise';
 import './Homepage.scss';
 
@@ -14,8 +16,9 @@ function Homepage() {
             <section className="Homepage-component">
                 <Candidat />
                 <Entreprise />
-                
             </section>
+            <AboutUs />
+            {/* <Contact /> */}
         </div>
     )
 }

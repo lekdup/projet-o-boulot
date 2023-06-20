@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import recruit from '../../assets/recruit.svg';
 import './Entreprise.scss';
 
@@ -25,7 +26,7 @@ function Entreprise() {
             </div>
             <div className="wrapper-entreprise-buttons">
                 <button className='wrapper-entreprise-button'>Créer une offre</button>
-                <button className='wrapper-entreprise-button'>Je souhaite en savoir +</button>
+                <button className='wrapper-entreprise-button'><Link to="/entreprise/inscription">Créer mon espace entreprise</Link></button>
             </div>
         </div>       
     )

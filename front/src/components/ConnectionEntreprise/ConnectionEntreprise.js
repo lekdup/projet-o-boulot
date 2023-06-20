@@ -1,38 +1,55 @@
 import './ConnectionEntreprise.scss';
 import loginEntreprise from "../../assets/loginEntreprise.svg";
+import { useDispatch} from 'react-redux';
+import { useEffect, useRef, useState } from 'react';
+import { setUserEntreprise } from '../../actions/entreprise';
 import { Link } from 'react-router-dom';
 import api from '../../api/api';
-import { useEffect, useState } from 'react';
-import {useSelector, useDispatch} from 'react-redux';
-import { setUserEntreprise } from '../../actions/entreprise';
 
 function ConnectionEntreprise() {
+    const userRef = useRef();
+    const errRef = useRef();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [errMsg, setErrMsg] = useState("");
     const [token, setToken] = useState("");
 
-    const userEntreprise = useSelector(state => state.entreprise.user);
     const dispatch = useDispatch();
 
-    
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        api.post('/login_check', {
-            email: email,
-            password: password,
-        })
-        .then((res) => {
-            console.log(res.data.token);
-            localStorage.setItem('token', res.data.token);
-            window.history.back();
-            setToken(res.data.token);
-            console.log(token)
 
-        })
-        .catch(() => {
+    useEffect(() => {
+        userRef.current.focus();
+    }, [])
+
+    useEffect(() => {
+        setErrMsg("");
+    }, [email, password])
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await api.post( 'http://isisyoussef-server.eddi.cloud/projet-o-boulot-back/public/api/login_check' ,
+            {
+                email: email,
+                password: password
+            });
+            console.log(response.data.token);
+            setToken(response.data.token);
+            localStorage.setItem('token', token);
+        } catch (err) {
             console.log("Mauvais email/password");
-        })
+            if (!err?.response) {
+                setErrMsg('No Server Response');
+            } else if(err.response?.status === 400) {
+                setErrMsg('Missing Username or Password')
+            } else if(err.response?.status === 401) {
+                setErrMsg('Unauthorized');
+            } else {
+                setErrMsg('Login Failed');
+            }
+            errRef.current.focus();
+        }
     }
 
     useEffect (() => {
@@ -57,6 +74,7 @@ function ConnectionEntreprise() {
     return(
         <section className="ConnectionEntreprise" >
             <h1 className="ConnectionEntreprise-title">Connectez-vous</h1>
+            <p ref={errRef} className={`ConnectionEntreprise-${errMsg ? "errmsg" : "offscreen"}`} aria-live="assertive">{errMsg}</p>
             <div className="ConnectionEntreprise-image" >
                 <img
                     src={loginEntreprise} 
@@ -76,6 +94,7 @@ function ConnectionEntreprise() {
                         type="email"
                         inputMode="email"
                         name="email"
+                        ref={userRef}
                         placeholder="e.g. jean@dupant.fr"
                         value={email}
                         onChange={(e) => {
