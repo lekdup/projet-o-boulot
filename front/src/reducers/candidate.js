@@ -2,17 +2,25 @@
 
 
 import { SET_USER } from "../actions/candidat";
+// import { EXEMPLE_ACTION } from '../actions/candidat';
 
-// => EXEMPLE "list" est accessible avec state.candidat.list, pas state.list /!\
+import { SET_TOKEN_CANDIDATE } from "../actions/candidate";
+
+// => EXEMPLE "tokenCandidate" est accessible avec state.candidat.tokenCandidate, pas state.tokenCandidate /!\
 export const initialState = {
     user: '',
+    tokenCandidate: '',
   };
 
 
   function reducer(state = initialState, action = {}) {
     switch (action.type) {
 
-      // Exemple ==>
+      case SET_TOKEN_CANDIDATE:
+        return {
+          ...state,
+          tokenCandidate: action.payload.tokenCandidate
+        };
 
       //case SET_CONNECTED_USER:
       //    return {

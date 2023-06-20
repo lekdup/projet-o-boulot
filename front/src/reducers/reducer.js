@@ -3,13 +3,13 @@
 import { combineReducers } from 'redux';
 
 // on importe les reducers
-import candidatReducer from './candidat';
+import candidateReducer from './candidate';
 import entrepriseReducer from './entreprise';
 
 // lien entre les tiroirs et les reducers
 const rootReducer = combineReducers({
   // nom du tiroir : nom du reducer qui s'en occupe /!/
-  candidat: candidatReducer,
+  candidate: candidateReducer,
   entreprise: entrepriseReducer,
 });
 

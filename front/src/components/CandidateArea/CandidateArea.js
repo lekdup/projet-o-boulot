@@ -1,8 +1,8 @@
 import'./CandidateArea.scss';
 import logoCandidatArea from '../../assets/logoCandidatArea.svg';
+import { Link } from 'react-router-dom';
 
 import {useSelector} from 'react-redux';
-import { Link } from 'react-router-dom';
 
 
 function CandidatArea () {
@@ -19,6 +19,7 @@ function CandidatArea () {
             
             <div className='CandidateArea-buttons'>
                 <button className='CandidateArea-button' ><Link to="/candidat/mes-donnes"> Mes données personnelles</Link></button>
+                <button className='CandidateArea-button' ><Link to='/mes-donnees'>Mes données personnelles</Link></button>
                 <button className='CandidateArea-button' >Mes missions</button>
                 <button className='CandidateArea-button' >Mes alertes</button>
                 <button className='CandidateArea-button' >Mes documents</button>

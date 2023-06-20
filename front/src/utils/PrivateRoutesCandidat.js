@@ -10,4 +10,5 @@ const PrivateRoutesCandidat = () => {
     );
 }
 
+
 export default PrivateRoutesCandidat;

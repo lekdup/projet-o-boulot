@@ -5,6 +5,7 @@ import loginCandidate from '../../assets/login-candidate.svg';
 import { useEffect, useState, useRef } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {setUser} from '../../actions/candidat';
+import { Link } from 'react-router-dom';
 
 function ConnectionCandidate() {
     const userRef = useRef();
@@ -128,7 +129,7 @@ function ConnectionCandidate() {
                     type="submit"
                 >Connexion
                 </button>
-                <p>Vous n'avez pas encore de compte ? <a href="#">Inscrivez-vous !</a></p>
+                <p>Vous n'avez pas encore de compte ? <Link to="/candidat/inscription"><span>Inscrivez-vous !</span></Link></p>
             </form>
         </section>
     );

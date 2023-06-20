@@ -4,7 +4,7 @@ import logo from '../../assets/logo.png';
 function AboutUs() {
 
     return(
-        <div className="AboutUs">
+        <div className="AboutUs" id="qui-sommes-nous" >
             <h1 className="AboutUs-title">Qui Sommes nous ?</h1>
 
             <section className="AboutUs-section">
@@ -13,7 +13,7 @@ function AboutUs() {
 
         
             <div className="AboutUs-span-logo">
-            <img className="AboutUs-span-logo" src={logo}></img>
+            <img className="AboutUs-span-logo" src={logo} alt="logo of O'Boulot"></img>
             </div>
 
 
