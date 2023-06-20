@@ -6,6 +6,7 @@ import './Homepage.scss';
 
 function Homepage() {
 
+    
     return(
         <div className="Homepage">
             <article className="Homepage-intro">

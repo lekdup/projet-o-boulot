@@ -1,4 +1,4 @@
-.Homepage{
+.Homepage {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -16,17 +16,18 @@
     & h2 {
       font-size: 1.2rem;
       font-weight: 400;
-      margin: .5rem 0 1.5rem 0;
+      margin: 0.5rem 0 1.5rem 0;
     }
     & p {
       display: none;
-      @media (min-width: 799px){
+      @media (min-width: 799px) {
         display: block;
         max-width: 800px;
         margin: 0 3rem 1rem 3rem;
       }
     }
   }
+
   &-component {
     @media (min-width: 799px) {
       display: grid;
@@ -34,7 +35,21 @@
       grid-template-rows: auto;
     }
   }
+
+  // Animation de transition pour le composant <AboutUs />
+  &-about-us {
+    max-width: 100%;
+        -webkit-transform: scale(1);
+	    transform: scale(1);
+	    -webkit-transition: .3s ease-in-out;
+	    transition: 1s ease-in-out;
+
+    &.about-us-enter-active {
+      max-width: 100%;
+        -webkit-transform: scale(1);
+	    transform: scale(1);
+	    -webkit-transition: .3s ease-in-out;
+	    transition: 1s ease-in-out;
+    }
+  }
 }
-
-
-  
