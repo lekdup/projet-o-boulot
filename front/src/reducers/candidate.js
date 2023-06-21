@@ -11,7 +11,7 @@ import { UPTADE_NUMBER} from "../actions/candidate";
 import { UPTADE_EMAIL } from "../actions/candidate";
 
 
-// => EXEMPLE "tokenCandidate" est accessible avec state.candidat.tokenCandidate, pas state.tokenCandidate /!\
+// => EXEMPLE "tokenCandidate" est accessible avec e.tokenCandidate, pas state.tokenCandidate /!\
 export const initialState = {
     user: [],
     tokenCandidate: '',

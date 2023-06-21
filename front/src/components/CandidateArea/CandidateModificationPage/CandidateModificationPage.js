@@ -7,8 +7,8 @@ function CandidateModificationPage() {
 
     const firstname = useSelector(state => state.candidate.firstname);
     const lastname = useSelector(state => state.candidate.lastname);
-    const email = useSelector(state => state.candidat.email);
-    const number = useSelector(state => state.candidat.number);
+    const email = useSelector(state => state.candidate.email);
+    const number = useSelector(state => state.candidate.number);
     
     const handleFirstname = (event) => {
         dispatch(uptadeFirstname(event.target.value))

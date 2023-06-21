@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 
 function CandidateDataPage() {
 
-	const user = useSelector(state => state.candidat.user);
+	const user = useSelector(state => state.candidate.user);
 
     return(
         <div className="CandidateDataPage">
