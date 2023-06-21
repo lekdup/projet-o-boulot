@@ -18,7 +18,7 @@ function CandidatArea () {
             <img className="EntrepriseArea-img" src={logoCandidatArea} alt="Logo Candidate Area Page" />
             
             <div className='CandidateArea-buttons'>
-                <button className='CandidateArea-button' ><Link to="/candidat/mes-donnes"> Mes données personnelles</Link></button>
+            <Link to="/candidat/mes-donnees"><button className='CandidateArea-button'> Mes données personnelles</button></Link>
                 
                 <button className='CandidateArea-button' >Mes missions</button>
                 <button className='CandidateArea-button' >Mes alertes</button>

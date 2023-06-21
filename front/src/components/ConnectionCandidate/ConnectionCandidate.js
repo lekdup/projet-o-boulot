@@ -3,22 +3,27 @@ import api from '../../api/api';
 import loginCandidate from '../../assets/login-candidate.svg';
 import { useEffect, useState, useRef } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {setUser} from '../../actions/candidate';
+import {setUser, setTokenCandidate} from '../../actions/candidate';
+
 import { Link } from 'react-router-dom';
 
 function ConnectionCandidate() {
+
     const userRef = useRef();
     const errRef = useRef();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
     const [token, setToken] = useState("");
     const [errMsg, setErrMsg] = useState("");
 
-    const user = useSelector(state => state.candidate.user);
-    console.log(user);
+    
+    const tokenCandidate = useSelector(state => state.candidate.tokenCandidate);
+
     const dispatch = useDispatch();
 
+    //console.log(tokenCandidate);
    
     useEffect(() => {
         userRef.current.focus();
@@ -28,7 +33,7 @@ function ConnectionCandidate() {
         setErrMsg("");
     }, [email, password])
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         api.post('/login_check', {
             email: email,
@@ -36,10 +41,11 @@ function ConnectionCandidate() {
         })
         .then((res) => {
             console.log(res.data.token);
-            setToken(res.data.token);
-            localStorage.setItem('token', token);
+            dispatch(setTokenCandidate(res.data.token));
+            localStorage.setItem('token', res.data.token);
+            
             //window.history.back(); //ne pas utiliser cela car raffraichissement de la page 
-            console.log(token)
+            
         })
         .catch((err) => {
             console.log("Mauvais email/password");
@@ -56,18 +62,19 @@ function ConnectionCandidate() {
         })
     }
 
-    useEffect (() => {
-
-
-            // requete GET pour récupérer tous les candidats
+    useEffect(() => {
+        // requete GET pour récupérer les données du candidat
+        if (tokenCandidate) {
             api.get('/candidats/me')
-            .then ((res) => {
-                dispatch(setUser(res.data))
-                console.log(res.data)
-            })
-            .catch(()=> 
-            console.log('Pas de récupération de dataUser erreur API'))
-        }, [token]);
+                .then((res) => {
+                    dispatch(setUser(res.data));
+                    console.log(res.data);
+                })
+                .catch(() =>
+                    console.log('Pas de récupération de dataUser erreur API')
+                );
+        }
+    }, [tokenCandidate]);
 
     return(
         <section className="ConnectionCandidate" >

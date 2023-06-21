@@ -64,9 +64,9 @@ function App() {
         {/* private routes, for only logged in clients */}
             <Route element={<PrivateRoutesCandidat />}>
               <Route path="/candidat" element={<CandidatArea />} />
-              <Route path="/candidat/mes-donnes" element={<CandidateDataPage />} />
-              <Route path="/candidat/mes-donnes/done" element={<CandidateAlertPage />} />
-              <Route path="/candidat/mes-donnes/modification" element={<CandidateModificationPage />} />
+              <Route path="/candidat/mes-donnees" element={<CandidateDataPage />} />
+              <Route path="/candidat/mes-donnees/done" element={<CandidateAlertPage />} />
+              <Route path="/candidat/mes-donnees/modification" element={<CandidateModificationPage />} />
             </Route> 
       
             {/* private routes, for only logged in entreprise */}

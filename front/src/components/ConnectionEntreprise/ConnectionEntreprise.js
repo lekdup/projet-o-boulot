@@ -1,12 +1,14 @@
 import './ConnectionEntreprise.scss';
 import loginEntreprise from "../../assets/loginEntreprise.svg";
-import { useDispatch} from 'react-redux';
+import { useDispatch, useSelector} from 'react-redux';
 import { useEffect, useRef, useState } from 'react';
-import { setUserEntreprise } from '../../actions/entreprise';
+import { setTokenEntreprise, setUserEntreprise } from '../../actions/entreprise';
 import { Link } from 'react-router-dom';
 import api from '../../api/api';
 
 function ConnectionEntreprise() {
+
+
     const userRef = useRef();
     const errRef = useRef();
 
@@ -14,6 +16,8 @@ function ConnectionEntreprise() {
     const [password, setPassword] = useState("");
     const [errMsg, setErrMsg] = useState("");
     const [token, setToken] = useState("");
+
+    const tokenEntreprise = useSelector(state => state.candidate.tokenEntreprise);
 
     const dispatch = useDispatch();
 
@@ -29,14 +33,15 @@ function ConnectionEntreprise() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await api.post( 'http://isisyoussef-server.eddi.cloud/projet-o-boulot-back/public/api/login_check' ,
+            const res = await api.post( '/login_check' ,
             {
                 email: email,
                 password: password
             });
-            console.log(response.data.token);
-            setToken(response.data.token);
-            localStorage.setItem('token', token);
+            console.log(res.data.token);
+            dispatch(setTokenEntreprise(res.data.token));
+            localStorage.setItem('token', res.data.token);
+            
         } catch (err) {
             console.log("Mauvais email/password");
             if (!err?.response) {
@@ -54,7 +59,8 @@ function ConnectionEntreprise() {
 
     useEffect (() => {
     
-            api.get('/entreprise/me')
+        if (tokenEntreprise) {
+            api.get('/entreprises/me')
             .then ((res) => {
                 console.log(res.data)
                 console.log(email)
@@ -63,7 +69,8 @@ function ConnectionEntreprise() {
             })
             .catch(()=> 
             console.log('Pas de récupération de dataUser erreur API'))
-    }, [token]);
+        }
+    }, [tokenEntreprise]);
 
     return(
         <section className="ConnectionEntreprise" >

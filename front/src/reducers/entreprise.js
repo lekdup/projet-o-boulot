@@ -1,6 +1,7 @@
 // Ne pas oublier d'importer les actions comme ceci:
 
 import { SET_USER_ENTREPRISE } from "../actions/entreprise";
+import { SET_TOKEN_ENTREPRISE } from "../actions/entreprise";
 
 
 // import { EXEMPLE_ACTION } from '../actions/entreprise';
@@ -19,6 +20,12 @@ export const initialState = {
         return {
           ...state,
           connectedUserEntreprise: action.payload.connectedUserEntreprise,
+        };
+
+        case SET_TOKEN_ENTREPRISE:
+        return {
+          ...state,
+          tokenEntreprise: action.payload.tokenEntreprise
         };
 
 
