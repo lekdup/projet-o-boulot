@@ -15,9 +15,11 @@ function ConnectionCandidate() {
     const [token, setToken] = useState("");
     const [errMsg, setErrMsg] = useState("");
 
-    // const user = useSelector(state => state.candidat.user);
+    const user = useSelector(state => state.candidate.user);
+    console.log(user);
     const dispatch = useDispatch();
 
+   
     useEffect(() => {
         userRef.current.focus();
     }, [])
@@ -36,7 +38,7 @@ function ConnectionCandidate() {
             console.log(res.data.token);
             setToken(res.data.token);
             localStorage.setItem('token', token);
-            // window.history.back();
+            window.history.back();
             console.log(token)
         })
         .catch((err) => {
@@ -55,25 +57,17 @@ function ConnectionCandidate() {
     }
 
     useEffect (() => {
-        // On vérifie si nous avons reçu un token lors de la tentative de connexion 
-        // Si oui, cela veut dire que le couple email/password existe dans l'API
-        if (token) {
+
+
             // requete GET pour récupérer tous les candidats
             api.get('/candidats/me')
             .then ((res) => {
+                dispatch(setUser(res.data))
                 console.log(res.data)
-                console.log(email)
-                // On filtre les résultats pour ne garder que les données associées à l'email entré par l'utilisateur
-                const connectedCandidate = res.data.find((candidate) => candidate.email === email);
-                // On set avec le résultat filtré
-                dispatch(setUser(connectedCandidate))
-                console.log(connectedCandidate)
             })
             .catch(()=> 
             console.log('Pas de récupération de dataUser erreur API'))
-        } else {console.log("Il n'y a pas de token")}
-
-    }, [token]);
+        }, [token]);
 
     return(
         <section className="ConnectionCandidate" >

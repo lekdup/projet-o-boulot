@@ -6,13 +6,19 @@ import { SET_USER } from "../actions/candidate";
 
 import { SET_TOKEN_CANDIDATE } from "../actions/candidate";
 import { UPTADE_FIRSTNAME } from "../actions/candidate";
+import { UPTADE_LASTNAME } from "../actions/candidate";
+import { UPTADE_NUMBER} from "../actions/candidate";
+import { UPTADE_EMAIL } from "../actions/candidate";
+
 
 // => EXEMPLE "tokenCandidate" est accessible avec state.candidat.tokenCandidate, pas state.tokenCandidate /!\
 export const initialState = {
-    user: '',
+    user: [],
     tokenCandidate: '',
     firstname: '',
     lastname: '',
+    email: '',
+    number: '',
   };
 
 
@@ -47,7 +53,19 @@ export const initialState = {
           return {
             ...state,
             lastname: action.payload.lastname,
-          }
+          };
+
+          case UPTADE_EMAIL:
+          return {
+            ...state,
+            email: action.payload.email,
+          };
+
+          case UPTADE_NUMBER:
+          return {
+            ...state,
+            number: action.payload.number,
+          };
 
       default:
         return state;
