@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import api from '../../../api/api';
 import './CandidateModificationPage.scss';
-import { uptadeFirstname, uptadeLastname, uptadeEmail, uptadeNumber } from '../../../actions/candidate';
-import { useState } from 'react';
+import { setUser } from '../../../actions/candidate';
+import { useEffect, useState } from 'react';
 
 function CandidateModificationPage() {
     // VERIFIER COMMENT PASSER EN REDUX POUR LES INPUTS CONTROLLE
@@ -27,6 +27,8 @@ function CandidateModificationPage() {
                 email: email,
                 phone: phone
             });
+
+            dispatch(setUser(res.data))
 
             console.log(res.data)
         } catch (err) {

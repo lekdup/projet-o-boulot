@@ -46,7 +46,7 @@ function CandidateDataPage() {
 				<div className="CandidateDataPage-p" >Veuillez verifier l'exactitude de vos données personnelles, ces dernière sont très importantes. Ces dernière serviront à établir et à éditer votre contrat de travail.</div>
 
 				<div className="CandidateDataPage-input-buttons">
-					<Link to="/candidat/mes-donnees/modification"><a className="CandidateDataPage-input-button" href="/" >Modifier</a></Link>
+					<Link to="/entreprise/mes-donnees/modification"><a className="CandidateDataPage-input-button" href="/" >Modifier</a></Link>
                     <a className="CandidateDataPage-input-button" href="/" >Supprimer</a>
 				</div>
 
