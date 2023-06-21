@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 function CandidateModificationPage() {
     // VERIFIER COMMENT PASSER EN REDUX POUR LES INPUTS CONTROLLE
-    
+
     const user = useSelector(state => state.candidate.user);
     console.log(user);
 
@@ -17,12 +17,22 @@ function CandidateModificationPage() {
 
     const dispatch = useDispatch();
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         //Mettre en redirection si possible vers la page candidat
         event.preventDefault();
-        // A finir 
-        api.put(`/candidat/${user.id}`)
+        try {
+            const res = await api.put(`/candidats/20` , {
+                firstname: firstname,
+                lastname: lastname,
+                email: email,
+                phone: phone
+            });
+
+            console.log(res.data)
+        } catch (err) {
+        console.log('jai une erreur')
     }
+}
 
     return(
         <div className="CandidateModificationPage" >
@@ -55,8 +65,10 @@ function CandidateModificationPage() {
                 type="text" 
                 id="firstname" 
                 name="firstname" 
-                //value = {user.email}
-                onChange = {handleEmail}
+                value={email}
+                onChange = {(event) => {
+                    setEmail(event.target.value)
+                }}
                 placeholder="Email">
                 </input>
 
@@ -64,8 +76,10 @@ function CandidateModificationPage() {
                 type="text" 
                 id="firstname" 
                 name="firstname" 
-                //value = {user.phone}
-                onChange = {handleNumber}
+                value={phone}
+                onChange = {(event) => {
+                    setPhone(event.target.value)
+                }}
                 placeholder="Number Phone">
                 </input>
 
