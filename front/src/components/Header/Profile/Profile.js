@@ -1,9 +1,27 @@
 import { Link } from 'react-router-dom';
 import './Profile.scss';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 function Profile({ logoColors }) {
-    const [toggle, setToggle] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+    const buttonRef = useRef();
+
+    useEffect(() => {
+        const handleOutsideClick = (e) => {
+            if (buttonRef.current && !buttonRef.current.contains(e.target)) {
+                setIsOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleOutsideClick);
+        return () => {
+            document.addEventListener('mousedown', handleOutsideClick);
+        };
+    }, []);
+
+    const handleButtonClick = () => {
+        setIsOpen((prevIsOpen) => !prevIsOpen);
+    };
 
     return(
         <section className='profile'>
@@ -11,11 +29,10 @@ function Profile({ logoColors }) {
                 className="profile-image"
                 src={logoColors}
                 alt="profile icon"
-                onClick={() => {
-                    setToggle(!toggle);
-                }}
+                ref={buttonRef}
+                onClick={handleButtonClick}
             />        
-            <div className={`profile-select ${toggle ? "show" : ""}`} >
+            <div className={`profile-select ${isOpen ? "show" : ""}`} >
                 <Link to="/candidat"><button className="profile-select-btn">Candidat</button></Link>
                 <Link to="/entreprise"><button className="profile-select-btn">Entreprise</button></Link>
             </div>
