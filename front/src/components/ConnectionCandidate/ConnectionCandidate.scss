@@ -17,11 +17,28 @@
         &-title {
             grid-column: span 2;
         }
+        &-errmsg {
+            grid-column: span 2;
+        }
+        &-offscreen {
+            display: none;
+        }
     }
+    &-errmsg {
+        background-color: lightpink;
+        color: firebrick;
+        font-weight: bold;
+        padding: .5rem;
+        // margin: 1rem auto;
+    }
+
     &-title {
         font-size: 1.5rem;
         font-weight: 700;
-
+        margin-bottom: 1rem;
+        @media(min-width: 799px) {
+            margin-bottom: 0;
+        }
     }
     &-image {
         max-width: 10rem;

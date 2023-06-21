@@ -2,8 +2,14 @@
 import './CandidateDataPage.scss';
 import logoCandidateDataPage from '../../../assets/logoCandidateDataPage.svg'
 
+import {useSelector} from 'react-redux';
+import { useEffect } from 'react';
+
+
 
 function CandidateDataPage() {
+
+	const user = useSelector(state => state.candidat.user);
 
     return(
         <div className="CandidateDataPage">
@@ -17,22 +23,22 @@ function CandidateDataPage() {
 		    <div>
 			
 				<div className="CandidateDataPage-input" >
-				    <label className="CandidateDataPage-input-label" htmlFor="name">Nom du candidat ici </label>
+				    <label className="CandidateDataPage-input-label" htmlFor="name">{user.lastname} </label>
 					
 				</div>
 
 				<div className="CandidateDataPage-input" >
-					<label className="CandidateDataPage-input-label" htmlFor="prenom">Prénom du candidat ici </label>
+					<label className="CandidateDataPage-input-label" htmlFor="prenom">{user.firstname} </label>
 					
 				</div>
 
                 <div className="CandidateDataPage-input" >
-					<label className="CandidateDataPage-input-label" htmlFor="prenom">Age du candidat ici </label>
+					<label className="CandidateDataPage-input-label" htmlFor="prenom">{user.phone} </label>
 					
 				</div>
 
 				<div className="CandidateDataPage-input" >
-					<label className="CandidateDataPage-input-label" htmlFor="email">E-mail du candidat ici </label>
+					<label className="CandidateDataPage-input-label" htmlFor="email">{user.email} </label>
 					
 				</div>
 

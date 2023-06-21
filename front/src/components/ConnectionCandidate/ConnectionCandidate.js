@@ -1,33 +1,78 @@
 import './ConnectionCandidate.scss';
-import axios from 'axios';
-
+import api from '../../api/api';
 import loginCandidate from '../../assets/login-candidate.svg';
-import { useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
+import {useSelector, useDispatch} from 'react-redux';
+import {setUser} from '../../actions/candidate';
 import { Link } from 'react-router-dom';
 
 function ConnectionCandidate() {
+    const userRef = useRef();
+    const errRef = useRef();
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [token, setToken] = useState("");
+    const [errMsg, setErrMsg] = useState("");
 
-    const handleSubmit = (e) => {
+    const user = useSelector(state => state.candidate.user);
+    console.log(user);
+    const dispatch = useDispatch();
+
+   
+    useEffect(() => {
+        userRef.current.focus();
+    }, [])
+
+    useEffect(() => {
+        setErrMsg("");
+    }, [email, password])
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        axios.post('http://isisyoussef-server.eddi.cloud/projet-o-boulot-back/public/api/login_check', {
+        api.post('/login_check', {
             email: email,
             password: password,
         })
         .then((res) => {
             console.log(res.data.token);
-            localStorage.setItem('token', res.data.token);
+            setToken(res.data.token);
+            localStorage.setItem('token', token);
             window.history.back();
+            console.log(token)
         })
-        .catch(() => {
+        .catch((err) => {
             console.log("Mauvais email/password");
+            if (!err?.response) {
+                setErrMsg('No Server Response');
+            } else if(err.response?.status === 400) {
+                setErrMsg('Missing Username or Password')
+            } else if(err.response?.status === 401) {
+                setErrMsg('Unauthorized');
+            } else {
+                setErrMsg('Login Failed');
+            }
+            errRef.current.focus();
         })
     }
+
+    useEffect (() => {
+
+
+            // requete GET pour récupérer tous les candidats
+            api.get('/candidats/me')
+            .then ((res) => {
+                dispatch(setUser(res.data))
+                console.log(res.data)
+            })
+            .catch(()=> 
+            console.log('Pas de récupération de dataUser erreur API'))
+        }, [token]);
 
     return(
         <section className="ConnectionCandidate" >
             <h1 className="ConnectionCandidate-title">Connectez-vous</h1>
+            <p ref={errRef} className={`ConnectionCandidate-${errMsg ? "errmsg" : "offscreen"}`} aria-live="assertive">{errMsg}</p>
             <div className="ConnectionCandidate-image" >
                 <img
                     src={loginCandidate}
@@ -47,11 +92,13 @@ function ConnectionCandidate() {
                         type="email"
                         inputMode="email"
                         name="email"
+                        ref={userRef}
                         placeholder="e.g. jean@dupant.fr"
                         value={email}
                         onChange={(e) => {
                             setEmail(e.target.value)
                         }}
+                        required
                     />
                 </div>
                 <label htmlFor="password">Mot de passe</label>
@@ -66,6 +113,7 @@ function ConnectionCandidate() {
                         onChange={(e) => {
                             setPassword(e.target.value)
                         }}
+                        required
                     />
                 </div>
                 <p><a href="#"> Mot de passe oublié ?</a></p>
