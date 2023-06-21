@@ -29,9 +29,6 @@ function CandidateModificationPage() {
     const handleSubmit = (event) => {
         //Mettre en redirection si possible vers la page candidat
         event.preventDefault();
-
-        
-
         // A finir 
         api.put('/candidat/:id')
     }

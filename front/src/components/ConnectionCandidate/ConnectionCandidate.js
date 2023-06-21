@@ -38,7 +38,7 @@ function ConnectionCandidate() {
             console.log(res.data.token);
             setToken(res.data.token);
             localStorage.setItem('token', token);
-            window.history.back();
+            //window.history.back(); //ne pas utiliser cela car raffraichissement de la page 
             console.log(token)
         })
         .catch((err) => {

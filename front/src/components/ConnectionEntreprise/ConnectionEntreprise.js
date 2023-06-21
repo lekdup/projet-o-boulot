@@ -53,10 +53,7 @@ function ConnectionEntreprise() {
     }
 
     useEffect (() => {
-        // On vérifie si nous avons reçu un token lors de la tentative de connexion 
-        // Si oui, cela veut dire que le couple email/password existe dans l'API
-        if (token) {
-            // requete GET pour récupérer tous les candidats
+    
             api.get('/entreprise/me')
             .then ((res) => {
                 console.log(res.data)
@@ -66,8 +63,6 @@ function ConnectionEntreprise() {
             })
             .catch(()=> 
             console.log('Pas de récupération de dataUser erreur API'))
-        } else {console.log("Il n'y a pas de token")}
-
     }, [token]);
 
     return(
