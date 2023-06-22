@@ -19,6 +19,7 @@ import CandidatArea from './CandidateArea/CandidateArea';
 import CandidateDataPage from './CandidateArea/CandidateDataPage/CandidateDataPage';
 import CandidateAlertPage from './CandidateArea/CandidateAlertPage/CandidateAlertPage';
 import CandidateModificationPage from './CandidateArea/CandidateModificationPage/CandidateModificationPage';
+import Missions from './CandidateArea/Missions/Missions';
 
 import ConnectionEntreprise from './ConnectionEntreprise/ConnectionEntreprise';
 import EntrepriseArea from './EntrepriseArea/EntrepriseArea';
@@ -67,6 +68,8 @@ function App() {
               <Route path="/candidat/mes-donnees" element={<CandidateDataPage />} />
               <Route path="/candidat/mes-donnees/done" element={<CandidateAlertPage />} />
               <Route path="/candidat/mes-donnees/modification" element={<CandidateModificationPage />} />
+              <Route path="/candidat/mes-donnees/missions" element={<Missions />} />
+
             </Route> 
       
             {/* private routes, for only logged in entreprise */}

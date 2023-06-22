@@ -1,5 +1,5 @@
 import './Missions.scss';
-import MissionsList from '../Missions/MissionsList/MissionsList'
+import MissionsList from './MissionsList/MissionsList'
 
 import {useState} from 'react';
 
@@ -15,6 +15,9 @@ function Missions(){
         setMenuValue(navValue);
         console.log(navValue);
     };
+
+    
+
 return (
     <div className='Missions'>
         <nav >

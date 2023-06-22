@@ -36,7 +36,8 @@ function CardsList({ offers }){
         }
       };
       // on stocke le tableau dans le localstorage
-      localStorage.setItem('favorite', clickedOfferIds); 
+      // pour pouvoir le transformer ensuite en tableau dans localStorage il faut mettre avant stringify sinon ça ne fonctionne pas
+      localStorage.setItem('favorite', JSON.stringify(clickedOfferIds)); 
 
     console.log(clickedOfferIds)
     return(
