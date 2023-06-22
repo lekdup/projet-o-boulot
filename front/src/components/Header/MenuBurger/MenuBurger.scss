@@ -62,6 +62,9 @@
             }
         }
         &--extend {
+            & span {
+                vertical-align: middle;
+            }
             &:hover .MenuBurger__nav--extend-nestedMenu{
                 transform: scale(1,1);
             }

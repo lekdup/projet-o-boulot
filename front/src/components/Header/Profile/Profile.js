@@ -32,10 +32,10 @@ function Profile({ logoColors }) {
                 ref={buttonRef}
                 onClick={handleButtonClick}
             />        
-            <div className={`profile-select ${isOpen ? "show" : ""}`} >
-                <Link to="/candidat"><button className="profile-select-btn">Candidat</button></Link>
-                <Link to="/entreprise"><button className="profile-select-btn">Entreprise</button></Link>
-            </div>
+            <ul className={`profile-select ${isOpen ? "show" : ""}`} >
+                <Link to="/candidat"><li className="profile-select-btn">Candidat</li></Link>
+                <Link to="/entreprise"><li className="profile-select-btn">Entreprise</li></Link>
+            </ul>
         </section>
     )
 }
