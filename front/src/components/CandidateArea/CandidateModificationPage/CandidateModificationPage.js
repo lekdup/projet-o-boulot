@@ -21,7 +21,7 @@ function CandidateModificationPage() {
         //Mettre en redirection si possible vers la page candidat
         event.preventDefault();
         try {
-            const res = await api.put(`/candidats/20` , {
+            const res = await api.put(`/candidats/${user.id}` , {
                 firstname: firstname,
                 lastname: lastname,
                 email: email,
@@ -38,7 +38,7 @@ function CandidateModificationPage() {
 
     return(
         <div className="CandidateModificationPage" >
-            <h1 className="CandidateModificationPage-title" >Modififer mes informations candidat</h1>
+            <h1 className="CandidateModificationPage-title" >Modifier mes informations candidat</h1>
 
             <form className="CandidateModificationPage-inputs" onSubmit={handleSubmit}>
                 <input className="CandidateModificationPage-input" 
