@@ -9,11 +9,8 @@ import { useEffect } from 'react';
 
 
 function CandidatArea () {
-
-    
     const tokenCandidate = useSelector(state => state.candidate.tokenCandidate);
     const user = useSelector(state => state.candidate.user);
-    console.log(user);
 
     const dispatch = useDispatch();
 

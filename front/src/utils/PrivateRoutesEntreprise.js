@@ -1,11 +1,14 @@
-import { Outlet, Navigate  } from "react-router-dom";
+import { Outlet, Navigate, useLocation } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 const PrivateRoutesEntreprise = () => {
-    let auth = {'token':false}
+    const { auth } = useAuth();
+    const location = useLocation();
     
     return(
-        //verifier à quoi correspond le <Outlet/> /!/
-        auth.token ? <Outlet/> : <Navigate to="/entreprise/login"/>
+        auth?.token 
+            ? <Outlet />
+            : <Navigate to="/entreprise/login" state={{ from:location }} replace />
     )
 }
 

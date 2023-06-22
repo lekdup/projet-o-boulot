@@ -76,7 +76,7 @@ function App() {
               <Route path="/entreprise/mes-donnees/done" element={<EntrepriseAlertPage />} />
               <Route path="/entreprise/ajout-publication/done" element={<EntrepriseAddAlertPage />} />
               <Route path="/entreprise/mes-donnees/modification" element={<EntrepriseModificationPage />} />
-              <Route path="/entreprise/offre-emploi" element={<EntrepriseAddOffer />} />
+              <Route path="/entreprise/ajout-publication" element={<EntrepriseAddOffer />} />
             </Route>
 
             {/* public routes, for everybody */}

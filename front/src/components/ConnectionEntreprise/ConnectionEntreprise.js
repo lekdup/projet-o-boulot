@@ -2,12 +2,16 @@ import './ConnectionEntreprise.scss';
 import loginEntreprise from "../../assets/loginEntreprise.svg";
 import { useDispatch, useSelector} from 'react-redux';
 import { useEffect, useRef, useState } from 'react';
+import useAuth from '../../hooks/useAuth';
 import { setTokenEntreprise, setUserEntreprise } from '../../actions/entreprise';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import api from '../../api/api';
 
 function ConnectionEntreprise() {
-
+    const { auth, setAuth } = useAuth();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
 
     const userRef = useRef();
     const errRef = useRef();
@@ -15,9 +19,8 @@ function ConnectionEntreprise() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errMsg, setErrMsg] = useState("");
-    const [token, setToken] = useState("");
 
-    const tokenEntreprise = useSelector(state => state.candidate.tokenEntreprise);
+    const tokenEntreprise = useSelector(state => state.entreprise.tokenEntreprise);
 
     const dispatch = useDispatch();
 
@@ -38,17 +41,20 @@ function ConnectionEntreprise() {
                 email: email,
                 password: password
             });
-            console.log(res.data.token);
-            dispatch(setTokenEntreprise(res.data.token));
-            localStorage.setItem('token', res.data.token);
-            
+            console.log(res?.data);
+            dispatch(setTokenEntreprise(res?.data?.token));
+            const token = res?.data?.token;
+            localStorage.setItem('token', token);
+            setAuth({ email, token })
+            setEmail('');
+            setPassword('');
+            navigate(from, { replace: true });
         } catch (err) {
-            console.log("Mauvais email/password");
-            if (!err?.response) {
+            if (!err?.res) {
                 setErrMsg('No Server Response');
-            } else if(err.response?.status === 400) {
+            } else if(err.res?.status === 400) {
                 setErrMsg('Missing Username or Password')
-            } else if(err.response?.status === 401) {
+            } else if(err.res?.status === 401) {
                 setErrMsg('Unauthorized');
             } else {
                 setErrMsg('Login Failed');
@@ -56,21 +62,42 @@ function ConnectionEntreprise() {
             errRef.current.focus();
         }
     }
-
-    useEffect (() => {
-    
-        if (tokenEntreprise) {
+    console.log(tokenEntreprise);
+    useEffect(() => {
+        if (auth) {
             api.get('/entreprises/me')
-            .then ((res) => {
-                console.log(res.data)
-                console.log(email)
-                
-                dispatch(setUserEntreprise(res.data))
-            })
-            .catch(()=> 
-            console.log('Pas de récupération de dataUser erreur API'))
+            .then((res) => {
+                    const roles = res?.data?.roles;
+                    setAuth({ roles })
+                    console.log(res?.data);
+                    dispatch(setUserEntreprise(res.data))
+                })
+                .catch ((err) => {
+                    console.error("Cannot fetch data");
+                })
         }
-    }, [tokenEntreprise]);
+    }, [])
+    //         console.log(res.data.token);
+    //         localStorage.setItem('token', res.data.token);
+            
+    //     } catch (err) {
+    //         console.log("Mauvais email/password");
+    //     }
+    // }
+
+    // useEffect (() => {
+    
+    //     if (tokenEntreprise) {
+    //         api.get('/entreprises/me')
+    //         .then ((res) => {
+    //             console.log(res.data)
+    //             console.log(email)
+                
+    //         })
+    //         .catch(()=> 
+    //         console.log('Pas de récupération de dataUser erreur API'))
+    //     }
+    // }, [tokenEntreprise]);
 
     return(
         <section className="ConnectionEntreprise" >

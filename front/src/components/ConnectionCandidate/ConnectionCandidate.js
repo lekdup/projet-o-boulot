@@ -5,17 +5,18 @@ import { useEffect, useState, useRef } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {setUser, setTokenCandidate} from '../../actions/candidate';
 
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 function ConnectionCandidate() {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/"
 
     const userRef = useRef();
     const errRef = useRef();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
-    const [token, setToken] = useState("");
     const [errMsg, setErrMsg] = useState("");
 
     
@@ -23,8 +24,6 @@ function ConnectionCandidate() {
 
     const dispatch = useDispatch();
 
-    //console.log(tokenCandidate);
-   
     useEffect(() => {
         userRef.current.focus();
     }, [])
@@ -40,15 +39,14 @@ function ConnectionCandidate() {
             password: password,
         })
         .then((res) => {
-            console.log(res.data.token);
+            // console.log(res.data.token);
             dispatch(setTokenCandidate(res.data.token));
             localStorage.setItem('token', res.data.token);
-            
-            //window.history.back(); //ne pas utiliser cela car raffraichissement de la page 
+            navigate(from, { replace: true });
             
         })
         .catch((err) => {
-            console.log("Mauvais email/password");
+            // console.log("Mauvais email/password");
             if (!err?.response) {
                 setErrMsg('No Server Response');
             } else if(err.response?.status === 400) {
@@ -61,6 +59,7 @@ function ConnectionCandidate() {
             errRef.current.focus();
         })
     }
+    console.log(tokenCandidate);
 
     useEffect(() => {
         // requete GET pour récupérer les données du candidat
@@ -68,7 +67,7 @@ function ConnectionCandidate() {
             api.get('/candidats/me')
                 .then((res) => {
                     dispatch(setUser(res.data));
-                    console.log(res.data);
+                    // console.log(res.data);
                 })
                 .catch(() =>
                     console.log('Pas de récupération de dataUser erreur API')
