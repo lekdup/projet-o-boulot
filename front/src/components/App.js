@@ -8,6 +8,8 @@ import Help from './Help/Help';
 import AboutUs from './AboutUs/AboutUs';
 import Legacy from './Legacy/Legacy';
 import Joblist from './Joblist/Joblist';
+import Jobcard from './Jobcard/Jobcard';
+
 import Contact from './Contact/Contact';
 
 import PrivateRoutesCandidat from '../utils/PrivateRoutesCandidat';
@@ -94,6 +96,8 @@ function App() {
             <Route path="/qui-sommes-nous" element={<AboutUs />} />
             <Route path="/mentions-legales" element={<Legacy />} /> 
             <Route path="/candidat/joblist" element={<Joblist/>} />
+            <Route path="/candidat/jobcard/:id" element={<Jobcard/>} />
+
             <Route path="/candidat/login" element={<ConnectionCandidate /> } />
             <Route path="/candidat/inscription" element={<CandidateSubscription />} />
             <Route path="/entreprise/login" element={<ConnectionEntreprise />} />

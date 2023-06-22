@@ -36,7 +36,6 @@ function MissionsList({menuValue}){
       }
     }, [FavoriteList, filteredOffers]);
   
-    // Utiliser filteredOffers en dehors de la requête
     console.log(filteredOffers);
 
     return(

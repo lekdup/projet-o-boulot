@@ -1,6 +1,8 @@
 import './CardsList.scss';
 import {useState} from 'react';
 
+import { Link } from 'react-router-dom';
+
 function CardsList({ offers }){
     /*const [isClicked, setIsClicked] = useState(() => Array.from({ length: offers.length }, () => false));
 
@@ -77,9 +79,9 @@ function CardsList({ offers }){
               </svg>
             )}
           </div>
-          <a href='#' className='card-title'>
+          <Link to={`/candidat/jobcard/${offer.id}`} className='card-title'>
             {offer.entitled}
-          </a>
+          </Link>
           <div className='card-tags'>
             <p>{offer.place}</p>
           </div>
