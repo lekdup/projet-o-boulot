@@ -5,6 +5,7 @@ import api from '../../api/api';
 import { useEffect, useState } from 'react';
 
 function Joblist(){
+<<<<<<< HEAD
 
     const [offers, setOffers] = useState([]);
 
@@ -20,6 +21,9 @@ function Joblist(){
   }, []);
 
 
+=======
+    
+>>>>>>> Missions
     return(
       
         <div className='Joblist'>

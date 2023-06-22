@@ -3,11 +3,15 @@ import {useState} from 'react';
 
 
 function Card(){
+<<<<<<< HEAD
     const [isClicked, setIsClicked] = useState(false);
     const handleClick = () => {
         setIsClicked(!isClicked)
     }
 
+=======
+   
+>>>>>>> Missions
     return(
         <div className='card'>
             <div className ='card-bookmark'>
