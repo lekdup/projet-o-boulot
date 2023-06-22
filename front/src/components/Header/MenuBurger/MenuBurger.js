@@ -1,57 +1,57 @@
 import { Link } from 'react-router-dom';
 import './MenuBurger.scss';
-import { useState } from 'react';
+// import './NavBar.scss';
+import { useEffect, useRef, useState } from 'react';
 
 function MenuBurger() {
-    const [toggle, setToggle] = useState(false);
-    const [menuExtend, setMenuExtend] = useState("");
+    const [isOpen, setIsOpen] = useState(false);
+    const buttonRef = useRef();
 
-    const handleClick = (e) => {
-        const menuValue = e.target.getAttribute('data-value');
-        if (menuExtend === menuValue) {
-            setMenuExtend('');
-        } else {
-            setMenuExtend(menuValue)
-        }
+    useEffect(() => {
+        const handleOutsideClick = (e) => {
+            if (buttonRef.current && !buttonRef.current.contains(e.target)) {
+                setIsOpen(false);
+            }
+        };
+        document.addEventListener('mousedown', handleOutsideClick);
+        return () => {
+            document.addEventListener('mousedown', handleOutsideClick);
+        };
+    }, []);
+
+    const handleButtonClick = () => {
+        setIsOpen((prevIsOpen) => !prevIsOpen);
     };
 
     return( 
-        <nav className={`MenuBurger ${toggle ? "show" : ""}`} >
+        <nav className={`MenuBurger ${isOpen ? "show" : ""}`} >
             <ul className="MenuBurger__nav">
-                <li onClick={handleClick} data-value="O'Boulot">O'Boulot <span className="MenuBurger__nav--arrow">&gt;</span>
-                    {menuExtend === "O'Boulot" && (
-                        <ul className="MenuBurger__nav--extend">
-                            <Link to="#qui-sommes-nous"><li>Qui sommes-nous</li></Link>
-                            <Link to="/"><li>Prestations</li></Link>
-                            <Link to="/contact"><li>Contact</li></Link>
-                        </ul>
-                    )}
-                </li>
-                <li onClick={handleClick} data-value="Candidat">Candidat <span className="MenuBurger__nav--arrow">&gt;</span>
-                {menuExtend === "Candidat" && (
-                    <ul className="MenuBurger__nav--extend">
+                <Link to="/"><li className="MenuBurger__nav--extend">O'Boulot <span className="MenuBurger__nav--arrow">&gt;</span>
+                    <ul className="MenuBurger__nav--extend-nestedMenu">
+                        <Link to="#qui-sommes-nous"><li>Qui sommes-nous</li></Link>
+                        <Link to="/*"><li>Prestations</li></Link>
+                        <Link to="/contact"><li>Contact</li></Link>
+                    </ul>
+                </li></Link>
+                <Link to="/candidat/mes-donnees"><li className="MenuBurger__nav--extend">Candidat <span className="MenuBurger__nav--arrow">&gt;</span>
+                    <ul className="MenuBurger__nav--extend-nestedMenu">
                         <Link to="/candidat/joblist"><li>Trouver un boulot</li></Link>
                         <Link to="/candidat/login"><li>Se connecter</li></Link>
                     </ul>
-                )}
-                </li>
-                <li onClick={handleClick} data-value="Entreprise">Entreprise <span className="MenuBurger__nav--arrow">&gt;</span>
-                {menuExtend === "Entreprise" && (
-                    <ul className="MenuBurger__nav--extend">
-                        <Link to="/"><li>Publier un Boulot</li></Link>
+                </li></Link>
+                <Link to="/entreprise/mes-donnees"><li className="MenuBurger__nav--extend">Entreprise <span className="MenuBurger__nav--arrow">&gt;</span>
+                    <ul className="MenuBurger__nav--extend-nestedMenu">
+                        <Link to="/*"><li>Publier un Boulot</li></Link>
                         <Link to="/entreprise/login"><li>Se connecter</li></Link>
                     </ul>
-                )}
-                </li>
+                </li></Link>
                 <Link to="/actualites"><li>Actualités</li></Link>
                 <Link to="/aide"><li>Aide</li></Link>
                 <Link to="/contact"><li>Contact</li></Link>
             </ul>
             <button
                 className="MenuBurger__logo"
-                onClick={() => {
-                    setToggle(!toggle);
-                }}
+                onClick={handleButtonClick}
             >
                 <span className="MenuBurger__logo--bar"></span>
             </button>

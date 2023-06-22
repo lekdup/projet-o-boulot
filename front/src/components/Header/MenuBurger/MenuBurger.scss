@@ -7,9 +7,9 @@
             min-height: 100vh;
             background-color: white;
         }
-        &.show .MenuBurger__nav > li {
+        &.show .MenuBurger__nav > a li {
             opacity: 1;
-            transition: opacity 250ms ease-in-out 250ms;
+            transition: opacity 250ms ease-in-out 100ms;
             &:hover {
                 padding-bottom: 1.4rem;
                 background-color: #eee;
@@ -33,6 +33,7 @@
             margin-right: 0;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
             position: absolute;
             min-height: 100vh;
             background-color: white;
@@ -46,32 +47,44 @@
         &--arrow {
             color: #ccc;
         }
-        & > li {
+        & a li {
             transition: .3s;
+            &:hover {
+                box-shadow:  0 3px 5px rgba(57, 63, 72, 0.3);
+            }
             @media (max-width: 799px) {
                 font-size: 7vw;
                 border-bottom: 1px solid #eee;
+                width: 100vw;
+                height: 4rem;
                 opacity: 0;
-                transition: opacity 150ms ease-in-out;
+                transition:  opacity 150ms ease-in-out;
             }
         }
         &--extend {
-            position: absolute;
-            top: 3rem;
-            background-color: white;
-            margin-left: -1rem;
-            transform: scale(1,1);
-            transform-origin: top;
-            transition: transform 400ms ease-in-out;
-            box-shadow:  0 3px 5px rgba(57, 63, 72, 0.3);
-            @media (max-width: 799px) {
-                position: inherit;
-                background-color: #eee;
+            &:hover .MenuBurger__nav--extend-nestedMenu{
+                transform: scale(1,1);
             }
-            & > li {
-                padding: .5rem 0;
-                border-bottom: 1px #fff solid;
-                transition: .3s;
+            &-nestedMenu {
+                box-shadow:  0 3px 5px rgba(57, 63, 72, 0.3);
+                position: absolute;
+                top: 3rem;
+                margin-left: -1rem;
+                background-color: #eee;
+                transform: scale(1,0);
+                transform-origin: top;
+                transition: transform 400ms ease-in-out;
+                @media (max-width: 799px) {
+                    position: static;
+                    width: 100vw;
+                    margin-top: 1rem;
+                }
+                & a li{
+                    &:hover {
+                        background-color: #fff;
+                        transition: .3s;
+                    }
+                }
             }
         }
     }
