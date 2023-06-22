@@ -44,6 +44,7 @@ function ConnectionCandidate() {
             dispatch(setTokenCandidate(res.data.token));
             localStorage.setItem('token', res.data.token);
             
+            
             //window.history.back(); //ne pas utiliser cela car raffraichissement de la page 
             
         })
