@@ -1,0 +1,87 @@
+@use 'src/styles/vars';
+
+.confirmationApply{
+    background-color: vars.$grey;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 1rem;
+    margin-bottom: 1rem;
+    overflow-y: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    
+    &-title{
+        margin-top: 1rem;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+    &-content{
+        font-size: 0.9rem;
+        margin-top: 1rem;
+    }
+    &-link{
+        text-decoration : underline;
+        
+    }
+    &-btn{
+        width: 12rem;
+        margin-top: .5rem;
+
+        padding: .5rem;
+        font-size: 1rem;
+        border-radius: .4rem;
+        color: white;
+        background-color: vars.$orange;
+    }
+    &-btn:hover{
+        transform: translateY(-3px);
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+    }
+    &-btn.cancel{
+        background-color: vars.$darkGrey;
+
+    }
+    &-userData{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+
+        & li{
+            margin-top: .4rem;
+            & span{
+                font-weight: 700;
+            }
+   
+        }
+    }
+}
+
+
+.confirmationModal{
+    background-color: vars.$grey;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 1rem;
+    margin-bottom: 1rem;
+    overflow-y: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &-button{
+        width: 12rem;
+        margin-top: .5rem;
+
+        padding: .5rem;
+        font-size: 1rem;
+        border-radius: .4rem;
+        color: white;
+        background-color: vars.$orange;
+    }
+    &-btn:hover{
+        transform: translateY(-3px);
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+    }
+}
