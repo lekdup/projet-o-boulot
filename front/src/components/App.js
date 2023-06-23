@@ -47,8 +47,6 @@ import { ClimbingBoxLoader } from 'react-spinners';
 function App() {
   const { auth, setAuth } = useAuth();
   const location = useLocation();
-  // const navigate = useNavigate();
-  // const from = location.state.from.pathname || "/";
   
   const [isLoading, setIsLoading] = useState(true);
 
@@ -98,7 +96,6 @@ function App() {
 
   
   if(isLoading) {
-    // TODO: Modifier pour avoir un vrai composant loading 
     return (
       <div className="loading-container">
         <ClimbingBoxLoader color="#FF772B"/>
@@ -112,7 +109,6 @@ function App() {
       {/* <EntrepriseHeader /> */}
         
         <div className="main-container">
-        
           <Routes>
 
         {/* private routes, for only logged in clients */}

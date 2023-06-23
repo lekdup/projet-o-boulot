@@ -29,7 +29,13 @@ function EntrepriseHeader() {
                         <img className="logo-image" src={logoOboulot} alt="Logo O'Boulot en couleur bleu" />
                     </Link>
                 </div>
-                <div className="Menu-profile">
+                <div className="Menus">
+                    <div className="Menus-profile">
+
+                    </div>
+                    <div className="Menus-navbar">
+                        
+                    </div>
                 </div>
             </div>
         </header>
