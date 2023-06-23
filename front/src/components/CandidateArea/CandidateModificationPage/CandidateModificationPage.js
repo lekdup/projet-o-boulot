@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import api from '../../../api/api';
 import './CandidateModificationPage.scss';
-import { uptadeFirstname, uptadeLastname, uptadeEmail, uptadeNumber } from '../../../actions/candidate';
-import { useState } from 'react';
+import { setUser } from '../../../actions/candidate';
+import { useEffect, useState } from 'react';
 
 function CandidateModificationPage() {
     // VERIFIER COMMENT PASSER EN REDUX POUR LES INPUTS CONTROLLE
@@ -21,12 +21,14 @@ function CandidateModificationPage() {
         //Mettre en redirection si possible vers la page candidat
         event.preventDefault();
         try {
-            const res = await api.put(`/candidats/20` , {
+            const res = await api.put(`/candidats/${user.id}` , {
                 firstname: firstname,
                 lastname: lastname,
                 email: email,
                 phone: phone
             });
+
+            dispatch(setUser(res.data))
 
             console.log(res.data)
         } catch (err) {
@@ -36,7 +38,7 @@ function CandidateModificationPage() {
 
     return(
         <div className="CandidateModificationPage" >
-            <h1 className="CandidateModificationPage-title" >Modififer mes informations candidat</h1>
+            <h1 className="CandidateModificationPage-title" >Modifier mes informations candidat</h1>
 
             <form className="CandidateModificationPage-inputs" onSubmit={handleSubmit}>
                 <input className="CandidateModificationPage-input" 
