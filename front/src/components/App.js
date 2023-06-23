@@ -1,4 +1,5 @@
-import { Routes, Route, useLocation} from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Routes, Route, useLocation, useNavigate} from 'react-router-dom';
 
 import './App.scss';
 
@@ -39,8 +40,51 @@ import Actus from './Actus/Actus';
 import Article from './Article/Article';
 import EntrepriseAddOffer from './EntrepriseArea/EntrepriseAddOffer/EntrepriseAddOffer';
 
+import useAuth from '../hooks/useAuth';
+import EntrepriseHeader from './EntrepriseArea/EntrepriseHeader/EntrepriseHeader';
+import { ClimbingBoxLoader } from 'react-spinners';
+
 function App() {
+  const { auth, setAuth } = useAuth();
   const location = useLocation();
+  // const navigate = useNavigate();
+  // const from = location.state.from.pathname || "/";
+  
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+
+    const publicRoutes = [
+      '/',
+      'aide',
+      'contact',
+      'qui-sommes-nous',
+      '/actualites',
+      '/article',
+      '/mentions-legales',
+      '/candidat/joblist',
+      '/candidat/login',
+      '/candidat/inscription',
+      '/entreprise/login',
+      '/entreprise/inscription'
+    ];
+
+    const isPublicRoute = publicRoutes.includes(location.pathname);
+
+    if (isPublicRoute) {
+      setIsLoading(false)
+    }
+    const token = localStorage.getItem("token");
+    const roles = localStorage.getItem("roles");
+
+    if(token && roles) {
+      setAuth({ roles, token })
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 2500)
+    }
+  }, []);
+  console.log(auth);
   
   const getDifferentLogoColor = () => {
     if (location.pathname.startsWith('/candidat')) {
@@ -52,11 +96,21 @@ function App() {
     }
   }
 
+  
+  if(isLoading) {
+    // TODO: Modifier pour avoir un vrai composant loading 
+    return (
+      <div className="loading-container">
+        <ClimbingBoxLoader color="#FF772B"/>
+      </div>
+    )
+  }
   return (
     
     <main className="App">
       <Header logoColors={getDifferentLogoColor()}/>
-
+      {/* <EntrepriseHeader /> */}
+        
         <div className="main-container">
         
           <Routes>
@@ -70,6 +124,7 @@ function App() {
             </Route> 
       
             {/* private routes, for only logged in entreprise */}
+            {!isLoading &&
             <Route element={<PrivateRoutesEntreprise />}>
               <Route path="/entreprise" element={<EntrepriseArea />} />
               <Route path="/entreprise/mes-donnees" element={<EntrepriseDataPage />} />
@@ -78,6 +133,7 @@ function App() {
               <Route path="/entreprise/mes-donnees/modification" element={<EntrepriseModificationPage />} />
               <Route path="/entreprise/ajout-publication" element={<EntrepriseAddOffer />} />
             </Route>
+            }
 
             {/* public routes, for everybody */}
             <Route path="/aide" element={<Help />} />

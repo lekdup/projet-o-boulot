@@ -59,7 +59,6 @@ function ConnectionCandidate() {
             errRef.current.focus();
         })
     }
-    console.log(tokenCandidate);
 
     useEffect(() => {
         // requete GET pour récupérer les données du candidat

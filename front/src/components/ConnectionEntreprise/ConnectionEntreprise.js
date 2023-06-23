@@ -3,7 +3,7 @@ import loginEntreprise from "../../assets/loginEntreprise.svg";
 import { useDispatch, useSelector} from 'react-redux';
 import { useEffect, useRef, useState } from 'react';
 import useAuth from '../../hooks/useAuth';
-import { setTokenEntreprise, setUserEntreprise } from '../../actions/entreprise';
+import { setUserEntreprise } from '../../actions/entreprise';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import api from '../../api/api';
 
@@ -20,8 +20,9 @@ function ConnectionEntreprise() {
     const [password, setPassword] = useState("");
     const [errMsg, setErrMsg] = useState("");
 
-    const tokenEntreprise = useSelector(state => state.entreprise.tokenEntreprise);
 
+    const tokenEntreprise = useSelector(state => state.entreprise.tokenEntreprise);
+    const userEntreprise = useSelector(state => state.entreprise.userEntreprise);
     const dispatch = useDispatch();
 
 
@@ -33,6 +34,8 @@ function ConnectionEntreprise() {
         setErrMsg("");
     }, [email, password])
 
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -42,13 +45,13 @@ function ConnectionEntreprise() {
                 password: password
             });
             console.log(res?.data);
-            dispatch(setTokenEntreprise(res?.data?.token));
-            const token = res?.data?.token;
+            const token = res.data.token;
             localStorage.setItem('token', token);
-            setAuth({ email, token })
             setEmail('');
             setPassword('');
+            fetchUserData();
             navigate(from, { replace: true });
+
         } catch (err) {
             if (!err?.res) {
                 setErrMsg('No Server Response');
@@ -62,42 +65,36 @@ function ConnectionEntreprise() {
             errRef.current.focus();
         }
     }
-    console.log(tokenEntreprise);
-    useEffect(() => {
-        if (auth) {
-            api.get('/entreprises/me')
-            .then((res) => {
-                    const roles = res?.data?.roles;
-                    setAuth({ roles })
-                    console.log(res?.data);
-                    dispatch(setUserEntreprise(res.data))
-                })
-                .catch ((err) => {
-                    console.error("Cannot fetch data");
-                })
-        }
-    }, [])
-    //         console.log(res.data.token);
-    //         localStorage.setItem('token', res.data.token);
-            
-    //     } catch (err) {
-    //         console.log("Mauvais email/password");
-    //     }
-    // }
 
-    // useEffect (() => {
-    
-    //     if (tokenEntreprise) {
-    //         api.get('/entreprises/me')
-    //         .then ((res) => {
-    //             console.log(res.data)
-    //             console.log(email)
-                
-    //         })
-    //         .catch(()=> 
-    //         console.log('Pas de récupération de dataUser erreur API'))
-    //     }
-    // }, [tokenEntreprise]);
+    const fetchUserData = () => {
+        api.get('/entreprises/me')
+        .then((res) => {
+            console.log(res?.data);
+
+            const token = localStorage.getItem('token');
+            const roles = res?.data?.roles;
+            localStorage.setItem('roles', roles)
+            
+            setAuth({ roles, token })
+            dispatch(setUserEntreprise(res.data))
+            console.log(auth);
+        })
+        .catch ((err) => {
+            console.error("Cannot fetch data");
+        })
+    }
+
+    console.log(auth);
+
+    // useEffect(() => {
+        // if (auth) {
+        // }
+    // }, [])
+
+    // if(isLoading) {
+    //         // TODO: Modifier pour avoir un vrai composant loading 
+    //         return '...Loading';
+    //       }
 
     return(
         <section className="ConnectionEntreprise" >
@@ -144,7 +141,7 @@ function ConnectionEntreprise() {
                         }}
                     />
                 </div>
-                <p><a href="#">Mot de passe oublié ?</a></p>
+                <a href="#">Mot de passe oublié ?</a>
                 <button
                     className="ConnectionEntreprise-form-btn"
                     type="submit"

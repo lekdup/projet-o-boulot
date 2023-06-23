@@ -7,7 +7,7 @@
             min-height: 100vh;
             background-color: white;
         }
-        &.show .MenuBurger__nav > a li {
+        &.show .MenuBurger__nav li {
             opacity: 1;
             transition: opacity 250ms ease-in-out 100ms;
             &:hover {
@@ -47,7 +47,21 @@
         &--arrow {
             color: #ccc;
         }
-        & a li {
+        // & a li {
+            // transition: .3s;
+            // &:hover {
+                // box-shadow:  0 3px 5px rgba(57, 63, 72, 0.3);
+            // }
+            // @media (max-width: 799px) {
+            //     font-size: 7vw;
+            //     border-bottom: 1px solid #eee;
+            //     width: 100vw;
+            //     height: 4rem;
+            //     opacity: 0;
+            //     transition:  opacity 150ms ease-in-out;
+            // }
+        // }
+        & li {
             transition: .3s;
             &:hover {
                 box-shadow:  0 3px 5px rgba(57, 63, 72, 0.3);
