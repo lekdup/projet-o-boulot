@@ -24,11 +24,12 @@
             background-color: vars.$grey;
             text-align: center;
             border-radius: .4rem;
-            padding: 1rem;
+            padding: 2rem;
             max-width: 700px;
             margin: auto;
             &-image{
                 height: 200px;
+                margin: auto;
             }
             &-text{
                 margin-top: 1rem;

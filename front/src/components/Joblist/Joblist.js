@@ -30,9 +30,6 @@ function Joblist(){
             </form>
         <div className='Joblist-content'>
             
-            
-        
-
         <CardsList offers={offers} />
         
         </div>
