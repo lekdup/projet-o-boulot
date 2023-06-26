@@ -1,0 +1,36 @@
+.profile-option {
+    position: absolute;
+        top: 3rem;
+        // left: -4.5rem;
+        right: 0;
+        padding: .3rem 0;
+        border-radius: .4rem;
+        box-shadow:  0 3px 5px rgba(57, 63, 72, 0.3);
+        text-align: start;
+        background-color: #eee;
+        transform: scale(1,0);
+        transform-origin: top;
+        transition: transform 400ms ease-in-out;
+        &-btn {
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: .6rem .8rem;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 150ms ease-in-out;
+            white-space: nowrap;
+            &.company:hover {
+                background-color: #0C89FF51;
+            } 
+            &.candidate:hover {
+                background-color: #ff792b51;
+            }
+        }
+        &.show {
+            transform: scale(1, 1);
+        }
+        &.show .profile-option-btn {
+            opacity: 1;
+            transition: opacity 250ms ease-in-out 250ms;
+        }
+}

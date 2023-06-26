@@ -6,7 +6,14 @@ function useToggle() {
 
     useEffect(() => {
         const handleOutsideClick = (e) => {
-            if (ref.current && !ref.current.contains(e.target)) {
+            const clickedEl = e.target;
+            const isNestedMenu = clickedEl.classList.contains("navbar-menu-dropdown");
+
+            if (isNestedMenu) {
+                return;
+            }
+
+            if (ref.current && !ref.current.contains(clickedEl)) {
                 setIsOpen(false);
             }
         };

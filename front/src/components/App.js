@@ -82,12 +82,12 @@ function App() {
       }, 2500)
     }
   }, []);
-  console.log(auth);
+  // console.log(auth);
   
   const getDifferentLogoColor = () => {
-    if (location.pathname.startsWith('/candidat')) {
+    if (auth.roles === 'ROLE_CANDIDATE') {
         return logoCandidat;
-    } else if (location.pathname.startsWith('/entreprise')) {
+    } else if (auth.roles === 'ROLE_COMPANY') {
         return logoEntreprise;
     } else {
         return logoNeutre;
@@ -105,8 +105,11 @@ function App() {
   return (
     
     <main className="App">
+      {!auth.roles ? (
       <Header logoColors={getDifferentLogoColor()}/>
-      {/* <EntrepriseHeader /> */}
+      ) : (
+      <EntrepriseHeader logoColors={getDifferentLogoColor()}/>
+      )}
         
         <div className="main-container">
           <Routes>
