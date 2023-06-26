@@ -41,7 +41,7 @@
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
         }
     }
-.showJobCard{
+/*.showJobCard{
     width: 50%;
     margin-left: 1rem;
     @media (max-width: 799px){
@@ -52,11 +52,11 @@
 }
 .showJobList{
     width: 50%;
-    //overflow-y: scroll;
-    @media (max-width: 799px){
+    overflow-y: scroll;
+   @media (max-width: 799px){
         width: 100%;
 
     }
-}
+}*/
 
 }

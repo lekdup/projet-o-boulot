@@ -11,6 +11,7 @@ function Header({ logoColors }) {
 
     const handleScroll = () => {
         const position = window.scrollY;
+        //console.log(position);
         setScrollPosition(position);
     };
 

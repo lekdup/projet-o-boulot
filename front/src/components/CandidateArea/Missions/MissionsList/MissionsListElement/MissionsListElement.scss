@@ -1,56 +1,47 @@
 @use 'src/styles/vars';
 
-.jobcard{
+.MissionsListElement{
     background-color: vars.$grey;
-    padding: 2rem;
+    padding: 1rem 1rem 1rem 2rem;
     border-radius: 1rem;
-    margin: 1rem;
-    margin-bottom: 1rem;
-    overflow-y: auto;
+    margin-top: 1rem;
     text-align: left;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    position: relative;
+    align-items: flex-start;
     &-title{
-        margin-top: 1rem;
         font-size: 1.5rem;
         font-weight: 500;
     }
-    &-content{
-        font-size: 0.9rem;
-        margin-top: 1rem;
-    }
     &-tags{
-        background-color: vars.$darkGrey;
+        background-color: rgb(173, 173, 173);
         padding: 0.4rem;
         border-radius: 0.5rem;
         display:inline;
         font-size: 0.6rem;
         margin-top: 0.5rem;
     }
+    &-tags.done{
+        display: none;
+
+    }
     &-bookmark{
         display: flex;
+        justify-content: flex-end;
         width: 100%;
-        justify-content: space-between; 
-        h1{
-           font-size: 1.8rem; 
-           color: vars.$darkGrey;
-        }
-        h1:hover{
-            text-shadow: 1px 1px 2px vars.$darkGrey;
 
-        }   
     }
     &-btn{
         width: 10rem;
         margin-top: 1rem;
-
         padding: .5rem;
         font-size: 1rem;
         border-radius: .4rem;
         color: white;
         background-color: vars.$orange;
+    }
+    &-btn.hidden{
+        display: none;
     }
     &-btn:hover{
         transform: translateY(-3px);
@@ -59,10 +50,3 @@
 
 
 }
-/*.jobcard::-webkit-scrollbar{
-    width: 10px;
-}
-.jobcard::-webkit-scrollbar-thumb {
-    background-color: rgb(173, 173, 173);
-    border-radius: 1rem;
-  }*/

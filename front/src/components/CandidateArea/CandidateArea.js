@@ -25,14 +25,14 @@ function CandidatArea () {
     return(
         <div className="CandidateArea">
             
-            <h1 className="CandidateArea-title"> Bonjour {user.firstname ?? user.firstname} </h1>
+            <h1 className="CandidateArea-title"> Bonjour {user.firstname} </h1>
 
             <img className="EntrepriseArea-img" src={logoCandidatArea} alt="Logo Candidate Area Page" />
             
             <div className='CandidateArea-buttons'>
             <Link to="/candidat/mes-donnees"><button className='CandidateArea-button'> Mes données personnelles</button></Link>
-                
-                <button className='CandidateArea-button' >Mes missions</button>
+            <Link to="/candidat/mes-donnees/missions"><button className='CandidateArea-button'> Mes missions</button></Link>
+    
                 <button className='CandidateArea-button' >Mes alertes</button>
                 <button className='CandidateArea-button' >Mes documents</button>
             </div>

@@ -15,7 +15,7 @@ function Joblist(){
               //setOffer()
           })
           .catch(err => {
-             alert('Erreur API  !')
+             alert('Erreur API !')
           })
   }, []);
 
@@ -30,15 +30,8 @@ function Joblist(){
             </form>
         <div className='Joblist-content'>
             
-            
-        <div className='showJobList'>
-
         <CardsList offers={offers} />
-        </div>
-        <div className='showJobCard'>
-        <Jobcard offers={offers} />
-
-        </div>
+        
         </div>
         
 
