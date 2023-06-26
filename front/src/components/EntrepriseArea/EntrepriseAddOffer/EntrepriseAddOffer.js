@@ -1,11 +1,28 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './EntrepriseAddOffer.scss';
 
 function EntrepriseAddOffer() {
+
+    const [isSubmitted, setSubmitted] = useState(false);
+    const navigate = useNavigate();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // ... Votre code de soumission de formulaire ici...
+        setSubmitted(true);
+    }
+
+    if (isSubmitted) {
+        navigate("/entreprise/ajout-publication/done");
+    }
+
+
     return (
         <section className="EntrepriseAddOffer">
             <h1 className="EntrepriseAddOffer-title">Ajout d'une offre d'emploi</h1>
-            <form className="EntrepriseAddOffer-form">
-                <div className="EntrepriseAddOffer-form-fieldHolder">
+            <form className="EntrepriseAddOffer-form" onSubmit={handleSubmit}>
+                <div className="EntrepriseAddOffer-form-fieldHolder" >
                     <input
                         type="text"
                         name="titre"

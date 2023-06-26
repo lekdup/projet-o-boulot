@@ -82,7 +82,7 @@ function App() {
       setAuth({ roles, token })
       setTimeout(() => {
         setIsLoading(false);
-      }, 2500)
+      }, 1000)
     }
   }, []);
   console.log(auth);

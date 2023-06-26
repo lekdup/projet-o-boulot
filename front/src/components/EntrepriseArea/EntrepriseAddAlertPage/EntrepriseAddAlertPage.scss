@@ -44,14 +44,17 @@
     &-buttons{
         display: flex;
         justify-content: center;
-        flex-direction: column;
+        flex-direction: row;
+        margin: 18px;
+        border: 14px;
+        
         
         
     }
 
     &-button{
         margin: 1rem;
-        background-color: vars.$orange;
+        background-color: vars.$blue;
         border-radius: 1rem;
         padding: 1rem 3rem;
         border-style: none;
@@ -59,6 +62,7 @@
         box-shadow: 0 3px 7px rgba(0, 0, 0, 0.4);
         transition: all 0.2s;
         text-align: center;
+        width: 100%;
     }
     &-button:hover {
         transform: translateY(-3px);

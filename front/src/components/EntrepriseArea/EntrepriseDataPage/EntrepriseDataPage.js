@@ -2,6 +2,7 @@
 import './EntrepriseDataPage.scss';
 import logoEntrepriseDataPage from '../../../assets/logoEntrepriseDataPage.svg'
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 
 function EntrepriseDataPage() {
@@ -43,8 +44,8 @@ function EntrepriseDataPage() {
 				<div className="EntrepriseDataPage-p" >Veuillez verifier l'exactitude de vos données personnelles, ces dernière sont très importantes. Ces dernières serviront à établir et à éditer les contrats de travail de vos futurs employés.</div>
 
 				<div className="EntrepriseDataPage-input-buttons">
-						<a className="EntrepriseDataPage-input-button" href="/" >Modifier</a>
-                        <a className="EntrepriseDataPage-input-button" href="/" >Supprimer</a>
+						<Link to= '/entreprise/mes-donnees/modification'><a className="EntrepriseDataPage-input-button" href="/" >Modifier</a></Link>
+                        <Link to= '/'><a className="EntrepriseDataPage-input-button" href="/" >Supprimer</a></Link>
 				</div>
 
 		</div>
