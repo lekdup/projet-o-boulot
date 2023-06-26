@@ -24,7 +24,7 @@ function ConnectionCandidate() {
     const [errMsg, setErrMsg] = useState("");
 
     
-    const tokenCandidate = useSelector(state => state.candidate.tokenCandidate);
+    // const tokenCandidate = useSelector(state => state.candidate.tokenCandidate);
 
     const dispatch = useDispatch();
 
@@ -36,20 +36,23 @@ function ConnectionCandidate() {
         setErrMsg("");
     }, [email, password])
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        api.post('/login_check', {
-            email: email,
-            password: password,
-        })
-        .then((res) => {
-            // console.log(res.data.token);
-            dispatch(setTokenCandidate(res.data.token));
-            localStorage.setItem('token', res.data.token);
+        try {
+            const res = await api.post('/login_check' ,
+            {
+                email: email,
+                password: password
+            });
+            const token = res.data.token;
+            localStorage.setItem('token', token);
+
+            setEmail('');
+            setPassword('');
+            fetchUserData();
             navigate(from, { replace: true });
-            
-        })
-        .catch((err) => {
+        }
+        catch (err) {
             // console.log("Mauvais email/password");
             if (!err?.response) {
                 setErrMsg('No Server Response');
@@ -61,29 +64,24 @@ function ConnectionCandidate() {
                 setErrMsg('Login Failed');
             }
             errRef.current.focus();
-        })
+        }
     }
 
-    useEffect(() => {
-        // requete GET pour récupérer les données du candidat
-        if (tokenCandidate) {
-            api.get('/candidats/me')
-                .then((res) => {
-                    const token = localStorage.getItem('token');
-                    const roles = res?.data?.roles;
-                    localStorage.setItem('roles', roles)
-                    setAuth({ roles, token })
-                    dispatch(setUser(res.data));
-                    console.log(auth);
+    const fetchUserData = () => {
+        api.get('/candidats/me')
+        .then((res) => {
+            const token = localStorage.getItem('token');
+            const roles = res?.data?.roles[0];
+            localStorage.setItem('roles', roles)
 
-
-                    // console.log(res.data);
-                })
-                .catch(() =>
-                    console.log('Pas de récupération de dataUser erreur API')
-                );
-        }
-    }, [tokenCandidate]);
+            setAuth({ roles, token })
+            dispatch(setUser(res.data));
+            // console.log(auth);
+        })
+        .catch(() =>
+            console.log('Pas de récupération de dataUser erreur API')
+        );
+    }
 
     return(
         <section className="ConnectionCandidate" >

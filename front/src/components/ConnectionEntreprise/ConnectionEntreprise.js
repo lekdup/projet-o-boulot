@@ -8,7 +8,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import api from '../../api/api';
 
 function ConnectionEntreprise() {
-    const { auth, setAuth } = useAuth();
+    const { setAuth } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
@@ -83,19 +83,7 @@ function ConnectionEntreprise() {
             console.error("Cannot fetch data");
         })
     }
-
-    // console.log(auth);
-
-    // useEffect(() => {
-        // if (auth) {
-        // }
-    // }, [])
-
-    // if(isLoading) {
-    //         // TODO: Modifier pour avoir un vrai composant loading 
-    //         return '...Loading';
-    //       }
-
+    
     return(
         <section className="ConnectionEntreprise" >
             <h1 className="ConnectionEntreprise-title">Connectez-vous</h1>
