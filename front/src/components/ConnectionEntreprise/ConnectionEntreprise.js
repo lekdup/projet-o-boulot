@@ -44,7 +44,7 @@ function ConnectionEntreprise() {
                 email: email,
                 password: password
             });
-            console.log(res?.data);
+            // console.log(res?.data);
             const token = res.data.token;
             localStorage.setItem('token', token);
             setEmail('');
@@ -72,7 +72,7 @@ function ConnectionEntreprise() {
             console.log(res?.data);
             const result = res.data;
             const token = localStorage.getItem('token');
-            const roles = res?.data?.roles;
+            const roles = res?.data?.roles[0];
             localStorage.setItem('roles', roles)
             
             setAuth({ roles, token })
@@ -86,7 +86,7 @@ function ConnectionEntreprise() {
     }
     console.log(userEntreprise);
 
-    console.log(auth);
+    // console.log(auth);
 
     // useEffect(() => {
         // if (auth) {

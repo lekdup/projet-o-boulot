@@ -1,28 +1,5 @@
-@use '../../../styles/vars';
-
-.profile{
-    z-index: 9;
-    color: #333;
-    width: 2rem;
-    margin-right: 3rem;
-    margin-top: .2rem;
-    position: relative;
-    cursor: pointer;
-    @media (min-width: 799px){
-        margin-right: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 0;
-    }
-
-    &-image{
-        max-width: 100%;
-        filter: none;
-    }
-
-    &-select {
-        position: absolute;
+.profile-option {
+    position: absolute;
         top: 3rem;
         // left: -4.5rem;
         right: 0;
@@ -42,26 +19,18 @@
             opacity: 0;
             transition: opacity 150ms ease-in-out;
             white-space: nowrap;
-        }
-        & a:first-child li {
-            &:hover {
-                background-color: #ff792b51;
-            }
-        }
-        & a:last-child li {
-            &:hover {
+            &.company:hover {
                 background-color: #0C89FF51;
+            } 
+            &.candidate:hover {
+                background-color: #ff792b51;
             }
         }
         &.show {
             transform: scale(1, 1);
         }
-        &.show .profile-select-btn {
+        &.show .profile-option-btn {
             opacity: 1;
             transition: opacity 250ms ease-in-out 250ms;
         }
-    }
-
-
-
 }
