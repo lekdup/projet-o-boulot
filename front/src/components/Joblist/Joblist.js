@@ -43,7 +43,9 @@ function Joblist(){
     setSearchSubmitted(true);
   };
 
-    return(
+ const displayedOffers = searchSubmitted ? searchResult : offers;
+ 
+  return(
       
         <div className='Joblist'>
         <h1 className='Joblist-title'> Les offres d'emploi</h1>
@@ -58,9 +60,15 @@ function Joblist(){
             onChange={handleChange}></input> 
             <button type='submit' className='Joblist-searchbar-button'> Recherche </button>
             </form>
-        <div className='Joblist-content'>
-            
-        <CardsList offers={searchSubmitted ? searchResult : offers} />
+        <div >
+        {displayedOffers.length > 0 ? (
+         <div className='Joblist-content'>
+            <p className='Joblist-result'> {displayedOffers.length} résultat{displayedOffers.length > 1 ? 's' : ''}</p>
+            <CardsList offers={displayedOffers} /></div>   
+         ) : 
+            (<p className='Joblist-result'> Aucun résultat </p>
+
+        ) }
         
         </div>
         

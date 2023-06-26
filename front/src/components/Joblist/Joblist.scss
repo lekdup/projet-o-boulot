@@ -11,6 +11,14 @@
     }
     &-content{
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+    &-result{
+        margin: auto;
+        font-size: .8rem;
+        font-style: italic;
     }
     &-searchbar{
         display: flex;
