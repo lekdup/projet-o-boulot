@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import './ConnectedNavbar.scss';
-import useAuth from '../../hooks/useAuth';
-import MenuBurger from '../Header/MenuBurger/MenuBurger';
-import useToggle from '../../hooks/useToggle';
+import useAuth from '../../../hooks/useAuth';
+import MenuBurger from '../../Header/MenuBurger/MenuBurger';
+import useToggle from '../../../hooks/useToggle';
 
 function ConnectedNavbar() {
     const { auth } = useAuth();

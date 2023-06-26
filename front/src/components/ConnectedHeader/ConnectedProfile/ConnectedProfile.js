@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './ConnectedProfile.scss';
-import useToggle from '../../hooks/useToggle';
-import useAuth from '../../hooks/useAuth';
+import useToggle from '../../../hooks/useToggle';
+import useAuth from '../../../hooks/useAuth';
 
 function ConnectedProfile({ logoColors }) {
     const [isOpen, handleButtonClick, buttonRef] = useToggle();

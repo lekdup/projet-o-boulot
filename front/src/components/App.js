@@ -41,8 +41,8 @@ import Article from './Article/Article';
 import EntrepriseAddOffer from './EntrepriseArea/EntrepriseAddOffer/EntrepriseAddOffer';
 
 import useAuth from '../hooks/useAuth';
-import EntrepriseHeader from './EntrepriseArea/EntrepriseHeader/EntrepriseHeader';
 import { ClimbingBoxLoader } from 'react-spinners';
+import ConnectedHeader from './ConnectedHeader/ConnectedHeader';
 
 function App() {
   const { auth, setAuth } = useAuth();
@@ -108,7 +108,7 @@ function App() {
       {!auth.roles ? (
       <Header logoColors={getDifferentLogoColor()}/>
       ) : (
-      <EntrepriseHeader logoColors={getDifferentLogoColor()}/>
+      <ConnectedHeader logoColors={getDifferentLogoColor()}/>
       )}
         
         <div className="main-container">

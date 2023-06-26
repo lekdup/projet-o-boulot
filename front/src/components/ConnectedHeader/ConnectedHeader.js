@@ -1,13 +1,14 @@
+import './ConnectedHeader.scss';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import '../../Header/Header.scss';
-import logoProfileEntreprise from '../../../assets/company.png';
-import logoOboulot from '../../../assets/logo.png'
-import ConnectedProfile from '../../ConnectedProfile/ConnectedProfile';
-import ConnectedNavbar from '../../ConnectedNavbar/ConnectedNavbar';
+// import '../../Header/Header.scss';
+// import logoProfileEntreprise from '../../../assets/company.png';
+import logoOboulot from '../../assets/logo.png'
+import ConnectedProfile from './ConnectedProfile/ConnectedProfile';
+import ConnectedNavbar from './ConnectedNavbar/ConnectedNavbar';
 
 
-function EntrepriseHeader({ logoColors }) {
+function ConnectedHeader({ logoColors }) {
     const [scrollPosition, setScrollPosition] = useState(0);
 
     const handleScroll = () => {
@@ -44,4 +45,4 @@ function EntrepriseHeader({ logoColors }) {
     )
 }
 
-export default EntrepriseHeader;
+export default ConnectedHeader;
