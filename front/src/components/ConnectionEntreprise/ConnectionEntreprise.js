@@ -44,7 +44,7 @@ function ConnectionEntreprise() {
                 email: email,
                 password: password
             });
-            console.log(res?.data);
+            // console.log(res?.data);
             const token = res.data.token;
             localStorage.setItem('token', token);
             setEmail('');
@@ -69,22 +69,22 @@ function ConnectionEntreprise() {
     const fetchUserData = () => {
         api.get('/entreprises/me')
         .then((res) => {
-            console.log(res?.data);
+            // console.log(res?.data);
 
             const token = localStorage.getItem('token');
-            const roles = res?.data?.roles;
+            const roles = res?.data?.roles[0];
             localStorage.setItem('roles', roles)
             
             setAuth({ roles, token })
             dispatch(setUserEntreprise(res.data))
-            console.log(auth);
+            // console.log(auth);
         })
         .catch ((err) => {
             console.error("Cannot fetch data");
         })
     }
 
-    console.log(auth);
+    // console.log(auth);
 
     // useEffect(() => {
         // if (auth) {

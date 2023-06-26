@@ -44,8 +44,8 @@ import Article from './Article/Article';
 import EntrepriseAddOffer from './EntrepriseArea/EntrepriseAddOffer/EntrepriseAddOffer';
 
 import useAuth from '../hooks/useAuth';
-import EntrepriseHeader from './EntrepriseArea/EntrepriseHeader/EntrepriseHeader';
 import { ClimbingBoxLoader } from 'react-spinners';
+import ConnectedHeader from './ConnectedHeader/ConnectedHeader';
 
 function App() {
   const { auth, setAuth } = useAuth();
@@ -85,12 +85,12 @@ function App() {
       }, 1000)
     }
   }, []);
-  console.log(auth);
+  // console.log(auth);
   
   const getDifferentLogoColor = () => {
-    if (location.pathname.startsWith('/candidat')) {
+    if (auth.roles === 'ROLE_CANDIDATE') {
         return logoCandidat;
-    } else if (location.pathname.startsWith('/entreprise')) {
+    } else if (auth.roles === 'ROLE_COMPANY') {
         return logoEntreprise;
     } else {
         return logoNeutre;
@@ -108,8 +108,11 @@ function App() {
   return (
     
     <main className="App">
+      {!auth.roles ? (
       <Header logoColors={getDifferentLogoColor()}/>
-      {/* <EntrepriseHeader /> */}
+      ) : (
+      <ConnectedHeader logoColors={getDifferentLogoColor()}/>
+      )}
         
         <div className="main-container">
           <Routes>
