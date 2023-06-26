@@ -4,10 +4,14 @@ import loginCandidate from '../../assets/login-candidate.svg';
 import { useEffect, useState, useRef } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {setUser, setTokenCandidate} from '../../actions/candidate';
+import useAuth from '../../hooks/useAuth';
+
 
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 function ConnectionCandidate() {
+    const { auth, setAuth } = useAuth();
+
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/"
@@ -65,7 +69,14 @@ function ConnectionCandidate() {
         if (tokenCandidate) {
             api.get('/candidats/me')
                 .then((res) => {
+                    const token = localStorage.getItem('token');
+                    const roles = res?.data?.roles;
+                    localStorage.setItem('roles', roles)
+                    setAuth({ roles, token })
                     dispatch(setUser(res.data));
+                    console.log(auth);
+
+
                     // console.log(res.data);
                 })
                 .catch(() =>
