@@ -9,7 +9,7 @@ import { SET_TOKEN_ENTREPRISE } from "../actions/entreprise";
 // => EXEMPLE "list" est accessible avec state.entreprise.list, pas state.list /!\
 export const initialState = {
     offre: [],
-    connectedUserEntreprise: [],
+    userEntreprise: [],
   };
 
 

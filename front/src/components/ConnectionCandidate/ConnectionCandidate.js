@@ -28,6 +28,8 @@ function ConnectionCandidate() {
 
     const dispatch = useDispatch();
 
+    console.log(auth);
+
     useEffect(() => {
         userRef.current.focus();
     }, [])
@@ -70,7 +72,7 @@ function ConnectionCandidate() {
             api.get('/candidats/me')
                 .then((res) => {
                     const token = localStorage.getItem('token');
-                    const roles = res?.data?.roles;
+                    const roles = res.data.roles;
                     localStorage.setItem('roles', roles)
                     setAuth({ roles, token })
                     dispatch(setUser(res.data));
