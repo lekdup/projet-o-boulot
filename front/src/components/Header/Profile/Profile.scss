@@ -22,15 +22,19 @@
     &-select {
         position: absolute;
         top: 3rem;
-        left: -7rem;
+        left: -4.5rem;
+        padding: .3rem 0;
+        border-radius: .4rem;
+        box-shadow:  0 3px 5px rgba(57, 63, 72, 0.3);
         text-align: start;
         background-color: #eee;
         transform: scale(1,0);
         transform-origin: top;
         transition: transform 400ms ease-in-out;
         &-btn {
-            font-size:1.5rem;
-            padding: 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: .6rem .8rem;
             width: 100%;
             opacity: 0;
             transition: opacity 150ms ease-in-out;

@@ -1,28 +1,10 @@
 import { Link } from 'react-router-dom';
 import './Profile.scss';
 import { useEffect, useRef, useState } from 'react';
+import useToggle from '../../../hooks/useToggle';
 
 function Profile({ logoColors }) {
-    const [isOpen, setIsOpen] = useState(false);
-    const buttonRef = useRef();
-
-    useEffect(() => {
-        const handleOutsideClick = (e) => {
-            if (buttonRef.current && !buttonRef.current.contains(e.target)) {
-                setIsOpen(false);
-            }
-        };
-
-        document.addEventListener('mousedown', handleOutsideClick);
-        return () => {
-            document.addEventListener('mousedown', handleOutsideClick);
-        };
-    }, []);
-
-    const handleButtonClick = () => {
-        setIsOpen((prevIsOpen) => !prevIsOpen);
-    };
-
+    const [isOpen, handleButtonClick, buttonRef] = useToggle();
     return(
         <section className='profile'>
             <img
