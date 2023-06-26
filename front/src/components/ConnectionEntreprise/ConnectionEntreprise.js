@@ -21,6 +21,7 @@ function ConnectionEntreprise() {
     const [errMsg, setErrMsg] = useState("");
 
     const tokenEntreprise = useSelector(state => state.entreprise.tokenEntreprise);
+    const userEntreprise = useSelector(state => state.entreprise.userEntreprise);
 
     const dispatch = useDispatch();
 
@@ -41,9 +42,9 @@ function ConnectionEntreprise() {
                 email: email,
                 password: password
             });
-            console.log(res?.data);
-            dispatch(setTokenEntreprise(res?.data?.token));
-            const token = res?.data?.token;
+            console.log(res.data);
+            dispatch(setTokenEntreprise(res.data.token));
+            const token = res.data.token;
             localStorage.setItem('token', token);
             setAuth({ email, token })
             setEmail('');
@@ -52,9 +53,9 @@ function ConnectionEntreprise() {
         } catch (err) {
             if (!err?.res) {
                 setErrMsg('No Server Response');
-            } else if(err.res?.status === 400) {
+            } else if(err.res.status === 400) {
                 setErrMsg('Missing Username or Password')
-            } else if(err.res?.status === 401) {
+            } else if(err.res.status === 401) {
                 setErrMsg('Unauthorized');
             } else {
                 setErrMsg('Login Failed');
@@ -63,13 +64,14 @@ function ConnectionEntreprise() {
         }
     }
     console.log(tokenEntreprise);
+
     useEffect(() => {
         if (auth) {
             api.get('/entreprises/me')
             .then((res) => {
-                    const roles = res?.data?.roles;
+                    const roles = res.data.roles;
                     setAuth({ roles })
-                    console.log(res?.data);
+                    console.log(res.data);
                     dispatch(setUserEntreprise(res.data))
                 })
                 .catch ((err) => {
@@ -77,6 +79,8 @@ function ConnectionEntreprise() {
                 })
         }
     }, [])
+
+    console.log(userEntreprise);
     //         console.log(res.data.token);
     //         localStorage.setItem('token', res.data.token);
             

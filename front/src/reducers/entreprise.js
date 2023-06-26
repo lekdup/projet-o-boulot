@@ -10,6 +10,7 @@ import { SET_TOKEN_ENTREPRISE } from "../actions/entreprise";
 export const initialState = {
     offre: [],
     connectedUserEntreprise: [],
+    userEntreprise: [],
   };
 
 
@@ -19,8 +20,10 @@ export const initialState = {
       case SET_USER_ENTREPRISE:
         return {
           ...state,
-          connectedUserEntreprise: action.payload.connectedUserEntreprise,
+          userEntreprise: action.payload.userEntreprise,
         };
+
+        
 
         case SET_TOKEN_ENTREPRISE:
         return {

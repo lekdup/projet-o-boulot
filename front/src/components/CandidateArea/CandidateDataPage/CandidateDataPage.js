@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 function CandidateDataPage() {
 
 	const user = useSelector(state => state.candidate.user);
+	console.log(user);
 
     return(
         <div className="CandidateDataPage">

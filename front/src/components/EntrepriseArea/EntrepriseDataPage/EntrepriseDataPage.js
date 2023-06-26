@@ -1,9 +1,13 @@
 
 import './EntrepriseDataPage.scss';
 import logoEntrepriseDataPage from '../../../assets/logoEntrepriseDataPage.svg'
+import { useSelector } from 'react-redux';
 
 
 function EntrepriseDataPage() {
+
+	const userEntreprise = useSelector(state => state.entreprise.userEntreprise);
+	console.log(userEntreprise);
 
     return(
         <div className="EntrepriseDataPage">
