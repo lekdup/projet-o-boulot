@@ -4,25 +4,7 @@ import {useState} from 'react';
 import { Link } from 'react-router-dom';
 
 function CardsList({ offers }){
-    /*const [isClicked, setIsClicked] = useState(() => Array.from({ length: offers.length }, () => false));
 
-    const [isClicked, setIsClicked] = useState(() => {
-        const initialClickedState = {};
-        offers.map(offer => {
-          return initialClickedState[offer.id] = false;
-        });
-        return initialClickedState;
-      });
-
-    const handleClick = (index) => {
-        setIsClicked((prevState) => {
-            const newState = [...prevState];
-            newState[index] = !newState[index];
-            return newState;
-        });
-    };
-
-    console.log(isClicked);*/
     // on initialise un tableau vide
     const [clickedOfferIds, setClickedOfferIds] = useState([]);
     
@@ -41,7 +23,6 @@ function CardsList({ offers }){
       // pour pouvoir le transformer ensuite en tableau dans localStorage il faut mettre avant stringify sinon ça ne fonctionne pas
       localStorage.setItem('favorite', JSON.stringify(clickedOfferIds)); 
 
-    console.log(clickedOfferIds)
     return(
         <div className='cardsList'>
             {offers.map((offer) => (
