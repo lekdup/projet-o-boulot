@@ -2,15 +2,42 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './EntrepriseAddOffer.scss';
 
+import api from '../../../api/api';
+
+
 function EntrepriseAddOffer() {
 
     const [isSubmitted, setSubmitted] = useState(false);
     const navigate = useNavigate();
 
+    const [entitled, setEntitled] = useState('');
+    const [dateFrom, setDateFrom] = useState('');
+    const [dateTill, setDateTill] = useState('');
+    const [place,       setPlace] = useState('');
+    const [description, setDescription] = useState('');
+
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        // ... Votre code de soumission de formulaire ici...
-        setSubmitted(true);
+        const newJob = {
+            "entitled": entitled,
+            "dateFrom": dateFrom,
+            "dateTill": dateTill,
+            "place": place,
+            "description": description}
+        api.post('/offres', newJob)
+        .then( res =>{
+            console.log(res)
+            setEntitled('');
+            setDateFrom('');
+            setDateTill('');
+            setPlace('');
+            setDescription('');
+        })
+        .catch(error => {
+            console.log(error)
+        })
     }
 
     if (isSubmitted) {
@@ -27,6 +54,10 @@ function EntrepriseAddOffer() {
                         type="text"
                         name="titre"
                         id="titre"
+                        value={entitled}
+                        onChange={(e => {
+                            setEntitled(e.target.value)
+                        })}
                     />
                     <label htmlFor="titre" >Title du boulot</label>
                 </div>
@@ -37,6 +68,10 @@ function EntrepriseAddOffer() {
                             type="date"
                             name="dateDebut"
                             id="dateDebut"
+                            value={dateFrom}
+                            onChange={(e => {
+                                setDateFrom(e.target.value)
+                            })}
                         />
                     </div>
                     <div className="EntrepriseAddOffer-form-dates-date">
@@ -45,6 +80,11 @@ function EntrepriseAddOffer() {
                             type="date"
                             name="dateFin"
                             id="dateFin"
+                            value={dateTill}
+                            onChange={(e => {
+                                setDateTill(e.target.value)
+                            })}
+
                         />
                     </div>
                 </div>
@@ -71,6 +111,10 @@ function EntrepriseAddOffer() {
                         type="text"
                         name="lieux"
                         id="lieux"
+                        value={place}
+                            onChange={(e => {
+                                setPlace(e.target.value)
+                            })}
                     />
                     <label htmlFor="lieux" >Lieux</label>
                 </div>
@@ -80,6 +124,10 @@ function EntrepriseAddOffer() {
                         rows="1"
                         maxLength="250"
                         id="votre-message"
+                        value={description}
+                            onChange={(e => {
+                                setDescription(e.target.value)
+                            })}
                     />
                     <label htmlFor="votre-message">Votre message</label>
                 </div>
