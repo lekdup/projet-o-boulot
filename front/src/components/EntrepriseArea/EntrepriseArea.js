@@ -2,12 +2,15 @@ import './EntrepriseArea.scss';
 import logoEntrepriseArea from '../../assets/logoEntrepriseArea.svg';
 import { Link } from 'react-router-dom';
 
+import {useSelector} from 'react-redux';
+
 function EntrepriseArea() {
+    const userEntreprise = useSelector(state => state.entreprise.connectedUserEntreprise)
 
     return(
         <div className="EntrepriseArea">
             
-            <h1 className="EntrepriseArea-title"> Bonjour entreprise X </h1>
+            <h1 className="EntrepriseArea-title"> Bonjour {userEntreprise.name} </h1>
 
             <img className="EntrepriseArea-img" src={logoEntrepriseArea} alt="Logo Candidate Area Page" />
             

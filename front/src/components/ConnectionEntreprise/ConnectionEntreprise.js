@@ -22,7 +22,7 @@ function ConnectionEntreprise() {
 
 
     const tokenEntreprise = useSelector(state => state.entreprise.tokenEntreprise);
-    const userEntreprise = useSelector(state => state.entreprise.userEntreprise);
+    const userEntreprise = useSelector(state => state.entreprise.connectedUserEntreprise);
     const dispatch = useDispatch();
 
 
@@ -70,19 +70,21 @@ function ConnectionEntreprise() {
         api.get('/entreprises/me')
         .then((res) => {
             console.log(res?.data);
-
+            const result = res.data;
             const token = localStorage.getItem('token');
             const roles = res?.data?.roles;
             localStorage.setItem('roles', roles)
             
             setAuth({ roles, token })
-            dispatch(setUserEntreprise(res.data))
+            dispatch(setUserEntreprise(result))
             console.log(auth);
+            console.log(result)
         })
         .catch ((err) => {
             console.error("Cannot fetch data");
         })
     }
+    console.log(userEntreprise);
 
     console.log(auth);
 
