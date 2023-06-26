@@ -28,6 +28,8 @@ function ConnectionCandidate() {
 
     const dispatch = useDispatch();
 
+    console.log(auth);
+
     useEffect(() => {
         userRef.current.focus();
     }, [])
@@ -67,6 +69,7 @@ function ConnectionCandidate() {
         }
     }
 
+<<<<<<< HEAD
     const fetchUserData = () => {
         api.get('/candidats/me')
         .then((res) => {
@@ -82,6 +85,28 @@ function ConnectionCandidate() {
             console.log('Pas de récupération de dataUser erreur API')
         );
     }
+=======
+    useEffect(() => {
+        // requete GET pour récupérer les données du candidat
+        if (tokenCandidate) {
+            api.get('/candidats/me')
+                .then((res) => {
+                    const token = localStorage.getItem('token');
+                    const roles = res.data.roles;
+                    localStorage.setItem('roles', roles)
+                    setAuth({ roles, token })
+                    dispatch(setUser(res.data));
+                    console.log(auth);
+
+
+                    // console.log(res.data);
+                })
+                .catch(() =>
+                    console.log('Pas de récupération de dataUser erreur API')
+                );
+        }
+    }, [tokenCandidate]);
+>>>>>>> 15f31bec3d9d3dfff64da2a32358542f6217d960
 
     return(
         <section className="ConnectionCandidate" >
