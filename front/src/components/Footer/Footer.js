@@ -8,7 +8,7 @@ function Footer() {
             <div className="container-foot">
                 <div className="aide">
                     <Link to="/aide"><p>Aide</p></Link>
-                    <Link to="/mention-legales"><p>Mentions légales</p></Link>
+                    <Link to="/mentions-legales"><p>Mentions légales</p></Link>
                 </div>
                 <div className="logo">
                     <Link to="/"><img src={logo} className="logo-footer" alt="logo of O'boulot" /></Link>
