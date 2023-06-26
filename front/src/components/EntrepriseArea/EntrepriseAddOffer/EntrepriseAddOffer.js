@@ -26,7 +26,7 @@ function EntrepriseAddOffer() {
             "dateTill": dateTill,
             "place": place,
             "description": description}
-        api.post('/offres', newJob)
+        api.post('/offres/', newJob)
         .then( res =>{
             console.log(res)
             setEntitled('');
