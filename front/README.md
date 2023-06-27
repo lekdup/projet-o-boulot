@@ -1,6 +1,5 @@
 # ETAPES PROJET FRONT REACT
 
-
 ## 1 - Création d'une app react
 
 Lien de la doc: 

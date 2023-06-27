@@ -1,0 +1,90 @@
+@use 'src/styles/vars';
+
+.EntrepriseDataPage {
+
+    @media (min-width: 799px) {
+        max-width: 900px;
+        margin: auto;
+        }
+
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    &-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 800;
+        padding: 2rem;
+        @media (min-width: 799px){
+            padding-top: 0;
+        }
+    }
+
+    &-form{
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        padding: 1rem;
+        border-radius: 1rem;
+        color: #333;
+        @media (min-width: 799px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+        }
+        &-image {
+            overflow: hidden;
+            border-radius: 1rem 1rem 0 0;
+            @media (min-width: 799px){
+                grid-row: span 6;
+                border-radius: 1rem;
+                margin-right: 1rem;
+            }
+        }
+        &-title {
+            font-size: 1.4rem;
+            font-weight: 900;
+            margin: 1rem 0 .3rem .5rem;
+        }
+        &-pres {
+            line-height: 1.2rem;
+            margin-left: .5rem;
+        }
+        &-info {
+            margin-left: .5rem;
+            margin-top: .5rem;
+            & span {
+                font-weight: bold;
+            }
+        }
+        &-rgpd {
+            margin: .5rem 0 .5rem .5rem;
+            font-size: .8rem;
+            line-height: 1.2rem;
+        }
+        &-button{
+            margin: .2rem;
+            background-color: vars.$blue;
+            border-radius: .5rem;
+            padding: .7rem 2rem;
+            border-style: none;
+            font-weight: bold;
+            font-size: 1rem;
+            color: #fff;
+            margin-left: .5rem;
+
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.4);
+            transition: all 0.2s;
+            &:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+            }
+            &:active {
+                transform: translateY(1px);
+                box-shadow: 0 3px 2px rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+}

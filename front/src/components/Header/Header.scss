@@ -1,18 +1,39 @@
 header {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    width: 100vw;
+}
+
+.container-head {
+    max-width: 1200px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background-color: #0C89FF;
+    margin: auto;
+    transition: .6s;
+    padding: 1rem 1.3rem;
+    @media(min-width: 799px) {
+        padding: 1rem 3rem;
+    }
 }
 
 .logo {
     width: 3rem;
+    z-index: 9;
     &-image {
         max-width: 100%;
+        filter: none;
     }
 }
 
 .Menu-profile {
     display: flex;
-    gap: 1rem;
+    @media (min-width: 799px) {
+        flex-direction: row-reverse;
+    }
+}
+
+.bcg{
+    background-color: rgba(242, 242, 242, .95 );
+    box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
 }

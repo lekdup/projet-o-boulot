@@ -1,50 +1,19 @@
 .App {
-  padding: 1rem;
-  text-align: center;
+  max-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.intro {
-  margin-top: 1rem;
-  & h1 {
-    font-size: 2.5rem;
-    font-weight: 800;
-  }
-  & p {
-    font-size: 1.2rem;
-    font-weight: 400;
-  }
+.main-container {
+  max-width: 1200px;
+  margin: auto;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
 }

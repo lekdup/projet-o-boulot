@@ -1,0 +1,14 @@
+.Menus {
+    @media (min-width: 799px) {
+        display: flex;
+        flex-direction: row-reverse;
+        &-navbar {
+            max-width: auto;
+        }
+        &-profile {
+            display: grid;
+            place-items: center;
+        }
+    }
+    
+}

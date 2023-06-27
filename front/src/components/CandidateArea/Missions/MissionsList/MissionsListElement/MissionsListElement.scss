@@ -1,0 +1,52 @@
+@use 'src/styles/vars';
+
+.MissionsListElement{
+    background-color: vars.$grey;
+    padding: 1rem 1rem 1rem 2rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    &-title{
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+    &-tags{
+        background-color: rgb(173, 173, 173);
+        padding: 0.4rem;
+        border-radius: 0.5rem;
+        display:inline;
+        font-size: 0.6rem;
+        margin-top: 0.5rem;
+    }
+    &-tags.done{
+        display: none;
+
+    }
+    &-bookmark{
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+
+    }
+    &-btn{
+        width: 10rem;
+        margin-top: 1rem;
+        padding: .5rem;
+        font-size: 1rem;
+        border-radius: .4rem;
+        color: white;
+        background-color: vars.$orange;
+    }
+    &-btn.hidden{
+        display: none;
+    }
+    &-btn:hover{
+        transform: translateY(-3px);
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+    }
+
+
+}
