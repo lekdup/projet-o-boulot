@@ -11,7 +11,7 @@ function MissionsListElement({menuValue, filteredOffer}){
         
 <Link to={`/candidat/jobcard/${filteredOffer.id}`} className='MissionsListElement-title'> {filteredOffer.entitled} </Link>
 <div className='MissionsListElement-tags'> <p> {filteredOffer.place}</p></div>
-<button className={menuValue === 'saved' ?'MissionsListElement-btn' : 'MissionsListElement-btn hidden'}> Je postule !</button>
+<Link to={`/candidat/jobcard/${filteredOffer.id}`} className='MissionsListElement-title'><button className={menuValue === 'saved' ?'MissionsListElement-btn' : 'MissionsListElement-btn hidden'}> Je postule !</button></Link>
 <div className={menuValue === 'coming' ?'MissionsListElement-tags' : ' MissionsListElement-tags done'}> <p> Début de ta mission : 5/01/2023</p></div>
 
    
