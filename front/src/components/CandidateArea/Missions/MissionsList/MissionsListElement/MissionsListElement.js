@@ -2,9 +2,7 @@ import './MissionsListElement.scss';
 import { Link
  } from 'react-router-dom';
 function MissionsListElement({menuValue, filteredOffer}){
-    // TODO : https://timmousk.com/blog/react-conditional-classname/#method-2-using-an-if-statement
-    // Comment faire une condition de type if else else pour un className
-    console.log({menuValue});
+    
     return(
         <div className='MissionsListElement'>
         <div className='MissionsListElement-bookmark'>
@@ -13,7 +11,7 @@ function MissionsListElement({menuValue, filteredOffer}){
         
 <Link to={`/candidat/jobcard/${filteredOffer.id}`} className='MissionsListElement-title'> {filteredOffer.entitled} </Link>
 <div className='MissionsListElement-tags'> <p> {filteredOffer.place}</p></div>
-<button className={menuValue === 'saved' ?'MissionsListElement-btn' : 'MissionsListElement-btn hidden'}> Je postule !</button>
+<Link to={`/candidat/jobcard/${filteredOffer.id}`} className='MissionsListElement-title'><button className={menuValue === 'saved' ?'MissionsListElement-btn' : 'MissionsListElement-btn hidden'}> Je postule !</button></Link>
 <div className={menuValue === 'coming' ?'MissionsListElement-tags' : ' MissionsListElement-tags done'}> <p> Début de ta mission : 5/01/2023</p></div>
 
    

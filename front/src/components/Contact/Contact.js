@@ -15,6 +15,7 @@ function Contact() {
                         type="text"
                         name="nom"
                         id="nom"
+                        placeholder=" "
                     />
                     <label htmlFor="nom" >Nom</label>
                 </div>
@@ -23,6 +24,7 @@ function Contact() {
                         type="text"
                         name="prenom"
                         id="prenom"
+                        placeholder=" "
                     />
                     <label htmlFor="prenom">Prénom</label>
                 </div>
@@ -32,6 +34,7 @@ function Contact() {
                         inputMode="email"
                         name="email"
                         id="email"
+                        placeholder=" "
                     />
                     <label htmlFor="email">Email</label>
                 </div>
@@ -41,6 +44,7 @@ function Contact() {
                         inputMode="tel"
                         name="telephone"
                         id="telephone"
+                        placeholder=" "
                     />
                     <label htmlFor="telephone">Téléphone</label>
                 </div>
@@ -50,6 +54,7 @@ function Contact() {
                         rows="1"
                         maxLength="250"
                         id="votre-message"
+                        placeholder=" "
                     />
                     <label htmlFor="votre-message">Votre message</label>
                 </div>

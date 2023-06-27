@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 
 
 function EntrepriseArea() {
-
 	const userEntreprise = useSelector(state => state.entreprise.userEntreprise);
     return(
         <div className="EntrepriseArea">
@@ -19,8 +18,6 @@ function EntrepriseArea() {
             <Link to="/*"><button className='EntrepriseArea-button' >Mes offres d'emploi</button></Link>
             <Link to="/*"><button className='EntrepriseArea-button' >Mes documents</button></Link>
             </div>
-       
-
         </div>
 
 

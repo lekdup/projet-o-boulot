@@ -11,42 +11,22 @@ function EntrepriseDataPage() {
 	console.log(userEntreprise);
 
     return(
-        <div className="EntrepriseDataPage">
+        <section className="EntrepriseDataPage">
         
             <h1 className="EntrepriseDataPage-title">Mes données personnelles</h1>
 			
-
-			<img className="EntrepriseDataPage-img" src={logoEntrepriseDataPage} alt="Logo Candidate Data Page"></img>
-
-            <form className="EntrepriseDataPage-form">
-		    <div>
-			
-				<div className="EntrepriseDataPage-input" >
-				    <label className="EntrepriseDataPage-input-label" htmlFor="name">{userEntreprise.name} </label>
-					
+            <article className="EntrepriseDataPage-form">
+				<div className="EntrepriseDataPage-form-image">
+					<img src='https://img.phonandroid.com/2022/07/Elon-Musk.jpg' alt='the CEO of Tesla, Space X, Paypal, Twitter and multi-billionaire, Elon MUSK'/>
 				</div>
-
-                <div className="EntrepriseDataPage-input" >
-					<label className="EntrepriseDataPage-input-label" htmlFor="prenom">{userEntreprise.siret} </label>
-					
-				</div>
-
-				<div className="EntrepriseDataPage-input" >
-					<label className="EntrepriseDataPage-input-label" htmlFor="email">{userEntreprise.username} </label>
-					
-				</div>
-
-				<div className="EntrepriseDataPage-p" >Veuillez verifier l'exactitude de vos données personnelles, ces dernière sont très importantes. Ces dernières serviront à établir et à éditer les contrats de travail de vos futurs employés.</div>
-
-				<div className="EntrepriseDataPage-input-buttons">
-						<Link to= '/entreprise/mes-donnees/modification'><a className="EntrepriseDataPage-input-button" href="/" >Modifier</a></Link>
-                        <Link to= '/'><a className="EntrepriseDataPage-input-button" href="/" >Supprimer</a></Link>
-				</div>
-
-		</div>
-        </form>
-
-        </div>
+				<p className="EntrepriseDataPage-form-title">{userEntreprise.name}</p>
+				<p className="EntrepriseDataPage-form-pres">{userEntreprise.presentation}</p>
+				<p className="EntrepriseDataPage-form-info" htmlFor="siret"><span>N° de siret : </span>{userEntreprise.siret}</p>
+				<p className="EntrepriseDataPage-form-info" htmlFor="email"><span>Email : </span>{userEntreprise.email}</p>
+				<p className="EntrepriseDataPage-form-rgpd" >Veuillez verifier l'exactitude de vos données personnelles, ces dernière sont très importantes. Ces dernières serviront à établir et à éditer les contrats de travail de vos futurs employés.</p>
+				<Link to= '/entreprise/mes-donnees/modification'><button className="EntrepriseDataPage-form-button" >Modifier</button></Link>
+        	</article>
+        </section>
     )
 }
 

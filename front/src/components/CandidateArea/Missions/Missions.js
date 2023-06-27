@@ -8,7 +8,7 @@ import {useState} from 'react';
  */
 function Missions(){
 
-    const [menuValue, setMenuValue] = useState('');
+    const [menuValue, setMenuValue] = useState('saved');
 
     const handleClick = (e) => {
         const navValue = e.target.getAttribute('data-value');

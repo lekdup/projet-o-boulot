@@ -14,7 +14,7 @@ function ConnectionCandidate() {
 
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location.state?.from?.pathname || "/"
+    const from = location.state?.from?.pathname || "/candidat"
 
     const userRef = useRef();
     const errRef = useRef();
@@ -50,7 +50,6 @@ function ConnectionCandidate() {
             setEmail('');
             setPassword('');
             fetchUserData();
-            navigate(from, { replace: true });
         }
         catch (err) {
             // console.log("Mauvais email/password");
@@ -76,6 +75,8 @@ function ConnectionCandidate() {
 
             setAuth({ roles, token })
             dispatch(setUser(res.data));
+            navigate(from, { replace: true });
+
             // console.log(auth);
         })
         .catch(() =>

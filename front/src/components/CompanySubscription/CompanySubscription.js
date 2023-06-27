@@ -3,7 +3,6 @@ import './CompanySubscription.scss';
 
 import { useState } from 'react';
 import api from '../../api/api';
-import { eventWrapper } from '@testing-library/user-event/dist/utils';
 
 function CompanySubscription() {
 
@@ -66,6 +65,7 @@ function CompanySubscription() {
                     type="text"
                     name="nomEntreprise"
                     id="nomEntreprise"
+                    placeholder=" "
                     value={name}
                     onChange = {(event) => {
                         setName(event.target.value)
@@ -79,6 +79,7 @@ function CompanySubscription() {
                     type="text"
                     name="siret"
                     id="siret"
+                    placeholder=" "
                     value={siret}
                     onChange = {(event) => {
                         setSiret(event.target.value)
@@ -92,6 +93,7 @@ function CompanySubscription() {
                     type="text"
                     name="nom"
                     id="nom"
+                    placeholder=" "
                     value={lastname}
                     onChange= {(event) => {
                         setLastame(event.target.value)
@@ -105,6 +107,7 @@ function CompanySubscription() {
                     type="text"
                     name="prenom"
                     id="prenom"
+                    placeholder=" "
                     value={firstname}
                     onChange = {(event) =>{
                         setFirstame(event.target.value)
@@ -118,6 +121,7 @@ function CompanySubscription() {
                     type="text"
                     name="adresse"
                     id="adresse"
+                    placeholder=" "
                     value={adress}
                     onChange = {(event) => {
                         setAdress(event.target.value)
@@ -131,6 +135,7 @@ function CompanySubscription() {
                     type="text"
                     name="codePostal"
                     id="codePostal"
+                    placeholder=" "
                     value={postalCode}
                     onChange = {(event) => {
                         setPostalCode(event.target.value)
@@ -144,6 +149,7 @@ function CompanySubscription() {
                     type="text"
                     name="ville"
                     id="ville"
+                    placeholder=" "
                     value={city}
                     onChange = {(event) => {
                         setCity(event.target.value)
@@ -158,6 +164,7 @@ function CompanySubscription() {
                     inputMode="tel"
                     name="telephone"
                     id="telephone"
+                    placeholder=" "
                     value={number}
                     onChange = {(event) => {
                         setNumber(event.target.value)
@@ -172,6 +179,7 @@ function CompanySubscription() {
                     inputMode="email"
                     name="email"
                     id="email"
+                    placeholder=" "
                     value={email}
                     onChange = {(event) => {
                         setEmail(event.target.value)
@@ -185,6 +193,7 @@ function CompanySubscription() {
                     type="newPassword"
                     name="newPassword"
                     id="newPassword"
+                    placeholder=" "
                     value={password}
                     onChange = {(event) => {
                         setPassword(event.target.value)
@@ -198,6 +207,7 @@ function CompanySubscription() {
                     type="confirmPassword"
                     name="confirmPassword"
                     id="confirmPassword"
+                    placeholder=" "
                     required
                 />
                 <label htmlFor="confirmPassword">Confirmer votre mot de passe *</label>
