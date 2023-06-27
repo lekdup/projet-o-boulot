@@ -47,12 +47,19 @@ import EntrepriseAddOffer from './EntrepriseArea/EntrepriseAddOffer/EntrepriseAd
 import useAuth from '../hooks/useAuth';
 import { ClimbingBoxLoader } from 'react-spinners';
 import ConnectedHeader from './ConnectedHeader/ConnectedHeader';
+import { useDispatch, useSelector } from 'react-redux';
+import api from '../api/api';
+import { setUserEntreprise } from '../actions/entreprise';
+import { setUser } from '../actions/candidate';
 
 function App() {
   const { auth, setAuth } = useAuth();
-  const location = useLocation();
+  const location = useLocation(); 
   
   const [isLoading, setIsLoading] = useState(true);
+
+  const dispatch = useDispatch();
+  const userEntreprise = useSelector(state => state.entreprise.userEntreprise);
 
   useEffect(() => {
 
@@ -80,14 +87,34 @@ function App() {
     const token = localStorage.getItem("token");
     const roles = localStorage.getItem("roles");
 
+    const fetchUserData = () => {
+      if (roles === 'ROLE_COMPANY') {
+        api.get('/entreprises/me')
+        .then((res) => {
+          dispatch(setUserEntreprise(res.data))
+        }).catch ((err) => {
+          console.error("Cannot fetch User");
+        })
+      } else if (roles === 'ROLE_CANDIDATE') {
+        api.get('/candidats/me')
+        .then((res) => {
+          dispatch(setUser(res.data))
+        }).catch((err) => {
+          console.error(err.status);
+        })
+      }
+    }
+
     if(token && roles) {
       setAuth({ roles, token })
+      fetchUserData();
       setTimeout(() => {
         setIsLoading(false);
       }, 1000)
     }
+
   }, []);
-  // console.log(auth);
+  // console.log(userEntreprise);
   
   const getDifferentLogoColor = () => {
     if (auth.roles === 'ROLE_CANDIDATE') {
