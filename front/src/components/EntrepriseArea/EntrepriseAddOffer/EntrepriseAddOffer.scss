@@ -75,12 +75,12 @@
                 }
             }
         }
-        &-times {
+        &-numbers {
             display: grid;
             grid-template-columns: 1fr 1fr;
             margin-bottom: 1rem;
             gap: 1rem;
-            &-time {
+            &-inside {
                 display: flex;
                 flex-direction: column;
                 gap: .2rem;

@@ -18,7 +18,7 @@ function EntrepriseDataPage() {
 
 			<img className="EntrepriseDataPage-img" src={logoEntrepriseDataPage} alt="Logo Candidate Data Page"></img>
 
-            <form className="EntrepriseDataPage-form" action="/">
+            <form className="EntrepriseDataPage-form">
 		    <div>
 			
 				<div className="EntrepriseDataPage-input" >

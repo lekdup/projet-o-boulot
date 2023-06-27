@@ -83,7 +83,7 @@ function ConnectionEntreprise() {
             console.error("Cannot fetch data");
         })
     }
-    console.log(userEntreprise);
+    // console.log(userEntreprise);
 
     return(
         <section className="ConnectionEntreprise" >
