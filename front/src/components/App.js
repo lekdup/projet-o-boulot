@@ -56,34 +56,34 @@ function App() {
   const { auth, setAuth } = useAuth();
   const location = useLocation(); 
   
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   const dispatch = useDispatch();
   const userEntreprise = useSelector(state => state.entreprise.userEntreprise);
 
   useEffect(() => {
 
-    const publicRoutes = [
-      '/',
-      'aide',
-      'contact',
-      'qui-sommes-nous',
-      '/actualites',
-      '/article',
-      '/mentions-legales',
-      '/candidat/joblist',
-      '/candidat/login',
-      '/candidat/inscription',
-      '/candidat/inscription/done',
-      '/entreprise/login',
-      '/entreprise/inscription'
-    ];
+    // const publicRoutes = [
+    //   '/',
+    //   'aide',
+    //   'contact',
+    //   'qui-sommes-nous',
+    //   '/actualites',
+    //   '/article',
+    //   '/mentions-legales',
+    //   '/candidat/joblist',
+    //   '/candidat/login',
+    //   '/candidat/inscription',
+    //   '/candidat/inscription/done',
+    //   '/entreprise/login',
+    //   '/entreprise/inscription'
+    // ];
 
-    const isPublicRoute = publicRoutes.includes(location.pathname);
+    // const isPublicRoute = publicRoutes.includes(location.pathname);
 
-    if (isPublicRoute) {
-      setIsLoading(false)
-    }
+    // if (isPublicRoute) {
+    //   setIsLoading(false)
+    // }
     const token = localStorage.getItem("token");
     const roles = localStorage.getItem("roles");
 
@@ -107,6 +107,7 @@ function App() {
 
     if(token && roles) {
       setAuth({ roles, token })
+      setIsLoading(true)
       fetchUserData();
       setTimeout(() => {
         setIsLoading(false);
