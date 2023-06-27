@@ -31,7 +31,7 @@
                 border-bottom: 1px solid #ccc;
                 outline: none;
                 background-color: #eee;
-                &:focus + label {
+                &:focus + label, &:not(:placeholder-shown) ~ label {
                     color: #555;
                     font-size: .75rem;
                     top: -1rem;
@@ -50,16 +50,6 @@
                 font-size: 1rem;
                 width: 100%;
                 height: 3rem;
-            }
-            & textarea {
-                border: none;
-                border-bottom: 1px solid #ccc;
-                outline: none;
-                &:focus + label {
-                    color: #555;
-                    font-size: .75rem;
-                    top: -2rem;
-                }
             }
 
         }

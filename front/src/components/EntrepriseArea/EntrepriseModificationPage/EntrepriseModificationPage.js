@@ -48,7 +48,7 @@ function EntrepriseModificationPage() {
     }
     return(
         <div className="EntrepriseModificationPage" >
-            <h1 className="EntrepriseModificationPage-title" >Modififer mes informations entreprise</h1>
+            <h1 className="EntrepriseModificationPage-title" >Modifier mes informations entreprise</h1>
 
             <form className="EntrepriseModificationPage-inputs" onSubmit={handleSubmit}>
                 <input

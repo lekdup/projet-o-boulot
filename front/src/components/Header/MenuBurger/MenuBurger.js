@@ -15,10 +15,7 @@ function MenuBurger() {
             if (isNestedMenu) {
                 return;
             }
-            if (buttonRef.current && 
-                !buttonRef.current.contains(clickedElement) &&
-                clickedElement.classList.contains('MenuBurger__nav--extend-nestedMenu')
-                ) {
+            if (buttonRef.current && !buttonRef.current.contains(clickedElement)) {
                 setIsOpen(false);
             }
         };

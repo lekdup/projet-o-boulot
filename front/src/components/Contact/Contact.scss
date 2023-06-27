@@ -34,7 +34,7 @@
                 border: none;
                 border-bottom: 1px solid #ccc;
                 outline: none;
-                &:focus + label {
+                &:focus + label, &:not(:placeholder-shown) ~ label {
                     color: #555;
                     font-size: .75rem;
                     top: -1.25rem;
@@ -58,7 +58,7 @@
                 border: none;
                 border-bottom: 1px solid #ccc;
                 outline: none;
-                &:focus + label {
+                &:focus + label, &:not(:placeholder-shown) ~ label {
                     color: #555;
                     font-size: .75rem;
                     top: -2rem;

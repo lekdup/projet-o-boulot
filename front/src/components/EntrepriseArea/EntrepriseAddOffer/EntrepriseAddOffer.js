@@ -81,12 +81,13 @@ function EntrepriseAddOffer() {
                         type="text"
                         name="titre"
                         id="titre"
+                        placeholder=" "
                         value={entitled}
                         onChange={(e) => {
                             setEntitled(e.target.value)
                         }}
                     />
-                    <label htmlFor="titre" >Title du boulot</label>
+                    <label htmlFor="titre" >Titre du boulot</label>
                 </div>
                 <div className="EntrepriseAddOffer-form-dates">
                     <div className="EntrepriseAddOffer-form-dates-date">
@@ -155,6 +156,7 @@ function EntrepriseAddOffer() {
                         type="text"
                         name="lieux"
                         id="lieux"
+                        placeholder=" "
                         value={place}
                             onChange={(e) => {
                                 setPlace(e.target.value)
@@ -168,6 +170,7 @@ function EntrepriseAddOffer() {
                         rows="1"
                         maxLength="250"
                         id="description"
+                        placeholder=" "
                         value={description}
                             onChange={(e) => {
                                 setDescription(e.target.value)

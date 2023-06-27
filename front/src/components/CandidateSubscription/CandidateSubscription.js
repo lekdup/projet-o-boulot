@@ -83,6 +83,7 @@ function CandidateSubscription() {
                         type="text"
                         name="nom"
                         id="nom"
+                        placeholder=" "
                         value={lastname}
                         onChange={(e) => {
                             setLastname(e.target.value)
@@ -96,6 +97,7 @@ function CandidateSubscription() {
                         type="text"
                         name="prenom"
                         id="prenom"
+                        placeholder=" "
                         value={firstname}
                         onChange={(e) => {
                             setFirstname(e.target.value)
@@ -138,6 +140,7 @@ function CandidateSubscription() {
                         inputMode="tel"
                         name="telephone"
                         id="telephone"
+                        placeholder=" "
                         value={phone}
                         onChange={(e) => {
                             setPhone(e.target.value)
@@ -151,6 +154,7 @@ function CandidateSubscription() {
                         type="text"
                         name="address"
                         id="address"
+                        placeholder=" "
                         value={address}
                         onChange={(e) => {
                             setAddress(e.target.value)
@@ -165,6 +169,7 @@ function CandidateSubscription() {
                         type="number"
                         name="postalCode"
                         id="postalCode"
+                        placeholder=" "
                         value={postalCode}
                         onChange={(e) => {
                             setPostalCode(e.target.value)
@@ -179,6 +184,7 @@ function CandidateSubscription() {
                         type="text"
                         name="city"
                         id="city"
+                        placeholder=" "
                         value={city}
                         onChange={(e) => {
                             setCity(e.target.value)
@@ -194,6 +200,7 @@ function CandidateSubscription() {
                         inputMode="email"
                         name="email"
                         id="email"
+                        placeholder=" "
                         value={email}
                         onChange={(e) => {
                             setEmail(e.target.value)
@@ -208,6 +215,7 @@ function CandidateSubscription() {
                         type="text"
                         name="description"
                         id="description"
+                        placeholder=" "
                         value={description}
                         onChange={(e) => {
                             setDescription(e.target.value)
@@ -222,6 +230,7 @@ function CandidateSubscription() {
                         type="newPassword"
                         name="newPassword"
                         id="newPassword"
+                        placeholder=" "
                         value={password}
                         onChange={(e) => {
                             setPassword(e.target.value)
@@ -235,6 +244,7 @@ function CandidateSubscription() {
                         type="confirmPassword"
                         name="confirmPassword"
                         id="confirmPassword"
+                        placeholder=" "
                         required
                     />
                     <label htmlFor="confirmPassword">Confirmer votre mot de passe *</label>
