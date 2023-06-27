@@ -8,12 +8,19 @@ import { useState } from 'react';
 
 function CandidateSubscription() {
 
+    let createdAt = new Date().toJSON().slice(0, 10);
+    let roles = ["ROLE_CANDIDATE"]
+
     const [lastname, setLastname] = useState('');
     const [firstname, setFirstname] = useState('');
     const [gender, setGender] = useState('');
     const [birthday, setBirthday] = useState('');
     const [phone, setPhone] = useState('');
+    const [address, setAddress] = useState('');
+    const [postalCode, setPostalCode] = useState('');    
+    const [city, setCity] = useState('');    
     const [email, setEmail] = useState('');
+    const [description, setDescription] = useState('');
     const [password, setPassword] = useState('');
 
     const handleSubmit = (e) => {
@@ -25,8 +32,14 @@ function CandidateSubscription() {
             "gender": gender,
             "birthday": birthday,
             "phone": phone,
+            "address": address,
+            "postalCode": postalCode,
+            "city" : city,
             "email": email,
-            "password": password}
+            "password": password,
+            "createdAt": createdAt,
+            "roles" : roles
+            }
         console.log(newCandidate);
         api.post('/candidats', newCandidate)
         .then( res =>{
@@ -37,8 +50,12 @@ function CandidateSubscription() {
             setGender('');
             setPassword('');
             setPhone('');
+            setAddress('');
+            setCity('');
+            setPostalCode('');
             setEmail('');
-        })
+        }
+        )
         .catch(error => {
             console.log(error)
         })
@@ -118,6 +135,49 @@ function CandidateSubscription() {
                     />
                     <label htmlFor="telephone">Téléphone</label>
                 </div>
+
+                <div className="CandidateSubscription-form-fieldHolder">
+                    <input
+                        type="text"
+                        name="address"
+                        id="address"
+                        value={address}
+                        onChange={(e) => {
+                            setAddress(e.target.value)
+                        }}
+                        required
+                    />
+                    <label htmlFor="address">Adresse postale</label>
+                </div>
+
+                <div className="CandidateSubscription-form-fieldHolder">
+                    <input
+                        type="number"
+                        name="postalCode"
+                        id="postalCode"
+                        value={postalCode}
+                        onChange={(e) => {
+                            setPostalCode(e.target.value)
+                        }}
+                        required
+                    />
+                    <label htmlFor="postalCode">Code postal</label>
+                </div>
+
+                <div className="CandidateSubscription-form-fieldHolder">
+                    <input
+                        type="text"
+                        name="city"
+                        id="city"
+                        value={city}
+                        onChange={(e) => {
+                            setCity(e.target.value)
+                        }}
+                        required
+                    />
+                    <label htmlFor="city">Ville</label>
+                </div>
+                
                 <div className="CandidateSubscription-form-fieldHolder">
                     <input
                         type="email"
@@ -132,6 +192,21 @@ function CandidateSubscription() {
                     />
                     <label htmlFor="email">Email *</label>
                 </div>
+
+                <div className="CandidateSubscription-form-fieldHolder">
+                    <input
+                        type="text"
+                        name="description"
+                        id="description"
+                        value={description}
+                        onChange={(e) => {
+                            setDescription(e.target.value)
+                        }}
+                        required
+                    />
+                    <label htmlFor="description"> 2-3 mots pour vous décrire ? *</label>
+                </div>
+
                 <div className="CandidateSubscription-form-fieldHolder">
                     <input
                         type="newPassword"
