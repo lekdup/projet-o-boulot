@@ -39,8 +39,8 @@ function EntrepriseDataPage() {
 				<div className="EntrepriseDataPage-p" >Veuillez verifier l'exactitude de vos données personnelles, ces dernière sont très importantes. Ces dernières serviront à établir et à éditer les contrats de travail de vos futurs employés.</div>
 
 				<div className="EntrepriseDataPage-input-buttons">
-						<Link to= '/entreprise/mes-donnees/modification'><a className="EntrepriseDataPage-input-button" href="/" >Modifier</a></Link>
-                        <Link to= '/'><a className="EntrepriseDataPage-input-button" href="/" >Supprimer</a></Link>
+						<Link to= '/entreprise/mes-donnees/modification'><p className="EntrepriseDataPage-input-button" >Modifier</p></Link>
+                        <Link to= '/'><p className="EntrepriseDataPage-input-button">Supprimer</p></Link>
 				</div>
 
 		</div>
