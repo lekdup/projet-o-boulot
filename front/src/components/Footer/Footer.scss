@@ -31,9 +31,26 @@ footer {
     display: flex;
     justify-content: center;
     gap: .5rem;
-    & li {
-        width: 2rem;
+    & a {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        background-color: #ddd;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
         list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transition: transform 200ms ease-in-out;
+        & svg {
+            max-width: 100%;
+            // display: block;
+            padding: .4rem;
+        }
+        &:hover {
+            transform: scale(.9);
+        }
     }
 }
 

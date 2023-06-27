@@ -50,8 +50,6 @@ function ConnectionEntreprise() {
             setEmail('');
             setPassword('');
             fetchUserData();
-            navigate(from, { replace: true });
-
         } catch (err) {
             if (!err?.res) {
                 setErrMsg('No Server Response');
@@ -77,6 +75,7 @@ function ConnectionEntreprise() {
             console.log(res.data)
             setAuth({ roles, token })
             dispatch(setUserEntreprise(res.data))
+            navigate(from, { replace: true });
             // console.log(auth);
         })
         .catch ((err) => {
