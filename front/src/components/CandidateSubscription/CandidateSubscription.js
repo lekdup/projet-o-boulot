@@ -5,11 +5,18 @@ import api from '../../api/api';
 
 
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 function CandidateSubscription() {
 
     let createdAt = new Date().toJSON().slice(0, 10);
     let roles = ["ROLE_CANDIDATE"]
+
+    const [isSubmitted, setSubmitted] = useState(false);
+    const navigate = useNavigate();
+
+
 
     const [lastname, setLastname] = useState('');
     const [firstname, setFirstname] = useState('');
@@ -54,6 +61,7 @@ function CandidateSubscription() {
             setCity('');
             setPostalCode('');
             setEmail('');
+            setSubmitted(true);
         }
         )
         .catch(error => {
@@ -62,7 +70,9 @@ function CandidateSubscription() {
 
     }
 
-
+    if (isSubmitted) {
+        navigate("/candidat/inscription/done");
+    }
 
     return (
         <section className="CandidateSubscription">

@@ -18,6 +18,7 @@ import PrivateRoutesEntreprise from '../utils/PrivateRoutesEntreprise';
 
 import ConnectionCandidate from './ConnectionCandidate/ConnectionCandidate';
 import CandidateSubscription from './CandidateSubscription/CandidateSubscription';
+import CandidateSubscriptionDone from './CandidateSubscription/CandidateSubscriptionDone/CandidateSubscriptionDone';
 import CandidatArea from './CandidateArea/CandidateArea';
 import CandidateDataPage from './CandidateArea/CandidateDataPage/CandidateDataPage';
 import CandidateAlertPage from './CandidateArea/CandidateAlertPage/CandidateAlertPage';
@@ -66,6 +67,7 @@ function App() {
       '/candidat/joblist',
       '/candidat/login',
       '/candidat/inscription',
+      '/candidat/inscription/done',
       '/entreprise/login',
       '/entreprise/inscription'
     ];
@@ -155,6 +157,7 @@ function App() {
 
             <Route path="/candidat/login" element={<ConnectionCandidate /> } />
             <Route path="/candidat/inscription" element={<CandidateSubscription />} />
+            <Route path="/candidat/inscription/done" element={<CandidateSubscriptionDone />} />
             <Route path="/entreprise/login" element={<ConnectionEntreprise />} />
             <Route path="/entreprise/inscription" element={<CompanySubscription />} />
 
