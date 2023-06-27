@@ -74,7 +74,7 @@ function ConnectionEntreprise() {
             const token = localStorage.getItem('token');
             const roles = res?.data?.roles[0];
             localStorage.setItem('roles', roles)
-            
+            console.log(res.data)
             setAuth({ roles, token })
             dispatch(setUserEntreprise(res.data))
             // console.log(auth);
@@ -83,7 +83,8 @@ function ConnectionEntreprise() {
             console.error("Cannot fetch data");
         })
     }
-    
+    console.log(userEntreprise);
+
     return(
         <section className="ConnectionEntreprise" >
             <h1 className="ConnectionEntreprise-title">Connectez-vous</h1>
