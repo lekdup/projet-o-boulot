@@ -2,9 +2,7 @@ import './MissionsListElement.scss';
 import { Link
  } from 'react-router-dom';
 function MissionsListElement({menuValue, filteredOffer}){
-    // TODO : https://timmousk.com/blog/react-conditional-classname/#method-2-using-an-if-statement
-    // Comment faire une condition de type if else else pour un className
-    console.log({menuValue});
+    
     return(
         <div className='MissionsListElement'>
         <div className='MissionsListElement-bookmark'>
