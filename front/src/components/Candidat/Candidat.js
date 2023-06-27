@@ -27,8 +27,8 @@ function Candidat() {
                 <img className={/*`${load ? */ "wrapper-candidat-apparition" /*:"wrapper-candidat-disparition"}`*/ } src={apply} alt="illustration of a man building blocks on a board" />
             </div>
             <div className="wrapper-candidat-buttons">
-                <button><Link to="/candidat/joblist">Consulter les offres</Link></button>
-                <button><Link to="/candidat/inscription">Créer mon espace candidat</Link></button>
+                <Link to="/candidat/joblist"><button>Consulter les offres</button></Link>
+                <Link to="/candidat/inscription"><button>Créer mon espace candidat</button></Link>
             </div>
         </div>
     )

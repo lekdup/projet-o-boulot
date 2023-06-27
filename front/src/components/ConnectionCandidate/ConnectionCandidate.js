@@ -2,15 +2,16 @@ import './ConnectionCandidate.scss';
 import api from '../../api/api';
 import loginCandidate from '../../assets/login-candidate.svg';
 import { useEffect, useState, useRef } from 'react';
-import {useSelector, useDispatch} from 'react-redux';
-import {setUser, setTokenCandidate} from '../../actions/candidate';
+import { useDispatch} from 'react-redux';
+import { setUser } from '../../actions/candidate';
+import { redirect } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 function ConnectionCandidate() {
-    const { setAuth } = useAuth();
+    const { auth, setAuth } = useAuth();
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -30,6 +31,11 @@ function ConnectionCandidate() {
 
     useEffect(() => {
         userRef.current.focus();
+        if (auth.roles === "ROLE_CANDIDATE") {
+            return navigate("/*");
+        } else if (auth.roles === "ROLE_COMPANY") {
+            return navigate("/*")
+        }
     }, [])
 
     useEffect(() => {

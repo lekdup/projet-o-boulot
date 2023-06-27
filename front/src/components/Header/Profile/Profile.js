@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import './Profile.scss';
-import { useEffect, useRef, useState } from 'react';
 import useToggle from '../../../hooks/useToggle';
 
 function Profile({ logoColors }) {

@@ -1,10 +1,13 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './CompanySubscription.scss';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import api from '../../api/api';
+import useAuth from '../../hooks/useAuth';
 
 function CompanySubscription() {
+    const { auth } = useAuth();
+    const navigate = useNavigate();
 
     const [name, setName] = useState('');
     const [siret, setSiret] = useState('');
@@ -54,6 +57,14 @@ function CompanySubscription() {
             console.log(error);
         }) 
     }
+
+    useEffect(() => {
+        if (auth.roles === "ROLE_CANDIDATE") {
+            navigate("/*");
+        } else if (auth.roles === "ROLE_COMPANY") {
+            navigate("/*")
+        }
+    })
     
 
     return (

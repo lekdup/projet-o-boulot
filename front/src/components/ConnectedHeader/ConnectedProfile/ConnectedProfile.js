@@ -2,15 +2,32 @@ import { Link } from 'react-router-dom';
 import './ConnectedProfile.scss';
 import useToggle from '../../../hooks/useToggle';
 import useAuth from '../../../hooks/useAuth';
+import { useState } from 'react';
+import { ClimbingBoxLoader } from 'react-spinners';
 
 function ConnectedProfile({ logoColors }) {
     const [isOpen, handleButtonClick, buttonRef] = useToggle();
     const { auth, setAuth } = useAuth();
 
+  const [isLoading, setIsLoading] = useState(false);
+
+
     const handleLogout = () => {
+        setIsLoading(true)
         localStorage.clear();
         setAuth({})
+        setTimeout(() => {
+        setIsLoading(false);
+      }, 1500)
     }
+
+     if(isLoading) {
+    return (
+      <div className="loading-container">
+        <ClimbingBoxLoader color="#FF772B"/>
+      </div>
+    )
+  }
 
     return (
         <section className='profile'>

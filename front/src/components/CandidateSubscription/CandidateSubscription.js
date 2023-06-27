@@ -4,19 +4,16 @@ import './CandidateSubscription.scss';
 import api from '../../api/api';
 
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 
 function CandidateSubscription() {
-
+    const { auth } = useAuth();
     let createdAt = new Date().toJSON().slice(0, 10);
     let roles = ["ROLE_CANDIDATE"]
-
-    const [isSubmitted, setSubmitted] = useState(false);
     const navigate = useNavigate();
-
-
 
     const [lastname, setLastname] = useState('');
     const [firstname, setFirstname] = useState('');
@@ -51,28 +48,21 @@ function CandidateSubscription() {
         api.post('/candidats', newCandidate)
         .then( res =>{
             console.log(res)
-            setLastname('');
-            setBirthday('');
-            setFirstname('');
-            setGender('');
-            setPassword('');
-            setPhone('');
-            setAddress('');
-            setCity('');
-            setPostalCode('');
-            setEmail('');
-            setSubmitted(true);
-        }
-        )
+            navigate("/candidat/inscription/done")
+        })
         .catch(error => {
             console.log(error)
         })
-
     }
 
-    if (isSubmitted) {
-        navigate("/candidat/inscription/done");
-    }
+    useEffect(() => {
+        if (auth.roles === "ROLE_CANDIDATE") {
+            navigate("/*");
+        } else if (auth.roles === "ROLE_COMPANY") {
+            navigate("/*")
+        }
+    })
+
 
     return (
         <section className="CandidateSubscription">

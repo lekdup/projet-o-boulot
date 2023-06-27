@@ -1,14 +1,15 @@
 import { Outlet, Navigate, useLocation  } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 const PrivateRoutesCandidat = () => {
+    const { auth } = useAuth();
     const location = useLocation();
-    const token = localStorage.getItem('token');
     
-    const hasToken = token !== null && token !== undefined;
-
-    return (
-        hasToken ? <Outlet/> : <Navigate to="/candidat/login" state={{ from: location }} replace/>
-    );
+    return(
+        auth?.roles === "ROLE_CANDIDATE" 
+            ? <Outlet />
+            : <Navigate to="/candidat/login" state={{ from:location }} replace />
+    )
 }
 
 

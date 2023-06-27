@@ -10,8 +10,8 @@ function Entreprise() {
                 <img className="wrapper-entreprise-apparition" src={recruit} alt="illustration of a man building blocks on a board" />
             </div>
             <div className="wrapper-entreprise-buttons">
-                <button className='wrapper-entreprise-button'><Link to="/entreprise/ajout-publication">Créer une offre</Link></button>
-                <button className='wrapper-entreprise-button'><Link to="/entreprise/inscription">Créer mon espace entreprise</Link></button>
+                <Link to="/entreprise/ajout-publication"><button>Créer une offre</button></Link>
+                <Link to="/entreprise/inscription"><button>Créer mon espace entreprise</button></Link>
             </div>
         </div>       
     )

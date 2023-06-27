@@ -6,7 +6,7 @@ const PrivateRoutesEntreprise = () => {
     const location = useLocation();
     
     return(
-        auth?.token 
+        auth?.roles === "ROLE_COMPANY" 
             ? <Outlet />
             : <Navigate to="/entreprise/login" state={{ from:location }} replace />
     )

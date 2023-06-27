@@ -8,7 +8,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import api from '../../api/api';
 
 function ConnectionEntreprise() {
-    const { setAuth } = useAuth();
+    const { auth, setAuth } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
@@ -20,14 +20,17 @@ function ConnectionEntreprise() {
     const [password, setPassword] = useState("");
     const [errMsg, setErrMsg] = useState("");
 
-
-    const tokenEntreprise = useSelector(state => state.entreprise.tokenEntreprise);
     const userEntreprise = useSelector(state => state.entreprise.userEntreprise);
     const dispatch = useDispatch();
 
 
     useEffect(() => {
         userRef.current.focus();
+        if (auth.roles === "ROLE_COMPANY") {
+            return navigate("/*");
+        } else if (auth.roles === "ROLE_CANDIDATE") {
+            return navigate("/*")
+        }
     }, [])
 
     useEffect(() => {

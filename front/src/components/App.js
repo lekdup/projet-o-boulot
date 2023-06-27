@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Routes, Route, useLocation, useNavigate} from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import './App.scss';
 
@@ -47,43 +47,19 @@ import EntrepriseAddOffer from './EntrepriseArea/EntrepriseAddOffer/EntrepriseAd
 import useAuth from '../hooks/useAuth';
 import { ClimbingBoxLoader } from 'react-spinners';
 import ConnectedHeader from './ConnectedHeader/ConnectedHeader';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import api from '../api/api';
 import { setUserEntreprise } from '../actions/entreprise';
 import { setUser } from '../actions/candidate';
 
 function App() {
   const { auth, setAuth } = useAuth();
-  const location = useLocation(); 
   
   const [isLoading, setIsLoading] = useState(false);
 
   const dispatch = useDispatch();
-  const userEntreprise = useSelector(state => state.entreprise.userEntreprise);
 
   useEffect(() => {
-
-    // const publicRoutes = [
-    //   '/',
-    //   'aide',
-    //   'contact',
-    //   'qui-sommes-nous',
-    //   '/actualites',
-    //   '/article',
-    //   '/mentions-legales',
-    //   '/candidat/joblist',
-    //   '/candidat/login',
-    //   '/candidat/inscription',
-    //   '/candidat/inscription/done',
-    //   '/entreprise/login',
-    //   '/entreprise/inscription'
-    // ];
-
-    // const isPublicRoute = publicRoutes.includes(location.pathname);
-
-    // if (isPublicRoute) {
-    //   setIsLoading(false)
-    // }
     const token = localStorage.getItem("token");
     const roles = localStorage.getItem("roles");
 
@@ -92,6 +68,7 @@ function App() {
         api.get('/entreprises/me')
         .then((res) => {
           dispatch(setUserEntreprise(res.data))
+
         }).catch ((err) => {
           console.error("Cannot fetch User");
         })
@@ -111,7 +88,7 @@ function App() {
       fetchUserData();
       setTimeout(() => {
         setIsLoading(false);
-      }, 1000)
+      }, 1500)
     }
 
   }, []);
@@ -148,15 +125,16 @@ function App() {
           <Routes>
 
         {/* private routes, for only logged in clients */}
+            {!isLoading &&
             <Route element={<PrivateRoutesCandidat />}>
               <Route path="/candidat" element={<CandidatArea />} />
               <Route path="/candidat/mes-donnees" element={<CandidateDataPage />} />
               <Route path="/candidat/mes-donnees/done" element={<CandidateAlertPage />} />
               <Route path="/candidat/mes-donnees/modification" element={<CandidateModificationPage />} />
               <Route path="/candidat/mes-donnees/missions" element={<Missions />} />
-
             </Route> 
-      
+            }
+
             {/* private routes, for only logged in entreprise */}
             {!isLoading &&
             <Route element={<PrivateRoutesEntreprise />}>
