@@ -23,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy" : "npm run build && mv -f build/index.html build/200.html && surge build --domain http://to-boulot.surge.sh"
+    "deploy" : "npm run build && mv -f build/index.html build/200.html && surge build --domain http://o-boulot.surge.sh"
   },
   "eslintConfig": {
     "extends": [
