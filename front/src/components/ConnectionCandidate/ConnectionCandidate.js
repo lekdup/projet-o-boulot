@@ -10,7 +10,7 @@ import useAuth from '../../hooks/useAuth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 function ConnectionCandidate() {
-    const { auth, setAuth } = useAuth();
+    const { setAuth } = useAuth();
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -27,8 +27,6 @@ function ConnectionCandidate() {
     // const tokenCandidate = useSelector(state => state.candidate.tokenCandidate);
 
     const dispatch = useDispatch();
-
-    console.log(auth);
 
     useEffect(() => {
         userRef.current.focus();

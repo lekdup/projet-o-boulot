@@ -43,7 +43,7 @@ function ConnectedNavbar() {
                         <Link to="/"><li>Mes documents</li></Link>
                     </ul>
                 </li>
-                <Link to="/candidat/joblist"><li>Publier un Boulot</li></Link>
+                <Link to="/entreprise/ajout-publication"><li>Publier un Boulot</li></Link>
                 <Link to="/actualites"><li>Actualités</li></Link>
                 <Link to="/contact"><li>Contact</li></Link>
             </ul>
