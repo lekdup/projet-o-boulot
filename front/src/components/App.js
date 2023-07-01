@@ -143,7 +143,6 @@ function App() {
               <Route path="/entreprise/mes-donnees/done" element={<EntrepriseAlertPage />} />
               <Route path="/entreprise/ajout-publication/done" element={<EntrepriseAddAlertPage />} />
               <Route path="/entreprise/mes-donnees/modification" element={<EntrepriseModificationPage />} />
-              <Route path="/entreprise/ajout-publication" element={<EntrepriseAddOffer />} />
             </Route>
             }
 
@@ -158,14 +157,15 @@ function App() {
             <Route path="/actualites" element={<Actus />} />
             <Route path="/qui-sommes-nous" element={<AboutUs />} />
             <Route path="/mentions-legales" element={<Legacy />} /> 
+
             <Route path="/candidat/joblist" element={<Joblist/>} />
             <Route path="/candidat/jobcard/:id" element={<Jobcard/>} />
-
             <Route path="/candidat/login" element={<ConnectionCandidate /> } />
             <Route path="/candidat/inscription" element={<CandidateSubscription />} />
             <Route path="/candidat/inscription/done" element={<CandidateSubscriptionDone />} />
             <Route path="/entreprise/login" element={<ConnectionEntreprise />} />
             <Route path="/entreprise/inscription" element={<CompanySubscription />} />
+            <Route path="/entreprise/ajout-publication" element={<EntrepriseAddOffer />} />
 
         </Routes>
         
