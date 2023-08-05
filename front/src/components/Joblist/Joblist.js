@@ -34,7 +34,7 @@ function Joblist(){
               //setOffer()
           })
           .catch(err => {
-             alert('Erreur API !')
+             console.error(err.message);
           })
   }, []);
 

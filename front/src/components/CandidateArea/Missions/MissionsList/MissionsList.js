@@ -27,7 +27,7 @@ function MissionsList({menuValue}){
           setFilteredOffers(filteredOffers);
         } catch (err) {
           console.error(err);
-          alert('Erreur API !');
+          alert('Erreur API MissionsList!');
         }
       };
   

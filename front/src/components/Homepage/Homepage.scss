@@ -1,3 +1,5 @@
+@use 'src/styles/vars';
+
 .Homepage {
   text-align: center;
   display: flex;
@@ -52,5 +54,47 @@
 	    -webkit-transition: .3s ease-in-out;
 	    transition: 1s ease-in-out;
     }
+  }
+}
+
+.wrapper {
+  padding: 0 1rem 1rem 1rem;
+  background-color: vars.$orange;
+  border-radius: .5rem;
+  margin: 1rem 1rem 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  &.entreprise {
+    background-color: vars.$blue;
+  }
+  &-title {
+      font-size: 1.5rem;
+      padding: 1.5rem 0;
+      color: white;
+  }
+  &-illustration {
+      display: none;
+      @media (min-width: 799px) {
+          display: block;
+          max-width: 15rem;
+      }
+  }
+  &-buttons {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: .5rem;
+      @media (min-width: 799px) {
+          margin-top: 1.5rem;
+      }
+      & button {
+          width: 15rem;
+          padding: .5rem;
+          font-size: 1rem;
+          border-radius: .4rem;
+          color: vars.$orange;
+      }
   }
 }
