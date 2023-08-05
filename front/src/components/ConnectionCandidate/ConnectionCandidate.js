@@ -4,7 +4,6 @@ import loginCandidate from '../../assets/login-candidate.svg';
 import { useEffect, useState, useRef } from 'react';
 import { useDispatch} from 'react-redux';
 import { setUser } from '../../actions/candidate';
-import { redirect } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 
