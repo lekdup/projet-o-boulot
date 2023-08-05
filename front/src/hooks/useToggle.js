@@ -7,7 +7,7 @@ function useToggle() {
     useEffect(() => {
         const handleOutsideClick = (e) => {
             const clickedEl = e.target;
-            const isNestedMenu = clickedEl.classList.contains("navbar-menu-dropdown");
+            const isNestedMenu = clickedEl.closest(".navbar-menu-dropdown, .MenuBurger__nav--extend");
 
             if (isNestedMenu) {
                 return;
