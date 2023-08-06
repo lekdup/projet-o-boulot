@@ -17,8 +17,8 @@ import PrivateRoutesCandidat from '../utils/PrivateRoutesCandidat';
 import PrivateRoutesEntreprise from '../utils/PrivateRoutesEntreprise';
 
 import ConnectionCandidate from './ConnectionCandidate/ConnectionCandidate';
-import CandidateSubscription from './CandidateSubscription/CandidateSubscription';
-import CandidateSubscriptionDone from './CandidateSubscription/CandidateSubscriptionDone/CandidateSubscriptionDone';
+import CandidateSubscription from './Subscriptions/CandidateSubscription';
+import CandidateSubscriptionDone from './Subscriptions/CandidateSubscriptionDone/CandidateSubscriptionDone';
 import CandidatArea from './CandidateArea/CandidateArea';
 import CandidateDataPage from './CandidateArea/CandidateDataPage/CandidateDataPage';
 import CandidateAlertPage from './CandidateArea/CandidateAlertPage/CandidateAlertPage';
@@ -26,6 +26,7 @@ import CandidateModificationPage from './CandidateArea/CandidateModificationPage
 import Missions from './CandidateArea/Missions/Missions';
 
 import ConnectionEntreprise from './ConnectionEntreprise/ConnectionEntreprise';
+import CompanySubscription from './Subscriptions/CompanySubscription';
 import EntrepriseArea from './EntrepriseArea/EntrepriseArea';
 import EntrepriseModificationPage from './EntrepriseArea/EntrepriseModificationPage/EntrepriseModificationPage';
 import EntrepriseDataPage from './EntrepriseArea/EntrepriseDataPage/EntrepriseDataPage';
@@ -38,10 +39,8 @@ import logoNeutre from '../assets/anonyme.png';
 import logoEntreprise from '../assets/company.png';
 import logoCandidat from '../assets/candidate.png';
 import Error404 from './Error404/Error404';
-import CompanySubscription from './CompanySubscription/CompanySubscription';
 
 import Actus from './Actus/Actus';
-import Article from './Article/Article';
 import EntrepriseAddOffer from './EntrepriseArea/EntrepriseAddOffer/EntrepriseAddOffer';
 
 import useAuth from '../hooks/useAuth';
@@ -152,7 +151,6 @@ function App() {
             <Route path="/" element={<Homepage />} />
 
             {/* a remplacer par la route suivante: /actualites/:id */}
-            <Route path="/article" element={<Article />} /> 
             <Route path="/contact" element={<Contact />} />
             <Route path="/actualites" element={<Actus />} />
             <Route path="/qui-sommes-nous" element={<AboutUs />} />

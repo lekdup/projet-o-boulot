@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import './CompanySubscription.scss';
+import './Subscription.scss';
 
 import { useEffect, useState } from 'react';
 import api from '../../api/api';
@@ -68,10 +68,10 @@ function CompanySubscription() {
     
 
     return (
-        <section className="EntrepriseSubscription">
-        <h1 className="EntrepriseSubscription-title">Inscrivez-vous</h1>
-        <form className="EntrepriseSubscription-form" onSubmit={handleSubmit}>
-            <div className="EntrepriseSubscription-form-fieldHolder">
+        <section className="Entreprise Subscription">
+        <h1 className="Entreprise Subscription-title">Inscrivez-vous</h1>
+        <form className="Entreprise Subscription-form" onSubmit={handleSubmit}>
+            <div className="Entreprise Subscription-form-fieldHolder">
                 <input
                     type="text"
                     name="nomEntreprise"
@@ -85,7 +85,7 @@ function CompanySubscription() {
                 />
                 <label htmlFor="nomEntreprise" >Nom de l'entreprise *</label>
             </div>
-            <div className="EntrepriseSubscription-form-fieldHolder">
+            <div className="Entreprise Subscription-form-fieldHolder">
                 <input
                     type="text"
                     name="siret"
@@ -99,7 +99,7 @@ function CompanySubscription() {
                 />
                 <label htmlFor="siret" >SIRET *</label>
             </div>
-            <div className="EntrepriseSubscription-form-fieldHolder">
+            <div className="Entreprise Subscription-form-fieldHolder">
                 <input
                     type="text"
                     name="nom"
@@ -113,7 +113,7 @@ function CompanySubscription() {
                 />
                 <label htmlFor="nom" >Nom *</label>
             </div>
-            <div className="EntrepriseSubscription-form-fieldHolder">
+            <div className="Entreprise Subscription-form-fieldHolder">
                 <input
                     type="text"
                     name="prenom"
@@ -127,7 +127,7 @@ function CompanySubscription() {
                 />
                 <label htmlFor="prenom">Prénom *</label>
             </div>
-            <div className="EntrepriseSubscription-form-fieldHolder">
+            <div className="Entreprise Subscription-form-fieldHolder">
                 <input
                     type="text"
                     name="adresse"
@@ -141,7 +141,7 @@ function CompanySubscription() {
                 />
                 <label htmlFor="adresse" >Adresse *</label>
             </div>
-            <div className="EntrepriseSubscription-form-fieldHolder">
+            <div className="Entreprise Subscription-form-fieldHolder">
                 <input
                     type="text"
                     name="codePostal"
@@ -155,7 +155,7 @@ function CompanySubscription() {
                 />
                 <label htmlFor="codePostal" >Code postal *</label>
             </div>
-            <div className="EntrepriseSubscription-form-fieldHolder">
+            <div className="Entreprise Subscription-form-fieldHolder">
                 <input
                     type="text"
                     name="ville"
@@ -169,7 +169,7 @@ function CompanySubscription() {
                 />
                 <label htmlFor="ville" >Ville *</label>
             </div>
-            <div className="EntrepriseSubscription-form-fieldHolder">
+            <div className="Entreprise Subscription-form-fieldHolder">
                 <input
                     type="number"
                     inputMode="tel"
@@ -184,7 +184,7 @@ function CompanySubscription() {
                 />
                 <label htmlFor="telephone">Téléphone *</label>
             </div>
-            <div className="EntrepriseSubscription-form-fieldHolder">
+            <div className="Entreprise Subscription-form-fieldHolder">
                 <input
                     type="email"
                     inputMode="email"
@@ -199,9 +199,9 @@ function CompanySubscription() {
                 />
                 <label htmlFor="email">Email *</label>
             </div>
-            <div className="EntrepriseSubscription-form-fieldHolder">
+            <div className="Entreprise Subscription-form-fieldHolder">
                 <input
-                    type="newPassword"
+                    type="Password"
                     name="newPassword"
                     id="newPassword"
                     placeholder=" "
@@ -213,9 +213,9 @@ function CompanySubscription() {
                 />
                 <label htmlFor="newPassword">Nouveau mot de passe *</label>
             </div>
-            <div className="EntrepriseSubscription-form-fieldHolder">
+            <div className="Entreprise Subscription-form-fieldHolder">
                 <input
-                    type="confirmPassword"
+                    type="Password"
                     name="confirmPassword"
                     id="confirmPassword"
                     placeholder=" "
@@ -225,7 +225,7 @@ function CompanySubscription() {
             </div>
             <button
                 type="submit"
-                className="EntrepriseSubscription-form-btn"
+                className="Entreprise Subscription-form-btn"
             >
                 Envoyer
             </button>

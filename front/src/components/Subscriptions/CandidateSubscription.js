@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import './CandidateSubscription.scss';
+import './Subscription.scss';
 
 import api from '../../api/api';
 
@@ -65,10 +65,10 @@ function CandidateSubscription() {
 
 
     return (
-        <section className="CandidateSubscription">
-            <h1 className="CandidateSubscription-title">Inscrivez-vous</h1>
-            <form className="CandidateSubscription-form" onSubmit={handleSubmit}>
-                <div className="CandidateSubscription-form-fieldHolder">
+        <section className="Candidate Subscription">
+            <h1 className="Candidate Subscription-title">Inscrivez-vous</h1>
+            <form className="Candidate Subscription-form" onSubmit={handleSubmit}>
+                <div className="Candidate Subscription-form-fieldHolder">
                     <input
                         type="text"
                         name="nom"
@@ -82,7 +82,7 @@ function CandidateSubscription() {
                     />
                     <label htmlFor="nom" >Nom *</label>
                 </div>
-                <div className="CandidateSubscription-form-fieldHolder">
+                <div className="Candidate Subscription-form-fieldHolder">
                     <input
                         type="text"
                         name="prenom"
@@ -96,7 +96,7 @@ function CandidateSubscription() {
                     />
                     <label htmlFor="prenom">Prénom *</label>
                 </div>
-                <div className="CandidateSubscription-form-dropdown">
+                <div className="Candidate Subscription-form-dropdown">
                     <label htmlFor="genre">Genre *</label>
                     <select 
                     name="genre" 
@@ -111,7 +111,7 @@ function CandidateSubscription() {
                         <option value="autre">Autre</option>
                     </select>
                 </div>
-                <div className="CandidateSubscription-form-dropdown">
+                <div className="Candidate Subscription-form-dropdown">
                     <label htmlFor="date">Date de naissance *</label>
                     <input
                         type="date"
@@ -124,7 +124,7 @@ function CandidateSubscription() {
                         required
                     />
                 </div>
-                <div className="CandidateSubscription-form-fieldHolder">
+                <div className="Candidate Subscription-form-fieldHolder">
                     <input
                         type="number"
                         inputMode="tel"
@@ -139,7 +139,7 @@ function CandidateSubscription() {
                     <label htmlFor="telephone">Téléphone</label>
                 </div>
 
-                <div className="CandidateSubscription-form-fieldHolder">
+                <div className="Candidate Subscription-form-fieldHolder">
                     <input
                         type="text"
                         name="address"
@@ -154,7 +154,7 @@ function CandidateSubscription() {
                     <label htmlFor="address">Adresse postale</label>
                 </div>
 
-                <div className="CandidateSubscription-form-fieldHolder">
+                <div className="Candidate Subscription-form-fieldHolder">
                     <input
                         type="number"
                         name="postalCode"
@@ -169,7 +169,7 @@ function CandidateSubscription() {
                     <label htmlFor="postalCode">Code postal</label>
                 </div>
 
-                <div className="CandidateSubscription-form-fieldHolder">
+                <div className="Candidate Subscription-form-fieldHolder">
                     <input
                         type="text"
                         name="city"
@@ -184,7 +184,7 @@ function CandidateSubscription() {
                     <label htmlFor="city">Ville</label>
                 </div>
                 
-                <div className="CandidateSubscription-form-fieldHolder">
+                <div className="Candidate Subscription-form-fieldHolder">
                     <input
                         type="email"
                         inputMode="email"
@@ -200,7 +200,7 @@ function CandidateSubscription() {
                     <label htmlFor="email">Email *</label>
                 </div>
 
-                <div className="CandidateSubscription-form-fieldHolder">
+                <div className="Candidate Subscription-form-fieldHolder">
                     <input
                         type="text"
                         name="description"
@@ -215,9 +215,9 @@ function CandidateSubscription() {
                     <label htmlFor="description"> 2-3 mots pour vous décrire ? *</label>
                 </div>
 
-                <div className="CandidateSubscription-form-fieldHolder">
+                <div className="Candidate Subscription-form-fieldHolder">
                     <input
-                        type="newPassword"
+                        type="Password"
                         name="newPassword"
                         id="newPassword"
                         placeholder=" "
@@ -229,9 +229,9 @@ function CandidateSubscription() {
                     />
                     <label htmlFor="newPassword">Nouveau mot de passe *</label>
                 </div>
-                <div className="CandidateSubscription-form-fieldHolder">
+                <div className="Candidate Subscription-form-fieldHolder">
                     <input
-                        type="confirmPassword"
+                        type="Password"
                         name="confirmPassword"
                         id="confirmPassword"
                         placeholder=" "
@@ -241,7 +241,7 @@ function CandidateSubscription() {
                 </div>
                 <button
                     type="submit"
-                    className="CandidateSubscription-form-btn"
+                    className="Candidate Subscription-form-btn"
                 >
                     Envoyer
                 </button>

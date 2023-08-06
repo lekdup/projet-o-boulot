@@ -1,4 +1,3 @@
-import AboutUs from '../AboutUs/AboutUs';
 import apply from '../../assets/apply.svg';
 import recruit from '../../assets/recruit.svg';
 import './Homepage.scss';
@@ -35,7 +34,6 @@ function Homepage() {
                 </div>
               </div>  
             </section>
-            <AboutUs />
         </div>
     )
 }

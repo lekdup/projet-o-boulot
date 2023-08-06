@@ -1,88 +1,81 @@
 @use 'src/styles/vars';
 
 .Actus{
-    text-align: center;
-    & h1{
-        font-size: 2.5rem;
-        font-weight: 800;
+  text-align: center;
+  & h1{
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+  &>p{
+    font-size: 1.2rem;
+    font-weight: 400; 
+  }
+  
+  &-searchbar{
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto;
+    &-input{
+      border-radius: .4rem 0rem 0rem .4rem;
+      border: none;
+      background-color: #eee;
+      height: 2rem;
+      width: 60%;
+      max-width: 600px;
+      padding: .5rem;
     }
-    & p{
-        font-size: 1.2rem;
-        font-weight: 400; 
+    &-button{
+      right: 50px;
+      width: 6rem;
+      height: 2rem;
+      padding: .5rem;
+      font-size: 1rem;
+      border-radius: 0rem 0.4rem 0.4rem 0rem;
+      color: white;
+      background-color: vars.$orange;
     }
-    
-    &-searchbar{
+    &-button:hover{
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+    } 
+  }
+
+  &-list{
+    margin: 1rem;
+    &-element{
+      background-color: #eee;
+      border-radius: .4rem;
+      max-width: 900px;
+      padding: 1rem;
+      @media (min-width: 799px) {
         display: flex;
-        justify-content: center;
+      }
+      &-illustration{
+        max-width: 14rem;
+        margin: auto;
+        @media (min-width: 799px) {
+          margin: auto 3rem;
+          flex: 1;
+        }
+        }
+      &-text{
         margin: 1rem;
-
-        &-input{
-            border-radius: .4rem 0rem 0rem .4rem;
-            border: none;
-            background-color: vars.$grey;
-            height: 2rem;
-            width: 60%;
-            max-width: 600px;
-            padding: .5rem;
-
+        @media (min-width: 799px) {
+          flex: 1;
         }
-        &-button{
-            right: 50px;
-            width: 6rem;
-            height: 2rem;
-            padding: .5rem;
-            font-size: 1rem;
-            border-radius: 0rem 0.4rem 0.4rem 0rem;
-            color: white;
-            background-color: vars.$orange;
+        &-title{
+          font-size: 1.2rem;
+          font-weight: bold;
+          padding-bottom: 1rem;
+          text-align: start;
+          @media (min-width: 799px) {
+            font-size: 1.5rem;
+          }
         }
-        &-button:hover{
-            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
-        } 
+        &-content {
+          text-align: justify;
+        }
+      }
     }
-    &-list{
-        margin: 1rem;
-        &-element{
-            background-color: vars.$grey;
-            display: flex;
-            border-radius: .4rem;
-            max-width: 800px;
-            margin: auto;
-            &-img{
-                width: 30%; 
-                margin:1rem; 
-              }
-              &-text{
-               display: flex;
-               flex-direction: column;
-               justify-content: center;
-               align-items: flex-start;
-               text-align: left;
-  
-               margin: 1rem;
-                  &-title{
-                      font-size: 1.2rem;
-                      font-weight: 800;
-                  }
-                  & p{
-                      font-weight: 400; 
-                      font-size: 1rem;
-  
-  
-                  }
-              }
-            @media (max-width: 799px){
-                height: 10rem;
-                &-img{
-                    width: 25%; 
-                    margin: 0.5rem; 
-                  }
-                  &-text{
-                   
-                  }
-            }
-            
-
-        }
-    }  
+  }  
 }
