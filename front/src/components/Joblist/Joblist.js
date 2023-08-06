@@ -62,9 +62,10 @@ function Joblist(){
             </form>
         <div >
         {displayedOffers.length > 0 ? (
-         <div className='Joblist-content'>
+          <div className='Joblist-content'>
             <p className='Joblist-result'> {displayedOffers.length} résultat{displayedOffers.length > 1 ? 's' : ''}</p>
-            <CardsList offers={displayedOffers} /></div>   
+            <CardsList offers={displayedOffers} />
+          </div>   
          ) : 
             (<p className='Joblist-result'> Aucun résultat </p>
 

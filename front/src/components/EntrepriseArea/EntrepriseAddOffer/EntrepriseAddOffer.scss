@@ -1,13 +1,15 @@
 @use '../../../styles/vars';
 
 .EntrepriseAddOffer {
-    max-width: 900px;
-    background-color: #eee;
-    border-radius: 1rem;
-    margin: 1rem;
-    padding: 1rem;
-    @media (min-width: 799px) {
+  width: 90vw;
+  background-color: #eee;
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+  @media (min-width: 799px) {
+      max-width: 900px;
         padding: 2rem;
+        
     }
     &-title {
         font-size: 2rem;
@@ -61,11 +63,12 @@
             }
         }
         &-dates {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            margin-bottom: 1rem;
+            display: flex;
+            flex-wrap: wrap;
             gap: 1rem;
+            margin-bottom: 1rem;
             &-date {
+              flex: 1;
                 display: flex;
                 flex-direction: column;
                 gap: .2rem;
@@ -76,11 +79,12 @@
             }
         }
         &-numbers {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            margin-bottom: 1rem;
+            display: flex;
+            flex-wrap: wrap;
             gap: 1rem;
+            margin-bottom: 1rem;
             &-inside {
+              flex: 1;
                 display: flex;
                 flex-direction: column;
                 gap: .2rem;
