@@ -16,7 +16,7 @@ import Contact from './Contact/Contact';
 import PrivateRoutesCandidat from '../utils/PrivateRoutesCandidat';
 import PrivateRoutesEntreprise from '../utils/PrivateRoutesEntreprise';
 
-import ConnectionCandidate from './ConnectionCandidate/ConnectionCandidate';
+import ConnectionCandidate from './Connections/ConnectionCandidate';
 import CandidateSubscription from './Subscriptions/CandidateSubscription';
 import CandidateSubscriptionDone from './Subscriptions/CandidateSubscriptionDone/CandidateSubscriptionDone';
 import CandidatArea from './CandidateArea/CandidateArea';
@@ -25,7 +25,7 @@ import CandidateAlertPage from './CandidateArea/CandidateAlertPage/CandidateAler
 import CandidateModificationPage from './CandidateArea/CandidateModificationPage/CandidateModificationPage';
 import Missions from './CandidateArea/Missions/Missions';
 
-import ConnectionEntreprise from './ConnectionEntreprise/ConnectionEntreprise';
+import ConnectionEntreprise from './Connections/ConnectionEntreprise';
 import CompanySubscription from './Subscriptions/CompanySubscription';
 import EntrepriseArea from './EntrepriseArea/EntrepriseArea';
 import EntrepriseModificationPage from './EntrepriseArea/EntrepriseModificationPage/EntrepriseModificationPage';

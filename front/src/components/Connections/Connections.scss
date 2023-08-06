@@ -1,6 +1,6 @@
 @use '../../styles/vars';
 
-.ConnectionEntreprise {
+.Connections {
     margin: 1rem auto 3rem;
     text-align: center;
     background-color: #eee;
@@ -34,7 +34,10 @@
     &-title {
         font-size: 1.5rem;
         font-weight: 700;
-
+        margin-bottom: 1rem;
+        @media(min-width: 799px) {
+            margin-bottom: 0;
+        }
     }
     &-image {
         max-width: 10rem;
@@ -79,10 +82,13 @@
             width: 100%;
             padding: .6rem;
             border-radius: .4rem;
-            background-color: vars.$blue;
+            background-color: vars.$orange;
             color: white;
             font-weight: 700;
             margin: 1.5rem auto;
+            &.company {
+              background-color: vars.$blue;
+            }
         }
     }
 }
