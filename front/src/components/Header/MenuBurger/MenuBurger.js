@@ -29,9 +29,9 @@ function MenuBurger() {
                         <Link to="/entreprise/inscription" onClick={toggle}><li>Inscrivez-vous</li></Link>
                     </ul>
                 </li>
-                <Link to="/actualites" onClick={toggle}><li>Actualités</li></Link>
-                <Link to="/aide" onClick={toggle}><li>Aide</li></Link>
-                <Link to="/contact" onClick={toggle}><li>Contact</li></Link>
+                <Link to="/actualites"><li>Actualités</li></Link>
+                <Link to="/aide"><li>Aide</li></Link>
+                <Link to="/contact"><li>Contact</li></Link>
             </ul>
             <button
                 className="MenuBurger__logo"
