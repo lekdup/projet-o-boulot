@@ -52,7 +52,7 @@ function JobOfferCard ({ setData, data, displayedOffers }) {
           <p className="JobOffer-form-info" htmlFor="siret"><span>N° de siret : </span>{password}</p>
           <p className="JobOffer-form-info" htmlFor="email"><span>Email : </span>{email}</p>
           <p className="JobOffer-form-rgpd" >Veuillez verifier l'exactitude de vos données personnelles, ces dernière sont très importantes. Ces dernières serviront à établir et à éditer les contrats de travail de vos futurs employés.</p>
-          <Link to= '/'  className="JobOffer-form-button"><button>Candidater</button></Link>
+          <Link to="/"  className="JobOffer-form-button"><button>Candidater</button></Link>
         </figcaption>
       </figure>
     ))}

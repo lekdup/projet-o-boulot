@@ -10,7 +10,6 @@ import Help from './Help/Help';
 import AboutUs from './AboutUs/AboutUs';
 import Legacy from './Legacy/Legacy';
 import Joblist from './Joblist/Joblist';
-import Jobcard from './Jobcard/Jobcard';
 
 import Contact from './Contact/Contact';
 
@@ -24,7 +23,6 @@ import CandidatArea from './CandidateArea/CandidateArea';
 import CandidateDataPage from './CandidateArea/CandidateDataPage/CandidateDataPage';
 import CandidateAlertPage from './CandidateArea/CandidateAlertPage/CandidateAlertPage';
 import CandidateModificationPage from './CandidateArea/CandidateModificationPage/CandidateModificationPage';
-import Missions from './CandidateArea/Missions/Missions';
 
 import ConnectionEntreprise from './Connections/ConnectionEntreprise';
 import CompanySubscription from './Subscriptions/CompanySubscription';
@@ -130,7 +128,6 @@ function App() {
               <Route path="/candidat/mes-donnees" element={<CandidateDataPage />} />
               <Route path="/candidat/mes-donnees/done" element={<CandidateAlertPage />} />
               <Route path="/candidat/mes-donnees/modification" element={<CandidateModificationPage />} />
-              <Route path="/candidat/mes-donnees/missions" element={<Missions />} />
             </Route> 
             }
 
@@ -157,7 +154,6 @@ function App() {
             <Route path="/mentions-legales" element={<Legacy />} /> 
 
             <Route path="/candidat/joblist" element={<Joblist/>} />
-            <Route path="/candidat/jobcard/:id" element={<Jobcard/>} />
             <Route path="/candidat/login" element={<ConnectionCandidate /> } />
             <Route path="/candidat/inscription" element={<CandidateSubscription />} />
             <Route path="/candidat/inscription/done" element={<CandidateSubscriptionDone />} />

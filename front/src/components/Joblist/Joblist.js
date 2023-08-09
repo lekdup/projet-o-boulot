@@ -1,14 +1,13 @@
 import './Joblist.scss';
 // import CardsList from './CardsList/CardsList';
 // import api from '../../api/api';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import JobOfferCard from './JobOfferCard';
 
 function Joblist(){
 
   const [data, setData] = useState([]);
 
-    const [offers, setOffers] = useState([]);
     const [searchValue, setSearchValue] = useState('');
 
     const [searchResult, setSearchResult] = useState([]);
