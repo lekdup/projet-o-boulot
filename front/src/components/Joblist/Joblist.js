@@ -1,9 +1,12 @@
 import './Joblist.scss';
-import CardsList from './CardsList/CardsList';
-import api from '../../api/api';
+// import CardsList from './CardsList/CardsList';
+// import api from '../../api/api';
 import { useEffect, useState } from 'react';
+import JobOfferCard from './JobOfferCard';
 
 function Joblist(){
+
+  const [data, setData] = useState([]);
 
     const [offers, setOffers] = useState([]);
     const [searchValue, setSearchValue] = useState('');
@@ -18,32 +21,30 @@ function Joblist(){
         setSearchValue(search);
         console.log(searchValue);
         
-        const filteredOffers = offers.filter((offer)=> 
-        offer.entitled.toLowerCase().includes(search)
+        const filteredOffers = data.filter((job)=> 
+        job.employment.title.toLowerCase().includes(search)
          );
         setSearchResult(filteredOffers); 
-        setSearchSubmitted(false);
+        setSearchSubmitted(true);
 
     }
-    
-
-    useEffect(() => {
-      api.get("/offres/")
-          .then(res => {
-              setOffers(res.data);
-              //setOffer()
-          })
-          .catch(err => {
-             console.error(err.message);
-          })
-  }, []);
+  //   useEffect(() => {
+  //     api.get("/offres/")
+  //         .then(res => {
+  //             setOffers(res.data);
+  //             //setOffer()
+  //         })
+  //         .catch(err => {
+  //            console.error(err.message);
+  //         })
+  // }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSearchSubmitted(true);
+    // setSearchSubmitted(true);
   };
 
- const displayedOffers = searchSubmitted ? searchResult : offers;
+ const displayedOffers = searchSubmitted ? searchResult : data;
  
   return(
       
@@ -55,22 +56,16 @@ function Joblist(){
             className='Joblist-searchbar-input' 
             type="text" 
             name="searchbar" 
-            placeholder="'Hotesse d'accueil' "
+            placeholder="'Developer, Designer, Executive...' "
             value={searchValue}
             onChange={handleChange}></input> 
             <button type='submit' className='Joblist-searchbar-button'> Recherche </button>
             </form>
         <div >
-        {displayedOffers.length > 0 ? (
           <div className='Joblist-content'>
             <p className='Joblist-result'> {displayedOffers.length} résultat{displayedOffers.length > 1 ? 's' : ''}</p>
-            <CardsList offers={displayedOffers} />
-          </div>   
-         ) : 
-            (<p className='Joblist-result'> Aucun résultat </p>
-
-        ) }
-        
+            <JobOfferCard setData={setData} data={data} displayedOffers={displayedOffers}/>
+          </div>
         </div>
         
 

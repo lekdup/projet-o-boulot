@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { Bars } from 'react-loader-spinner';
 
 import './App.scss';
 
@@ -44,7 +45,6 @@ import Actus from './Actus/Actus';
 import EntrepriseAddOffer from './EntrepriseArea/EntrepriseAddOffer/EntrepriseAddOffer';
 
 import useAuth from '../hooks/useAuth';
-import { ClimbingBoxLoader } from 'react-spinners';
 import ConnectedHeader from './ConnectedHeader/ConnectedHeader';
 import { useDispatch } from 'react-redux';
 import api from '../api/api';
@@ -107,7 +107,7 @@ function App() {
   if(isLoading) {
     return (
       <div className="loading-container">
-        <ClimbingBoxLoader color="#FF772B"/>
+        <Bars color="#FF772B"/>
       </div>
     )
   }
