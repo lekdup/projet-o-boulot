@@ -36,11 +36,11 @@ function CompanySubscription() {
             "password": password,
         }
 
-        console.log(newCompagny);
+        // console.log(newCompagny);
 
         api.post('/entreprise', newCompagny)
         .then(res => {
-            console.log(res)
+            // console.log(res)
 
             setName('');
             setSiret('');

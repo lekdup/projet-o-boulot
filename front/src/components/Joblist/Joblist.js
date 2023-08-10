@@ -23,7 +23,7 @@ function Joblist(){
 
         const search = e.target.value.toLowerCase();
         setSearchValue(search);
-        console.log(searchValue);
+        // console.log(searchValue);
         
         const filteredOffers = data.filter((job)=> 
         job.employment.title.toLowerCase().includes(search)
@@ -44,7 +44,7 @@ function Joblist(){
       setLoading(true);
       axios.get(url)
       .then(response=>{
-        console.log(response.data)
+        // console.log(response.data)
         setData(response.data);
         setTimeout(() => {
           setLoading(false);

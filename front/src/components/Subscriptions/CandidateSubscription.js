@@ -44,10 +44,10 @@ function CandidateSubscription() {
             "createdAt": createdAt,
             "roles" : roles
             }
-        console.log(newCandidate);
+        // console.log(newCandidate);
         api.post('/candidats', newCandidate)
         .then( res =>{
-            console.log(res)
+            // console.log(res)
             navigate("/candidat/inscription/done")
         })
         .catch(error => {
