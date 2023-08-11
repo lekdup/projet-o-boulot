@@ -1,8 +1,13 @@
+@use 'src/styles/vars';
 header {
     position: sticky;
     top: 0;
     z-index: 99;
     width: 100vw;
+    background-color: vars.$blue;
+    @media (min-width: 799px){
+      background-color: transparent;
+    }
 }
 
 .container-head {

@@ -87,14 +87,19 @@
       justify-content: center;
       gap: .5rem;
       @media (min-width: 799px) {
-          margin-top: 1.5rem;
+        margin-top: 1.5rem;
+      }
+      &.entreprise {
+        & button {
+        color: vars.$blue;
+        }
       }
       & button {
-          width: 15rem;
-          padding: .5rem;
-          font-size: 1rem;
-          border-radius: .4rem;
-          color: vars.$orange;
+        width: 15rem;
+        padding: .5rem;
+        font-size: 1rem;
+        border-radius: .4rem;
+        color: vars.$orange;
       }
   }
 }

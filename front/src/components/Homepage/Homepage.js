@@ -28,7 +28,7 @@ function Homepage() {
                 <div className="wrapper-illustration">
                     <img className="wrapper-apparition" src={recruit} alt="illustration of a man building blocks on a board" />
                 </div>
-                <div className="wrapper-buttons">
+                <div className="wrapper-buttons entreprise">
                     <Link to="/entreprise/ajout-publication"><button>Créer une offre</button></Link>
                     <Link to="/entreprise/inscription"><button>Créer mon espace entreprise</button></Link>
                 </div>
