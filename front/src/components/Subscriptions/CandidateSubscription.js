@@ -45,7 +45,7 @@ function CandidateSubscription() {
             "roles" : roles
             }
         console.log(newCandidate);
-        api.post('/candidats', newCandidate)
+        api.post('/CandidateController', newCandidate)
         .then( res =>{
             console.log(res)
             navigate("/candidat/inscription/done")
