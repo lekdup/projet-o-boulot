@@ -6,11 +6,11 @@ use PDO;
 class Database {
 
     private $bdd;
-    private static $_instance;
+    private static $instance;
 
     private function __construct() {
         $configData = parse_ini_file(__DIR__ . "./../config.ini");
-        var_dump($configData);
+        // var_dump($configData);
         try {
             $this->bdd = new PDO(
                 "mysql:host={$configData["DB_HOST"]};dbname={$configData["DB_NAME"]};charset=utf8",
@@ -18,7 +18,7 @@ class Database {
                 $configData["DB_PASSWORD"],
                 array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING)
             );
-            echo "PDO connection OK !";
+            // echo "PDO connection OK !";
         } catch (\Exception $exception) {
             echo "Erreur de connexion... <br>";
             echo $exception->getMessage() . "<br>";
@@ -30,9 +30,9 @@ class Database {
     }
 
     public static function getPDO() {
-        if (empty(self::$_instance)) {
-            self::$_instance = new Database();
+        if (empty(self::$instance)) {
+            self::$instance = new Database();
         }
-        return self::$_instance->bdd;
+        return self::$instance->bdd;
     } 
 }
