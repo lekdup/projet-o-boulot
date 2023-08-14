@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { Bars } from 'react-loader-spinner';
 
 import './App.scss';
 
@@ -9,7 +10,6 @@ import Help from './Help/Help';
 import AboutUs from './AboutUs/AboutUs';
 import Legacy from './Legacy/Legacy';
 import Joblist from './Joblist/Joblist';
-import Jobcard from './Jobcard/Jobcard';
 
 import Contact from './Contact/Contact';
 
@@ -23,7 +23,6 @@ import CandidatArea from './CandidateArea/CandidateArea';
 import CandidateDataPage from './CandidateArea/CandidateDataPage/CandidateDataPage';
 import CandidateAlertPage from './CandidateArea/CandidateAlertPage/CandidateAlertPage';
 import CandidateModificationPage from './CandidateArea/CandidateModificationPage/CandidateModificationPage';
-import Missions from './CandidateArea/Missions/Missions';
 
 import ConnectionEntreprise from './Connections/ConnectionEntreprise';
 import CompanySubscription from './Subscriptions/CompanySubscription';
@@ -44,7 +43,6 @@ import Actus from './Actus/Actus';
 import EntrepriseAddOffer from './EntrepriseArea/EntrepriseAddOffer/EntrepriseAddOffer';
 
 import useAuth from '../hooks/useAuth';
-import { ClimbingBoxLoader } from 'react-spinners';
 import ConnectedHeader from './ConnectedHeader/ConnectedHeader';
 import { useDispatch } from 'react-redux';
 import api from '../api/api';
@@ -107,7 +105,7 @@ function App() {
   if(isLoading) {
     return (
       <div className="loading-container">
-        <ClimbingBoxLoader color="#FF772B"/>
+        <Bars color="#FF772B"/>
       </div>
     )
   }
@@ -130,7 +128,6 @@ function App() {
               <Route path="/candidat/mes-donnees" element={<CandidateDataPage />} />
               <Route path="/candidat/mes-donnees/done" element={<CandidateAlertPage />} />
               <Route path="/candidat/mes-donnees/modification" element={<CandidateModificationPage />} />
-              <Route path="/candidat/mes-donnees/missions" element={<Missions />} />
             </Route> 
             }
 
@@ -157,7 +154,6 @@ function App() {
             <Route path="/mentions-legales" element={<Legacy />} /> 
 
             <Route path="/candidat/joblist" element={<Joblist/>} />
-            <Route path="/candidat/jobcard/:id" element={<Jobcard/>} />
             <Route path="/candidat/login" element={<ConnectionCandidate /> } />
             <Route path="/candidat/inscription" element={<CandidateSubscription />} />
             <Route path="/candidat/inscription/done" element={<CandidateSubscriptionDone />} />

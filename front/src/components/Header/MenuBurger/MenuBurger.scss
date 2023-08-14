@@ -1,3 +1,4 @@
+@use 'src/styles/vars';
 .MenuBurger {
     display: flex;
     align-items: center;
@@ -126,7 +127,7 @@
                 height: 3px;
                 position: relative;
                 border-radius: 3px;
-                background-color: #000;
+                background-color: vars.$grey;
                 transition: all .5s ease-in-out;
             } 
 

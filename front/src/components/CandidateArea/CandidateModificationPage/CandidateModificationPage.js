@@ -8,7 +8,7 @@ function CandidateModificationPage() {
     // VERIFIER COMMENT PASSER EN REDUX POUR LES INPUTS CONTROLLE
 
     const user = useSelector(state => state.candidate.user);
-    console.log(user);
+
 
     const [firstname, setFirstname] = useState(user.firstname);
     const [lastname, setLastname] = useState(user.lastname);
@@ -30,7 +30,7 @@ function CandidateModificationPage() {
 
             dispatch(setUser(res.data))
 
-            console.log(res.data)
+            // console.log(res.data)
         } catch (err) {
         console.log('jai une erreur')
     }

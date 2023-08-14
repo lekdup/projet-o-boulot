@@ -52,7 +52,7 @@ function EntrepriseAddOffer() {
         }
         api.post('/offres', newJob)
         .then( res =>{
-            console.log(res)
+            // console.log(res)
             setEntitled('');
             setDateFrom('');
             setDateTill('');
@@ -64,7 +64,7 @@ function EntrepriseAddOffer() {
             console.log(error.status)
         })
 
-        console.log(newJob);
+        // console.log(newJob);
     }
 
     if (isSubmitted) {

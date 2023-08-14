@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { useState } from 'react';
 
 function ConfirmationApply({offer, isOpen, setIsOpen}) {
- console.log(isOpen);
+//  console.log(isOpen);
 
  const handleCancel = () => {
     setIsOpen(false);
@@ -14,7 +14,7 @@ function ConfirmationApply({offer, isOpen, setIsOpen}) {
  const [showModal, setShowModal] = useState(false);
  
  const handleModal = () => {
-    console.log("je confirme ma candidature")
+    // console.log("je confirme ma candidature")
     setShowModal(true)
  }
 

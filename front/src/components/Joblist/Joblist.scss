@@ -4,6 +4,7 @@
     min-height: 100vh;
     text-align: center;
     margin: auto;
+    padding: 1rem;
     &-title {
         margin-top: 1rem;
         font-size: 2em;
@@ -67,4 +68,64 @@
     }
 }*/
 
+}
+
+
+.JobOffer {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  margin: 1rem auto .5rem;
+  border-radius: 1rem;
+  @media (min-width: 799px) {
+    max-width: 900px;
+    display: flex;
+  }
+  &-form{
+    text-align: start;
+    display: grid;
+    & * {
+      margin-bottom: .3rem;
+    }
+    @media (min-width: 799px) {
+      margin-left: 1rem;
+    }
+    &-company {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 900;
+      padding: .8rem;
+      @media (min-width: 799px){
+        text-align: start;
+        padding-left: 0;
+      }
+    }
+    &-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    &-pres {
+      font-style: italic;
+    }
+    &-info {
+      & span {
+        font-weight: bold;
+      }
+    }
+    &-rgpd {
+      font-size: .8rem;
+    }
+    &-button{
+      margin: .5rem auto;
+      & button {
+        background-color: vars.$orange;
+        border-radius: .5rem;
+        padding: .7rem 2rem;
+        font-weight: bold;
+        font-size: 1rem;
+        color: #fff;
+      }
+    }
+  }
+
+    
 }

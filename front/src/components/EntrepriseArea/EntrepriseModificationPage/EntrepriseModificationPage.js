@@ -40,7 +40,7 @@ function EntrepriseModificationPage() {
         }
         api.put(`entreprises/${userEntreprise.id}`, editedInfo)
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
                 navigate('/entreprise/mes-donnees')
             }).catch (err => {
                 console.error(err.status);

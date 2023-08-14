@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 function EntrepriseDataPage() {
 
 	const userEntreprise = useSelector(state => state.entreprise.userEntreprise);
-	console.log(userEntreprise);
+	// console.log(userEntreprise);
 
     return(
         <section className="EntrepriseDataPage">
