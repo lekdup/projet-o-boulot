@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost/dossier-projet/projet-o-boulot/back/app/Controllers'
+  baseURL: 'http://isisyoussef-server.eddi.cloud/projet-o-boulot-back/public/api'
 });
 
 api.interceptors.request.use((request) => {
